@@ -1,50 +1,50 @@
 using UnityEngine;
 using DG.Tweening;
 
-public class PlayerShooting : MonoBehaviour, WeaponBehaviour {
+public class PlayerShooting : MonoBehaviour, IWeapons {
     // Références aux objets
-    private GameObject mousePosition;
-    private GameObject player;
-
-    public GameObject playerBullet;
-    [SerializeField] private float bulletSpeed = 20f;
-
-    public int ammoAmmount = 9; 
-    public bool canShoot = true;
-    
+    [SerializeField] private int ammoAmmount = 3; 
+    [SerializeField] private float shootDelay = 0.5f;
+    private float lastShoot;
+    private GameObject shootIndicator;
     
     void Start()
     {
         // Idéalement, ces références devraient être configurées via l'inspecteur
-        if (player == null) player = GameObject.Find("Player");
-        if (mousePosition == null) mousePosition = GameObject.Find("Shoot Indicator");
+        shootIndicator = GameObject.Find("Shoot Indicator");
     }
-    
-    void Shooting(Vector2 aimLocation, float speed)
+
+    void Update() 
     {
-        // Créer le projectile à la position du joueur
-        GameObject prefabBullet = Instantiate(playerBullet, player.transform.position, Quaternion.identity);
-        Rigidbody2D prefabRB = prefabBullet.GetComponent<Rigidbody2D>();
-        
-        // Calculer les coordonnées au-delà de aimLocation (par exemple 2x plus loin de la position actuelle)
-        Vector2 playerPos = player.transform.position;
-        Vector2 extendedTarget = playerPos + ((aimLocation - playerPos) * 4f);
-        
-        // Déplacer avec DOTween
-        float distance = Vector2.Distance(playerPos, extendedTarget);
-        float duration = distance / bulletSpeed;
-        prefabRB.DOMove(extendedTarget, duration);
+
     }
-    
     public void Shoot()
     {
-        // Obtenir la position actuelle de la cible au moment du tir
-        Vector2 currentAimPosition = mousePosition.transform.position;
-        if (ammoAmmount>0 && canShoot) // Si le Player possède assez de Munition et que le timing est bon.
-        { 
-            // Appel de Shooting
-            Shooting(currentAimPosition, bulletSpeed);
+        if(canShoot())
+        {
+            Vector2 mousePosition = shootIndicator.transform.position;
+            GameObject bullet = BulletPooling.SharedInstance.GetPooledObject(); 
+            if (bullet == null) return;
+            bullet.SetActive(true);
+            BulletBehaviour bulletBehaviourInstance = bullet.GetComponent<BulletBehaviour>();
+            bulletBehaviourInstance.GetValues(gameObject, bullet,mousePosition, gameObject);
+            bulletBehaviourInstance.SetBehaviourType(BulletBehaviour.BehaviourBullet.Directional);
+            // ammoAmmount-=1;
+        } 
+    }
+    
+    private bool canShoot()
+    {
+        if (ammoAmmount>0 &&Time.time - lastShoot > shootDelay) // Comparaison avec le temps global
+        {
+            lastShoot = Time.time; // Mise à jour du dernier tir
+            return true;
         }
-        
+        return false;
+    }
+
+    public void TakeDamage()
+    {
+
     }
 }
