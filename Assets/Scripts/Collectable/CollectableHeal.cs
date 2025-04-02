@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class NewMonoBehaviourScript : MonoBehaviour
+public class CollectableHeal : MonoBehaviour
 {
     public int playerHealth;
 
