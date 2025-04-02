@@ -39,12 +39,14 @@ public class BulletPooling : MonoBehaviour
         
     }
 
-    public GameObject GetPooledObject()
+    public GameObject GetPooledObject(Vector2 position)
     {
         for(int i = 0; i < maxAmountToPool; i++)
         {
             if(!pooledObjects[i].activeInHierarchy)
             {
+                pooledObjects[i].transform.position = position;
+                pooledObjects[i].SetActive(true);
                 return pooledObjects[i];
             }
         }

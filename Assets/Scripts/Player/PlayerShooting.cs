@@ -1,7 +1,7 @@
 using UnityEngine;
 using DG.Tweening;
 
-public class PlayerShooting : MonoBehaviour, IWeapons {
+public class PlayerShooting : MonoBehaviour, IWeapons, IDamageable {
     // Références aux objets
     [SerializeField] private int ammoAmmount = 3; 
     [SerializeField] private float shootDelay = 0.5f;
@@ -20,20 +20,19 @@ public class PlayerShooting : MonoBehaviour, IWeapons {
     }
     public void Shoot()
     {
-        if(canShoot())
+        if(CanShoot())
         {
             Vector2 mousePosition = shootIndicator.transform.position;
-            GameObject bullet = BulletPooling.SharedInstance.GetPooledObject(); 
+            GameObject bullet = BulletPooling.SharedInstance.GetPooledObject(gameObject.transform.position); 
             if (bullet == null) return;
-            bullet.SetActive(true);
             BulletBehaviour bulletBehaviourInstance = bullet.GetComponent<BulletBehaviour>();
             bulletBehaviourInstance.GetValues(gameObject, bullet,mousePosition, gameObject);
             bulletBehaviourInstance.SetBehaviourType(BulletBehaviour.BehaviourBullet.Directional);
-            // ammoAmmount-=1;
+            ammoAmmount-=1;
         } 
     }
     
-    private bool canShoot()
+    private bool CanShoot()
     {
         if (ammoAmmount>0 &&Time.time - lastShoot > shootDelay) // Comparaison avec le temps global
         {
@@ -43,7 +42,7 @@ public class PlayerShooting : MonoBehaviour, IWeapons {
         return false;
     }
 
-    public void TakeDamage()
+    public void TakeDamage(int amount)
     {
 
     }

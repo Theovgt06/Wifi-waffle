@@ -7,11 +7,11 @@ public class BulletBehaviour : MonoBehaviour
     public enum BehaviourBullet { Inactive, Parabolic, Directional , Fixed }
     public BehaviourBullet currentBehaviour = BehaviourBullet.Inactive;
     private Vector2 mousePosition; 
-    public float bulletSpeed;
     private GameObject instantiateBullet;
     private GameObject player;
     private bool hasStartedDirectional = false;
     [SerializeField] private float shootDistance = 8f;
+    [SerializeField] private float bulletSpeed = 8f;
     private GameObject fromWho;
     void Start()
     {
@@ -65,7 +65,6 @@ public class BulletBehaviour : MonoBehaviour
         if (hasStartedDirectional) return; // Condition stopping Behavior actualisation.
         hasStartedDirectional = true;  // ---> 
 
-        bulletSpeed = 8f;
 
           // Get bullet components 
         Rigidbody2D bulletRB = instantiateBullet.GetComponent<Rigidbody2D>();
@@ -111,13 +110,13 @@ public class BulletBehaviour : MonoBehaviour
                 target.TakeDamage(1);
                 gameObject.SetActive(false);
             }
-            if(hitObject.name == "Enemy")
+            if(hitObject.CompareTag("Enemy"))
             {
                 IDamageable target = hitObject.GetComponent<IDamageable>();
                 target.TakeDamage(1);
                 gameObject.SetActive(false);
             }
-            if(hitObject.name == "Edge Collider")
+            if(hitObject.CompareTag("Edge Collider"))
             {
                 gameObject.SetActive(false);
                 gameObject.transform.position = player.transform.position;
