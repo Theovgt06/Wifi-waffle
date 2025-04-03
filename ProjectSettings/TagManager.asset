@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Edge Collider
   - Enemy
+  - Spawning Area
   layers:
   - Default
   - TransparentFX

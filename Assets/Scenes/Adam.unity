@@ -382,7 +382,7 @@ GameObject:
   - component: {fileID: 983624452}
   m_Layer: 0
   m_Name: SpawningPlateform
-  m_TagString: Untagged
+  m_TagString: Spawning Area
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -890,9 +890,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d277ef372b970a045adc3aafc2f52912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledObjects: []
   objectToPool: {fileID: 6961699545419245025, guid: 6d7f18d80d63c984892741235fa58944, type: 3}
-  player: {fileID: 1714797889}
   maxAmountToPool: 7
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
