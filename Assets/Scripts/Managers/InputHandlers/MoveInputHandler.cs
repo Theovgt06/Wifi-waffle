@@ -16,6 +16,7 @@ public class MoveInputHandler : InputHandler
             playerInput.actions["Move"].canceled += OnMoveCanceled;
             playerInput.actions["Jump"].performed += OnJumpPerformed;
             playerInput.actions["Jump"].canceled += OnJumpCanceled;
+
         }
         else
         {
@@ -32,6 +33,7 @@ public class MoveInputHandler : InputHandler
             playerInput.actions["Move"].canceled -= OnMoveCanceled;
             playerInput.actions["Jump"].performed -= OnJumpPerformed;
             playerInput.actions["Jump"].canceled -= OnJumpCanceled;
+
         }
     }
 
@@ -41,17 +43,6 @@ public class MoveInputHandler : InputHandler
         if (playerController != null)
         {
             playerController.SetMoveDirection(moveInput);
-        }
-        else
-        {
-            Debug.LogError("PlayerController non assigné dans MoveInputHandler");
-        }
-    }
-    private void OnJumpPerformed(InputAction.CallbackContext context)
-    {
-        if (playerController != null)
-        {
-            playerController.jumping = true;
         }
         else
         {
@@ -68,15 +59,30 @@ public class MoveInputHandler : InputHandler
             playerController.SetMoveDirection(moveInput);
         }
     }
-    private void OnJumpCanceled(InputAction.CallbackContext context)
+
+    private void OnJumpPerformed(InputAction.CallbackContext context)
     {
         if (playerController != null)
         {
-            playerController.jumping = false;
+            playerController.Jump();
         }
         else
         {
             Debug.LogError("PlayerController non assigné dans MoveInputHandler");
         }
     }
+
+    private void OnJumpCanceled(InputAction.CallbackContext context)
+    {
+        if (playerController != null)
+        {
+            playerController.NoJump();
+        }
+        else
+        {
+            Debug.LogError("PlayerController non assigné dans MoveInputHandler");
+        }
+    }
+
+
 }
