@@ -8,10 +8,12 @@ public class BulletPooling : MonoBehaviour
     
     
     public static BulletPooling SharedInstance;
-    public List<GameObject> pooledObjects;
-    public GameObject objectToPool;
-    public GameObject player;
-    public int maxAmountToPool;
+    private List<GameObject> pooledObjects;
+    [SerializeField] 
+    private GameObject objectToPool;
+    private GameObject player;
+
+    public int maxAmountToPool; // Futur réference à Ammo.
 
 
     void Awake()
@@ -51,5 +53,5 @@ public class BulletPooling : MonoBehaviour
             }
         }
         return null;
-}
+    }
 }
