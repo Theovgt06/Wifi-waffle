@@ -7,6 +7,9 @@ TagManager:
   - Edge Collider
   - Enemy
   - Spawning Area
+  - Grid
+  - Bottom Screen
+  - Plateform
   layers:
   - Default
   - TransparentFX
@@ -18,7 +21,7 @@ TagManager:
   - Player
   - Enemy
   - EdgeCollider
-  - 
+  - Plateform
   - 
   - 
   - 

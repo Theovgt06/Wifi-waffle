@@ -1,11 +1,13 @@
 using UnityEngine;
 
-public class PlateformBehavior : MonoBehaviour
+public class PlateformBehaviour : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    enum BehaviorBiome { Easy, Normal, Hard }
 
+    private float currentSpeed;
+    public int currentIndex;
     private PlatformEffector2D platformEffector;
+
 
     void Start()
     {
@@ -16,9 +18,27 @@ public class PlateformBehavior : MonoBehaviour
         }
     }
 
+
+    void OnInactive()
+    {
+
+    }
+
+
     // Update is called once per frame
     void Update()
     {
+        
+        transform.position -= Vector3.up * currentSpeed * Time.deltaTime;  
+        // if (transform.position.x <leftEdge){
+        //     Vector3 newPosition = transform.position;
+        //     newPosition.x += rightEdge;
+        //     transform.position = newPosition;
+        // }
+    }
 
+    public void ChangeSpeed(float newSpeed)
+    {
+        currentSpeed = newSpeed;
     }
 }

@@ -1,9 +1,21 @@
 using System.Collections.Generic;
 using UnityEngine;
+using System;
 
-[CreateAssetMenu(fileName = "PlateformByColor", menuName = "Scriptable Objects/Plateform")]
-public class PlateformByColor : ScriptableObject
+[CreateAssetMenu(fileName = "Plateform", menuName = "Scriptable Objects/Plateform")]
+public class PlateformByBiome : ScriptableObject
 {
-    public string PlateformeColor;
-    public List<GameObject> plateformeByType = new List<GameObject>();
+    public string plateformBiome;
+    public List<PlateformByColor> plateformByBiomes = new List<PlateformByColor>();
+
+    [Serializable] // Très important pour la sérialisation
+    public class PlateformByColor
+    {
+        public string plateformeColor;
+        public List<GameObject> plateformeByType = new List<GameObject>();
+
+    }
+
+    
 }
+

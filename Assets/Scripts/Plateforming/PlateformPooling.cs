@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
+
+
 public class PlateformPooling : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -14,12 +16,12 @@ public class PlateformPooling : MonoBehaviour
     [SerializeField]private List<GameObject> pooledHardPlateform;
     [SerializeField]private List<GameObject> pooledExpertPlateform;
 
-
     [Header("Prefab List")]
-    [SerializeField] private List<List<GameObject>> prefabEasyPlateform;
-    [SerializeField] private List<List<GameObject>> prefabNormalPlateform;
-    [SerializeField] private List<List<GameObject>> prefabHardPlateform;
-    [SerializeField] private List<List<GameObject>> prefabExpertPlateform;
+    [SerializeField] private PlateformByBiome prefabEasyPlateform;
+    [SerializeField] private PlateformByBiome prefabNormalPlateform;
+    [SerializeField] private PlateformByBiome prefabHardPlateform;
+    [SerializeField] private PlateformByBiome prefabExpertPlateform;
+
 
 
     void Awake()
@@ -47,63 +49,96 @@ public class PlateformPooling : MonoBehaviour
 
     public void PoolingEasy()
     {
-        if((prefabEasyPlateform.Count == 0) && (prefabEasyPlateform[0].Count == 0)) return;
+        
+        if(prefabEasyPlateform == null || prefabEasyPlateform.plateformByBiomes.Count == 0) return;
+    
         pooledEasyPlateform = new List<GameObject>();
         GameObject easyPlatform;
-        foreach (List<GameObject> i in prefabEasyPlateform) //the line the error is pointing to
+        int index = 0;
+        
+        // Parcourir les différentes couleurs de plateformes
+        foreach (var plateformColor in prefabEasyPlateform.plateformByBiomes)
         {
-            foreach (GameObject j in i) //the line the error is pointing to
+            // Parcourir chaque préfab pour cette couleur
+            foreach (var platformPrefab in plateformColor.plateformeByType)
             {
-                easyPlatform = Instantiate(j,spawningArealLocation, Quaternion.identity);
+                easyPlatform = Instantiate(platformPrefab, spawningArealLocation, Quaternion.identity);
+                easyPlatform.GetComponent<PlateformBehaviour>().currentIndex = index;
                 easyPlatform.SetActive(false);
+                easyPlatform.transform.parent = GameObject.FindGameObjectWithTag("Grid").transform;
                 pooledEasyPlateform.Add(easyPlatform);
+                index++;
             }
         }
     }
     void PoolingNormal()
     {
-        if((prefabNormalPlateform.Count == 0) && (prefabNormalPlateform[0].Count == 0)) return;
+        if(prefabNormalPlateform == null || prefabNormalPlateform.plateformByBiomes.Count == 0) return;
+    
         pooledNormalPlateform = new List<GameObject>();
         GameObject normalPlatform;
-        foreach (List<GameObject> i in prefabNormalPlateform) //the line the error is pointing to
+        int index = 0;
+        
+        // Parcourir les différentes couleurs de plateformes
+        foreach (var plateformColor in prefabNormalPlateform.plateformByBiomes)
         {
-            foreach (GameObject j in i) //the line the error is pointing to
+            // Parcourir chaque préfab pour cette couleur
+            foreach (var platformPrefab in plateformColor.plateformeByType)
             {
-                normalPlatform = Instantiate(j,spawningArealLocation, Quaternion.identity);
+                normalPlatform = Instantiate(platformPrefab, spawningArealLocation, Quaternion.identity);
+                normalPlatform.GetComponent<PlateformBehaviour>().currentIndex = index;
                 normalPlatform.SetActive(false);
-                pooledNormalPlateform.Add(normalPlatform);
+                normalPlatform.transform.parent = GameObject.FindGameObjectWithTag("Grid").transform;
+                pooledEasyPlateform.Add(normalPlatform);
+                index++;
             }
-        } 
+        }
     }
     void PoolingHard()
     {
-        if((prefabHardPlateform.Count == 0) && (prefabHardPlateform[0].Count == 0)) return;
-        pooledHardPlateform = new List<GameObject>();
+        if(prefabHardPlateform == null || prefabHardPlateform.plateformByBiomes.Count == 0) return;
+    
+        pooledEasyPlateform = new List<GameObject>();
         GameObject hardPlatform;
-        foreach (List<GameObject> i in prefabHardPlateform) //the line the error is pointing to
+        int index = 0;
+        
+        // Parcourir les différentes couleurs de plateformes
+        foreach (var plateformColor in prefabHardPlateform.plateformByBiomes)
         {
-            foreach (GameObject j in i) //the line the error is pointing to
+            // Parcourir chaque préfab pour cette couleur
+            foreach (var platformPrefab in plateformColor.plateformeByType)
             {
-                hardPlatform = Instantiate(j,spawningArealLocation, Quaternion.identity);
+                hardPlatform = Instantiate(platformPrefab, spawningArealLocation, Quaternion.identity);
+                hardPlatform.GetComponent<PlateformBehaviour>().currentIndex = index;
                 hardPlatform.SetActive(false);
-                pooledHardPlateform.Add(hardPlatform);
+                hardPlatform.transform.parent = GameObject.FindGameObjectWithTag("Grid").transform;
+                pooledEasyPlateform.Add(hardPlatform);
+                index++;
             }
         }
     }
     void PoolingExpert()
     {
-        if((prefabExpertPlateform.Count == 0) && (prefabExpertPlateform[0].Count == 0)) return;
-         pooledExpertPlateform = new List<GameObject>();
+        if(prefabExpertPlateform == null || prefabExpertPlateform.plateformByBiomes.Count == 0) return;
+    
+        pooledEasyPlateform = new List<GameObject>();
         GameObject expertPlatform;
-        foreach (List<GameObject> i in prefabExpertPlateform) //the line the error is pointing to
+        int index = 0;
+        
+        // Parcourir les différentes couleurs de plateformes
+        foreach (var plateformColor in prefabExpertPlateform.plateformByBiomes)
         {
-            foreach (GameObject j in i) //the line the error is pointing to
+            // Parcourir chaque préfab pour cette couleur
+            foreach (var platformPrefab in plateformColor.plateformeByType)
             {
-                expertPlatform = Instantiate(j,spawningArealLocation, Quaternion.identity);
+                expertPlatform = Instantiate(platformPrefab, spawningArealLocation, Quaternion.identity);
+                expertPlatform.GetComponent<PlateformBehaviour>().currentIndex = index;
                 expertPlatform.SetActive(false);
-                pooledExpertPlateform.Add(expertPlatform);
+                expertPlatform.transform.parent = GameObject.FindGameObjectWithTag("Grid").transform;
+                pooledEasyPlateform.Add(expertPlatform);
+                index++;
             }
-        } 
+        }
     }
 
 
