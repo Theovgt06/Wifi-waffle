@@ -1,3 +1,5 @@
+using System.Collections;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,19 +11,25 @@ public class PlayerController : MonoBehaviour
 
     [Header("Saut")]
     [SerializeField]
-    private float jumpPower;
-    //private float fallMultiplier;
+    public int jumpPower;
+    public float fallMultiplier;
 
     [Header("Réferences")]
     [SerializeField]
     private Rigidbody2D rb;
+    public Transform groundCheck;
+    public LayerMask groundLayer;
+
 
     private Vector2 moveDirection;
     private bool isFacingRight = true;
-    public bool jumping;
+    public bool isGrounded;
+    Vector2 vecGravity;
+    public bool jump;
 
     private void Awake()
     {
+
         if (rb == null)
         {
             rb = GetComponent<Rigidbody2D>();
@@ -30,6 +38,8 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
+        vecGravity = new Vector2(0, -Physics2D.gravity.y);
+
         PlayerInput playerInput = GetComponent<PlayerInput>();
         if (playerInput != null)
         {
@@ -74,15 +84,29 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
-        Jump();
+        Jumping();
+        
     }
 
+    private void Jumping()
+    {
+        isGrounded = Physics2D.OverlapCapsule(groundCheck.position, new Vector2(0.43f, 0.08f), CapsuleDirection2D.Horizontal, 0, groundLayer);
+        if (jump && isGrounded)
+        {
+            rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpPower, 0);
+        }
+
+        if (rb.linearVelocity.y < 0)
+        {
+            rb.linearVelocity -= vecGravity * fallMultiplier * Time.deltaTime;
+        }
+    }
 
     private void Move()
     {
         if (rb)
         {
-            rb.linearVelocity = new Vector2(moveDirection.x, 0) * moveSpeed;
+            rb.linearVelocity = new Vector2(moveDirection.x * moveSpeed, rb.linearVelocity.y);
         }
         else
         {
@@ -92,12 +116,11 @@ public class PlayerController : MonoBehaviour
 
     public void Jump()
     {
-        if (jumping)
-        {
-            Debug.Log("test saut");
-            rb.linearVelocity += new Vector2(rb.linearVelocity.x, jumpPower);
-        }
+        jump = true;
     }
 
-
+    public void NoJump()
+    {
+        jump = false;
+    }
 }
