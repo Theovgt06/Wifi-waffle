@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 5118644076771909640}
   - component: {fileID: 1293631083896570469}
   - component: {fileID: 6573572175953281848}
+  - component: {fileID: -1254709179375850700}
   m_Layer: 10
   m_Name: Brown_6
   m_TagString: Plateform
@@ -344,3 +345,22 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
+--- !u!251 &-1254709179375850700
+PlatformEffector2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4027633377651653420}
+  m_Enabled: 1
+  m_UseColliderMask: 0
+  m_ColliderMask:
+    serializedVersion: 2
+    m_Bits: 4096
+  m_RotationalOffset: 0
+  m_UseOneWay: 1
+  m_UseOneWayGrouping: 0
+  m_SurfaceArc: 160
+  m_UseSideFriction: 0
+  m_UseSideBounce: 0
+  m_SideArc: 1
