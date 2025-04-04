@@ -4,7 +4,7 @@ using DG.Tweening;
 public class BulletBehaviour : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public enum BehaviourBullet { Inactive, Parabolic, Directional , Fixed }
+    public enum BehaviourBullet { Inactive, Parabolic, DirectionalPlayer , DirectionalEnemy, Fixed }
     public BehaviourBullet currentBehaviour = BehaviourBullet.Inactive;
     private Vector2 mousePosition; 
     private GameObject instantiateBullet;
@@ -41,8 +41,11 @@ public class BulletBehaviour : MonoBehaviour
             case BehaviourBullet.Parabolic:
                 HandleParabolic();
                 break;
-            case BehaviourBullet.Directional:
-                HandleDirectional();
+            case BehaviourBullet.DirectionalPlayer:
+                HandleDirectionalPlayer();
+                break;
+            case BehaviourBullet.DirectionalEnemy:
+                HandleDirectionalEnemy();
                 break;
             case BehaviourBullet.Fixed:
                 HandleFixed();
@@ -60,7 +63,7 @@ public class BulletBehaviour : MonoBehaviour
         
     }
 
-    private void HandleDirectional()
+    private void HandleDirectionalPlayer()
     {
         if (hasStartedDirectional) return; // Condition stopping Behavior actualisation.
         hasStartedDirectional = true;  // ---> 
@@ -88,6 +91,14 @@ public class BulletBehaviour : MonoBehaviour
         bulletRB.DOMove(extendedTarget, duration);
     }
 
+
+    private void HandleDirectionalEnemy()
+    {
+
+    }
+    
+
+    
     private void HandleFixed()
     {
 

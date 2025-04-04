@@ -17,7 +17,7 @@ public class PlateformSpawning : MonoBehaviour
     private float expertSpeed;
 
     private GameObject spawningArea;
-    private Biome currentBiome = Biome.Easy;
+    public Biome currentBiome = Biome.Easy;
 
     [SerializeField] 
     private float spawnRate =  2f;

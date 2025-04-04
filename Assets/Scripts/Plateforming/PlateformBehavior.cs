@@ -17,14 +17,6 @@ public class PlateformBehaviour : MonoBehaviour
             platformEffector.useOneWay = true;
         }
     }
-
-
-    void OnInactive()
-    {
-
-    }
-
-
     // Update is called once per frame
     void Update()
     {
