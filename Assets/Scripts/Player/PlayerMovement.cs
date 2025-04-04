@@ -3,33 +3,22 @@ using UnityEditor;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
-public class PlayerController : MonoBehaviour
+public class PlayerMovement : MonoBehaviour
 {
     [Header("Mouvement")]
     [SerializeField]
     private float moveSpeed = 4f;
 
-    [Header("Saut")]
-    [SerializeField]
-    public int jumpPower;
-    public float fallMultiplier;
-
     [Header("Réferences")]
     [SerializeField]
     private Rigidbody2D rb;
-    public Transform groundCheck;
-    public LayerMask groundLayer;
-
 
     private Vector2 moveDirection;
     private bool isFacingRight = true;
-    public bool isGrounded;
-    Vector2 vecGravity;
-    public bool jump;
+    
 
     private void Awake()
     {
-
         if (rb == null)
         {
             rb = GetComponent<Rigidbody2D>();
@@ -38,8 +27,6 @@ public class PlayerController : MonoBehaviour
 
     private void Start()
     {
-        vecGravity = new Vector2(0, -Physics2D.gravity.y);
-
         PlayerInput playerInput = GetComponent<PlayerInput>();
         if (playerInput != null)
         {
@@ -84,23 +71,9 @@ public class PlayerController : MonoBehaviour
     private void FixedUpdate()
     {
         Move();
-        Jumping();
-        
     }
 
-    private void Jumping()
-    {
-        isGrounded = Physics2D.OverlapCapsule(groundCheck.position, new Vector2(0.43f, 0.08f), CapsuleDirection2D.Horizontal, 0, groundLayer);
-        if (jump && isGrounded)
-        {
-            rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpPower, 0);
-        }
-
-        if (rb.linearVelocity.y < 0)
-        {
-            rb.linearVelocity -= vecGravity * fallMultiplier * Time.deltaTime;
-        }
-    }
+    
 
     private void Move()
     {
@@ -112,15 +85,5 @@ public class PlayerController : MonoBehaviour
         {
             Debug.LogError("Rigidbody2D is missing on PlayerController");
         }
-    }
-
-    public void Jump()
-    {
-        jump = true;
-    }
-
-    public void NoJump()
-    {
-        jump = false;
     }
 }

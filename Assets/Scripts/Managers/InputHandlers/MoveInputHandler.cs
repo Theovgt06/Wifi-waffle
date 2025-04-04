@@ -3,7 +3,8 @@ using UnityEngine.InputSystem;
 
 public class MoveInputHandler : InputHandler
 {
-    [SerializeField] private PlayerController playerController;
+    [SerializeField] private PlayerMovement playerMovement;
+    [SerializeField] private PlayerJumping playerJumping;
 
     private Vector2 moveInput;
 
@@ -40,9 +41,9 @@ public class MoveInputHandler : InputHandler
     private void OnMovePerformed(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
-        if (playerController != null)
+        if (playerMovement != null)
         {
-            playerController.SetMoveDirection(moveInput);
+            playerMovement.SetMoveDirection(moveInput);
         }
         else
         {
@@ -54,17 +55,17 @@ public class MoveInputHandler : InputHandler
     private void OnMoveCanceled(InputAction.CallbackContext context)
     {
         moveInput = Vector2.zero;
-        if (playerController != null)
+        if (playerMovement != null)
         {
-            playerController.SetMoveDirection(moveInput);
+            playerMovement.SetMoveDirection(moveInput);
         }
     }
 
     private void OnJumpPerformed(InputAction.CallbackContext context)
     {
-        if (playerController != null)
+        if (playerJumping != null)
         {
-            playerController.Jump();
+            playerJumping.Jump();
         }
         else
         {
@@ -74,9 +75,9 @@ public class MoveInputHandler : InputHandler
 
     private void OnJumpCanceled(InputAction.CallbackContext context)
     {
-        if (playerController != null)
+        if (playerJumping != null)
         {
-            playerController.NoJump();
+            playerJumping.NoJump();
         }
         else
         {
