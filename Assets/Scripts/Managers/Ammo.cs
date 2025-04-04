@@ -3,9 +3,29 @@ using UnityEngine;
 public class Ammo : MonoBehaviour
 {
     public int maxAmmo = 7;
-    [SerializeField]private int currentAmmo;
-    [SerializeField]private int startingAmmo = 5;
-    public void AddAmmo(int ammoToAdd)
+    [SerializeField] private int currentAmmo;
+    [SerializeField] private int startingAmmo = 5;
+
+
+    public void ChangeAmmo(int amount)
+    {
+        currentAmmo += amount;
+        if (currentAmmo > maxAmmo)
+        {
+            currentAmmo = maxAmmo;
+        }
+        else if (currentAmmo <= 0)
+        {
+            currentAmmo = 0;
+        }
+    } 
+}
+
+
+
+
+
+    /*public void AddAmmo(int ammoToAdd)
     {
         
         if (currentAmmo + ammoToAdd > maxAmmo)
