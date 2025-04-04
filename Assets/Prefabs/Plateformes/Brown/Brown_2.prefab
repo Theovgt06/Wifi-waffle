@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -2442022474008250204}
   - component: {fileID: -7737033665700004097}
   - component: {fileID: -2666708015538936491}
-  m_Layer: 0
+  m_Layer: 10
   m_Name: Brown_2
   m_TagString: Plateform
   m_Icon: {fileID: 0}

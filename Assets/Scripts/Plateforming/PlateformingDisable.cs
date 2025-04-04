@@ -3,6 +3,10 @@ using UnityEngine;
 public class PlateformingDisable : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public PlateformPooling plateformPooling;
+    public PlateformSpawning plateformSpawning;
+   
+   
     void Start()
     {
         
@@ -16,9 +20,8 @@ public class PlateformingDisable : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        Debug.Log("caa");
         if(other.gameObject.CompareTag("Plateform")){
-            other.gameObject.SetActive(false);
+            plateformPooling.ReturnToPool(other.gameObject, plateformSpawning.currentBiome);
         }
     }
 }

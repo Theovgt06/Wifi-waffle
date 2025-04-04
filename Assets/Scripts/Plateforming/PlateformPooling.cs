@@ -22,6 +22,11 @@ public class PlateformPooling : MonoBehaviour
     [SerializeField] private PlateformByBiome prefabHardPlateform;
     [SerializeField] private PlateformByBiome prefabExpertPlateform;
 
+    [Header("Inactive List")]
+    [SerializeField] private List<int> inactiveEasyIndices;
+    [SerializeField] private List<int> inactiveNormalIndices;
+    [SerializeField] private List<int> inactiveHardIndices;
+    [SerializeField] private List<int> inactiveExpertIndices;
 
 
     void Awake()
@@ -38,6 +43,7 @@ public class PlateformPooling : MonoBehaviour
         PoolingNormal();
         PoolingHard();
         PoolingExpert();
+        InitializeInactiveLists();
     }
 
     // Update is called once per frame
@@ -89,7 +95,7 @@ public class PlateformPooling : MonoBehaviour
                 normalPlatform.GetComponent<PlateformBehaviour>().currentIndex = index;
                 normalPlatform.SetActive(false);
                 normalPlatform.transform.parent = GameObject.FindGameObjectWithTag("Grid").transform;
-                pooledEasyPlateform.Add(normalPlatform);
+                pooledNormalPlateform.Add(normalPlatform);
                 index++;
             }
         }
@@ -98,7 +104,7 @@ public class PlateformPooling : MonoBehaviour
     {
         if(prefabHardPlateform == null || prefabHardPlateform.plateformByBiomes.Count == 0) return;
     
-        pooledEasyPlateform = new List<GameObject>();
+        pooledHardPlateform = new List<GameObject>();
         GameObject hardPlatform;
         int index = 0;
         
@@ -112,7 +118,7 @@ public class PlateformPooling : MonoBehaviour
                 hardPlatform.GetComponent<PlateformBehaviour>().currentIndex = index;
                 hardPlatform.SetActive(false);
                 hardPlatform.transform.parent = GameObject.FindGameObjectWithTag("Grid").transform;
-                pooledEasyPlateform.Add(hardPlatform);
+                pooledHardPlateform.Add(hardPlatform);
                 index++;
             }
         }
@@ -121,7 +127,7 @@ public class PlateformPooling : MonoBehaviour
     {
         if(prefabExpertPlateform == null || prefabExpertPlateform.plateformByBiomes.Count == 0) return;
     
-        pooledEasyPlateform = new List<GameObject>();
+        pooledExpertPlateform = new List<GameObject>();
         GameObject expertPlatform;
         int index = 0;
         
@@ -135,26 +141,122 @@ public class PlateformPooling : MonoBehaviour
                 expertPlatform.GetComponent<PlateformBehaviour>().currentIndex = index;
                 expertPlatform.SetActive(false);
                 expertPlatform.transform.parent = GameObject.FindGameObjectWithTag("Grid").transform;
-                pooledEasyPlateform.Add(expertPlatform);
+                pooledExpertPlateform.Add(expertPlatform);
                 index++;
             }
         }
     }
 
-
-
-    public GameObject GetPooledPlateformeEasy(Vector2 position)
+    void InitializeInactiveLists()
     {
-        int j = Random.Range(0, pooledEasyPlateform.Count-1);
-        if(!pooledEasyPlateform[j].activeInHierarchy)
-        {
-            pooledEasyPlateform[j].transform.position = position;
-            pooledEasyPlateform[j].SetActive(true);
-            return pooledEasyPlateform[j];
-        }
-        return null;
+        inactiveEasyIndices = new List<int>();
+        inactiveNormalIndices = new List<int>();
+        inactiveHardIndices = new List<int>();
+        inactiveExpertIndices = new List<int>();
+        
+        // Remplir avec tous les indices initiaux (toutes les plateformes sont inactives au début)
+        for (int i = 0; i < pooledEasyPlateform.Count; i++)
+            inactiveEasyIndices.Add(i);
+        
+        for (int i = 0; i < pooledNormalPlateform.Count; i++)
+            inactiveNormalIndices.Add(i);
+        
+        for (int i = 0; i < pooledHardPlateform.Count; i++)
+            inactiveHardIndices.Add(i);
+        
+        for (int i = 0; i < pooledExpertPlateform.Count; i++)
+            inactiveExpertIndices.Add(i);
     }
 
+    
+    public GameObject GetPooledPlateformeEasy(Vector2 position)
+    {
+        if (inactiveEasyIndices.Count == 0)
+        return null; // Pas de plateformes dispo
+    
+        int randomInactiveIndex = Random.Range(0, inactiveEasyIndices.Count); // Index aléatoire
+        int platformIndex = inactiveEasyIndices[randomInactiveIndex]; // Récupé
+        
+        // Retirer cet index de la liste des inactifs
+        inactiveEasyIndices.RemoveAt(randomInactiveIndex);
+        // Activer la plateforme
+        pooledEasyPlateform[platformIndex].transform.position = position;
+        pooledEasyPlateform[platformIndex].SetActive(true);
+        
+        return pooledEasyPlateform[platformIndex];
+    }
+     public GameObject GetPooledPlateformeNormal(Vector2 position)
+    {
+        if (inactiveNormalIndices.Count == 0)
+        return null; // Pas de plateformes dispo
+    
+        int randomInactiveIndex = Random.Range(0, inactiveNormalIndices.Count); // Index aléatoire
+        int platformIndex = inactiveNormalIndices[randomInactiveIndex]; // Récupé
+        
+        // Retirer cet index de la liste des inactifs
+        inactiveNormalIndices.RemoveAt(randomInactiveIndex);
+        // Activer la plateforme
+        pooledNormalPlateform[platformIndex].transform.position = position;
+        pooledNormalPlateform[platformIndex].SetActive(true);
+        
+        return pooledNormalPlateform[platformIndex];
+    }
+     public GameObject GetPooledPlateformeHard(Vector2 position)
+    {
+        if (inactiveHardIndices.Count == 0)
+        return null; // Pas de plateformes dispo
+    
+        int randomInactiveIndex = Random.Range(0, inactiveHardIndices.Count); // Index aléatoire
+        int platformIndex = inactiveHardIndices[randomInactiveIndex]; // Récupé
+        
+        // Retirer cet index de la liste des inactifs
+        inactiveHardIndices.RemoveAt(randomInactiveIndex);
+        // Activer la plateforme
+        pooledHardPlateform[platformIndex].transform.position = position;
+        pooledHardPlateform[platformIndex].SetActive(true);
+        
+        return pooledHardPlateform[platformIndex];
+    }
+
+     public GameObject GetPooledPlateformeExpert(Vector2 position)
+    {
+        if (inactiveExpertIndices.Count == 0)
+        return null; // Pas de plateformes dispo
+    
+        int randomInactiveIndex = Random.Range(0, inactiveExpertIndices.Count); // Index aléatoire
+        int platformIndex = inactiveExpertIndices[randomInactiveIndex]; // Récupé
+        
+        // Retirer cet index de la liste des inactifs
+        inactiveExpertIndices.RemoveAt(randomInactiveIndex);
+        // Activer la plateforme
+        pooledExpertPlateform[platformIndex].transform.position = position;
+        pooledExpertPlateform[platformIndex].SetActive(true);
+        
+        return pooledExpertPlateform[platformIndex];
+    }
+
+    public void ReturnToPool(GameObject plateform, Biome currentBiome)
+    {
+        plateform.SetActive(false);
+        int index = plateform.GetComponent<PlateformBehaviour>().currentIndex;
+        
+        // Ajouter l'index à la liste appropriée des indices inactifs
+        switch (currentBiome)
+        {
+            case Biome.Easy:
+                inactiveEasyIndices.Add(index);
+                break;
+            case Biome.Normal:
+                inactiveNormalIndices.Add(index);
+                break;
+            case Biome.Hard:
+                inactiveHardIndices.Add(index);
+                break;
+            case Biome.Expert:
+                inactiveExpertIndices.Add(index);
+                break;
+        }   
+    }
    
     
 }
