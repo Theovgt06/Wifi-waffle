@@ -4,11 +4,11 @@ using DG.Tweening;
 public class BulletBehaviour : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    public enum BehaviourBullet { Inactive, Parabolic, DirectionalPlayer , DirectionalEnemy, Fixed }
+    public enum BehaviourBullet { Inactive, Parabolic, Directional, Fixed }
     public BehaviourBullet currentBehaviour = BehaviourBullet.Inactive;
-    private Vector2 mousePosition; 
+    private Vector2 aimPosition; 
     private GameObject instantiateBullet;
-    private GameObject player;
+    private GameObject startPoint;
     private bool hasStartedDirectional = false;
     [SerializeField] private float shootDistance = 8f;
     [SerializeField] private float bulletSpeed = 8f;
@@ -18,11 +18,11 @@ public class BulletBehaviour : MonoBehaviour
 
     } 
 
-    public void GetValues(GameObject playerRef, GameObject instantiateBulletRef, Vector2 mousePositionRef, GameObject fromWhoRef)
+    public void GetValues(GameObject startingPoint, GameObject instantiateBulletRef, Vector2 aimingPosition, GameObject fromWhoRef)
     {
-        player = playerRef;
+        startPoint = startingPoint;
         instantiateBullet = instantiateBulletRef;
-        mousePosition = mousePositionRef;
+        aimPosition = aimingPosition;
         fromWho = fromWhoRef;
     }
     // Update is called once per frame
@@ -41,12 +41,10 @@ public class BulletBehaviour : MonoBehaviour
             case BehaviourBullet.Parabolic:
                 HandleParabolic();
                 break;
-            case BehaviourBullet.DirectionalPlayer:
-                HandleDirectionalPlayer();
+            case BehaviourBullet.Directional:
+                HandleDirectional();
                 break;
-            case BehaviourBullet.DirectionalEnemy:
-                HandleDirectionalEnemy();
-                break;
+
             case BehaviourBullet.Fixed:
                 HandleFixed();
                 break;
@@ -63,7 +61,7 @@ public class BulletBehaviour : MonoBehaviour
         
     }
 
-    private void HandleDirectionalPlayer()
+    private void HandleDirectional()
     {
         if (hasStartedDirectional) return; // Condition stopping Behavior actualisation.
         hasStartedDirectional = true;  // ---> 
@@ -74,31 +72,25 @@ public class BulletBehaviour : MonoBehaviour
         Transform bulletTransform = instantiateBullet.GetComponent<Transform>();
       
         // Get direction and rotation to shoot.
-        Vector2 playerPos = player.transform.position;
-        Vector2 direction = (mousePosition - playerPos).normalized; 
+        Vector2 startPos = startPoint.transform.position;
+        Vector2 direction = (aimPosition - startPos).normalized; 
 
         // Compute Rotation
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         bulletTransform.rotation = Quaternion.AngleAxis(angle-90, Vector3.forward);
 
         // Compute Movement 
-        Vector2 extendedTarget = playerPos + ((mousePosition - playerPos)*shootDistance);  
-        float distance = Vector2.Distance(playerPos, extendedTarget);
+        Vector2 extendedTarget = startPos + ((aimPosition - startPos)*shootDistance);  
+        float distance = Vector2.Distance(startPos, extendedTarget);
         float duration = distance / bulletSpeed;
         
         // Set bullet Active and Shoot it.
         instantiateBullet.SetActive(true);
         bulletRB.DOMove(extendedTarget, duration);
     }
-
-
-    private void HandleDirectionalEnemy()
-    {
-
-    }
     
 
-    
+
     private void HandleFixed()
     {
 
@@ -130,7 +122,7 @@ public class BulletBehaviour : MonoBehaviour
             if(hitObject.CompareTag("Edge Collider"))
             {
                 gameObject.SetActive(false);
-                gameObject.transform.position = player.transform.position;
+                gameObject.transform.position = startPoint.transform.position;
             }
 
         }
