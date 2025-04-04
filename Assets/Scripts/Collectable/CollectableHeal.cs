@@ -2,8 +2,7 @@ using UnityEngine;
 
 public class CollectableHeal : MonoBehaviour
 {
-    public int playerHealth;
-
+    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -15,11 +14,18 @@ public class CollectableHeal : MonoBehaviour
     {
 
     }
-    void OnTriggerEnter2D(Collider2D collision)
+    void OnTriggerEnter2D(UnityEngine.Collider2D collision)
     {
-        if (collision.gameObject.tag == "Player")
+        if (collision.gameObject.CompareTag("Player"))
         {
-            playerHealth += 1;
+            Health health = collision.gameObject.GetComponent<Health>();
+            if (health == null)
+            {
+                Debug.LogError("Health component not found on player.");
+                return;
+            }
+            health.ChangeHealth(1);
+            Destroy(gameObject);
         }
 
     }
