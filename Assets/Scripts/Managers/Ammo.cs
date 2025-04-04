@@ -25,33 +25,33 @@ public class Ammo : MonoBehaviour
 
 
 
-    /*public void AddAmmo(int ammoToAdd)
-    {
+//    //*public void AddAmmo(int ammoToAdd)
+//    {
         
-        if (currentAmmo + ammoToAdd > maxAmmo)
-        {
-            currentAmmo = maxAmmo;
-        }
-        else
-        {
-            currentAmmo += ammoToAdd;
-        }
-    }
-    // Corrected method declaration
-    public void useAmmo()
-    {
-        currentAmmo--;
-    }
+//        if (currentAmmo + ammoToAdd > maxAmmo)
+//        {
+//            currentAmmo = maxAmmo;
+//        }
+//        else
+//        {
+//            currentAmmo += ammoToAdd;
+//        }
+//    }
+//    // Corrected method declaration
+//    public void useAmmo()
+//    {
+//        currentAmmo--;
+//    }
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        currentAmmo = startingAmmo;
-    }
+//    // Start is called once before the first execution of Update after the MonoBehaviour is created
+//    void Start()
+//    {
+//        currentAmmo = startingAmmo;
+//    }
 
-    // Update is called once per frame
-    void Update()
-    {
+//    // Update is called once per frame
+//    void Update()
+//    {
 
-    }
-}
+//    }
+//}
