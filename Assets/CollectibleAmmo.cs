@@ -1,30 +1,29 @@
 using UnityEngine;
 
-public class CollectableHeal : MonoBehaviour
+public class CollectibleAmmo : MonoBehaviour
 {
-    
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        
     }
     void OnTriggerEnter2D(UnityEngine.Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
         {
-            Health health = collision.gameObject.GetComponent<Health>();
-            if (health == null)
+            Ammo ammo = collision.gameObject.GetComponent<Ammo>();
+            if (ammo == null)
             {
-                Debug.LogError("Health component not found on player.");
+                Debug.LogError("Ammo component not found on player.");
                 return;
             }
-            health.ChangeHealth(1);
+            ammo.ChangeAmmo(1);
             Destroy(gameObject);
         }
 

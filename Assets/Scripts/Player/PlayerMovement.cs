@@ -12,6 +12,9 @@ public class PlayerMovement : MonoBehaviour
     [Header("Réferences")]
     [SerializeField]
     private Rigidbody2D rb;
+    public Transform anchorRight;
+    public Transform anchorLeft;
+    public Transform playerTransform;
 
     private Vector2 moveDirection;
     private bool isFacingRight = true;
@@ -66,6 +69,18 @@ public class PlayerMovement : MonoBehaviour
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
+    }
+
+    private void Update()
+    {
+        if(anchorLeft.position.x > playerTransform.position.x)
+        {
+            playerTransform.position = new Vector2((float)(anchorRight.position.x-0.01), playerTransform.position.y);
+        }
+        if(anchorRight.position.x < playerTransform.position.x)
+        {
+            playerTransform.position = new Vector2((float)(anchorLeft.position.x+0.01), playerTransform.position.y);
+        }
     }
 
     private void FixedUpdate()
