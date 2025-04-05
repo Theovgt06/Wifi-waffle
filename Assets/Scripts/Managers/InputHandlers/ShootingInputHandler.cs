@@ -3,7 +3,7 @@ using UnityEngine.InputSystem;
 
 public class ShootingInputHandler : InputHandler
 {
-   [SerializeField] private PlayerShooting playerShooting;
+   [SerializeField] private PlayerSystem playerSystem;
     protected override void RegisterInputActions()
     {
         PlayerInput playerInput = GetPlayerInput();
@@ -31,9 +31,9 @@ public class ShootingInputHandler : InputHandler
 // Uniquement la méthode pour le clic
     private void OnClickPerformed(InputAction.CallbackContext context)
     {
-        if (playerShooting != null)
+        if (playerSystem != null)
         {
-            playerShooting.Shoot();
+            playerSystem.Shoot();
         }
         else
         {

@@ -10,6 +10,9 @@ TagManager:
   - Grid
   - Bottom Screen
   - Plateform
+  - Pink
+  - Frog
+  - Vodoo
   layers:
   - Default
   - TransparentFX

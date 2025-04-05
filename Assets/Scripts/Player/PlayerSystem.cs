@@ -1,10 +1,12 @@
 using UnityEngine;
 using DG.Tweening;
 
-public class PlayerShooting : MonoBehaviour, IWeapons, IDamageable {
+public class PlayerSystem : MonoBehaviour, IWeapons, IDamageable {
     // Références aux objets
     [SerializeField] private int ammoAmmount = 3; 
     [SerializeField] private float shootDelay = 0.5f;
+    [SerializeField] private BulletPooling bulletPooling;
+
     private float lastShoot;
     private GameObject shootIndicator;
     
@@ -12,6 +14,8 @@ public class PlayerShooting : MonoBehaviour, IWeapons, IDamageable {
     {
         // Idéalement, ces références devraient être configurées via l'inspecteur
         shootIndicator = GameObject.Find("Shoot Indicator");
+        bulletPooling = gameObject.GetComponent<BulletPooling>();
+
     }
 
     void Update() 
@@ -23,12 +27,11 @@ public class PlayerShooting : MonoBehaviour, IWeapons, IDamageable {
         if(CanShoot())
         {
             Vector2 mousePosition = shootIndicator.transform.position;
-            GameObject bullet = BulletPooling.SharedInstance.GetPooledObject(gameObject.transform.position); 
+            GameObject bullet = bulletPooling.GetPooledObject(gameObject.transform.position); 
             if (bullet == null) return;
             BulletBehaviour bulletBehaviourInstance = bullet.GetComponent<BulletBehaviour>();
             bulletBehaviourInstance.GetValues(gameObject, bullet,mousePosition, gameObject);
             bulletBehaviourInstance.SetBehaviourType(BulletBehaviour.BehaviourBullet.Directional);
-            ammoAmmount-=1;
         } 
     }
     
