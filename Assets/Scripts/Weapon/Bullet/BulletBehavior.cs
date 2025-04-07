@@ -54,7 +54,7 @@ public class BulletBehaviour : MonoBehaviour
         }
     }
 
-    private void HandleInactive() 
+    private void HandleInactive()
     {
         
     }
@@ -64,10 +64,18 @@ public class BulletBehaviour : MonoBehaviour
         if (hasStartedDirectional) return; // Condition stopping Behavior actualisation.
         hasStartedDirectional = true; 
 
-        Vector2 startPos = startPoint.transform.position;
+        Vector2 startPos = startPoint.transform.localPosition;
         // Set bullet Active and Shoot it.
+        // peakDirectionXCalc = (Mathf.Abs(aimPosition.x)+Mathf.Abs(startPos.x))/2;
+        // peakDirectionYCalc = peakDirectionXCalc;
+        // if(startPos.x>=aimPosition.x){
+        //     peakDirectionXCalc = startPos.x-peakDirectionXCalc;
+        // }else{
+        //     peakDirectionXCalc = startPos.x+peakDirectionXCalc;
+        // }
+        // peakDirectionYCalc = startPos.y+peakDirectionYCalc;
+        LaunchBezierParabola(startPos,aimPosition,instantiateBullet);
 
-        LaunchBezierParabola(startPos,aimPosition,instantiateBullet,peakDirectionXCalc,peakDirectionYCalc);
     }
 
     private void HandleDirectional()
@@ -143,27 +151,32 @@ public class BulletBehaviour : MonoBehaviour
         }
     }
 
-    public void LaunchBezierParabola(Vector3 startPos, Vector3 targetPos, GameObject bullet, float peakDirectionX, float peakDirectionY)
+    public void LaunchBezierParabola(Vector2 startPos, Vector2 targetPos, GameObject bullet)
     {       
         bullet.SetActive(true);
-        if(startPos.x>=targetPos.x){
-            peakDirectionX *=-1;
-        }
-        Vector3 peakPos = startPos + Vector3.up * peakDirectionY + Vector3.right * peakDirectionX;
-        float duration = 1f;
+        float distance = Vector2.Distance(startPos, aimPosition);
+        float heightFactor = 0.5f;
+        Vector2 peakPos = new Vector2(
+            (startPos.x + aimPosition.x) / 2,
+            Mathf.Max(startPos.y, aimPosition.y) + (distance * heightFactor));        
+        float duration = 1f;    
 
         Tween bezierTween = DOTween.To(t => {
-            Vector3 p0 = startPos;
-            Vector3 p1 = peakPos;
-            Vector3 p2 = targetPos;
+            Vector2 p0 = startPos;
+            Vector2 p1 = peakPos;
+            Vector2 p2 = targetPos;
 
             float oneMinusT = 1f - t;
-            Vector3 pos = oneMinusT * oneMinusT * p0 + 
+            Vector2 pos = oneMinusT * oneMinusT * p0 + 
                         2f * oneMinusT * t * p1 + 
                         t * t * p2;
 
             bullet.transform.position = pos;
 
         }, 0f, 1f, duration).SetEase(Ease.Linear);
+        Debug.Log("Startpos :"+ startPos.x +","+startPos.y);
+        Debug.Log("Peakpos :"+ peakPos.x +","+peakPos.y);
+        Debug.Log("Targetpos :"+ targetPos.x +","+targetPos.y);
+        
     }
 }

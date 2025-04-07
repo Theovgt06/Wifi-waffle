@@ -7,7 +7,6 @@ public enum Biome {Stop, Easy, Normal, Hard, Expert};
 public class PlateformSpawning : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
-    
     [Header("Speed Plateforme Parametres ")]
     [Tooltip("Ratio de *10?")]
     [SerializeField]   
@@ -16,14 +15,20 @@ public class PlateformSpawning : MonoBehaviour
     private float hardSpeed;
     private float expertSpeed;
 
+    
+    
     private GameObject spawningArea;
     public Biome currentBiome = Biome.Easy;
 
     [SerializeField] 
     private float spawnRate =  2f;
+
+    public Evolution evolutionScript;
     void Start()
     {
         spawningArea = GameObject.FindGameObjectWithTag("Spawning Area");
+        evolutionScript = GameObject.FindGameObjectWithTag("Managers").GetComponent<Evolution>();
+
     }
     private void OnEnable()
     {
@@ -71,7 +76,8 @@ public class PlateformSpawning : MonoBehaviour
             plateformeEasy.transform.position = spawningArea.transform.position;
             PlateformBehaviour plateformBehaviour = plateformeEasy.GetComponent<PlateformBehaviour>();
             plateformeEasy.SetActive(true);
-            plateformBehaviour.ChangeSpeed(easySpeed);
+            plateformBehaviour.currentSpeed = easySpeed;
+            plateformBehaviour.currentBiome = Biome.Easy;
 
         }
 
