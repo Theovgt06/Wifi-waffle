@@ -1,4 +1,3 @@
-using JetBrains.Annotations;
 using UnityEngine;
 
 public class Health : MonoBehaviour
@@ -14,7 +13,7 @@ public class Health : MonoBehaviour
         }
         else if (currentHealth <= 0)
         {
-            //a voir quoi faire un Event
+            //a voir quoi faire un Eventzrrzrzr
         }
     }
    

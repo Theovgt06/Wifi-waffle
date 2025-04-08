@@ -27,7 +27,10 @@ public class PlateformPooling : MonoBehaviour
     [SerializeField] private List<int> inactiveNormalIndices;
     [SerializeField] private List<int> inactiveHardIndices;
     [SerializeField] private List<int> inactiveExpertIndices;
-
+    
+    private List<GameObject> spawnAnchorPooling;
+    private List<GameObject> enemiesListPooling;
+    private List<GameObject> collectableListPooling;
 
     void Awake()
     {
@@ -72,6 +75,7 @@ public class PlateformPooling : MonoBehaviour
                 easyPlatform.GetComponent<PlateformBehaviour>().currentIndex = index;
                 easyPlatform.SetActive(false);
                 easyPlatform.transform.parent = GameObject.FindGameObjectWithTag("Grid").transform;
+                InstantiateEverything(easyPlatform);
                 pooledEasyPlateform.Add(easyPlatform);
                 index++;
             }
@@ -257,6 +261,28 @@ public class PlateformPooling : MonoBehaviour
                 break;
         }   
     }
-   
+    
+    public void InstantiateEverything(GameObject platform)
+    {
+        spawnAnchorPooling = platform.GetComponent<PlateformBehaviour>().spawnAnchorToPool;
+        enemiesListPooling = platform.GetComponent<PlateformBehaviour>().enemiesList;
+        collectableListPooling = platform.GetComponent<PlateformBehaviour>().collectableList;
+        foreach (GameObject spawnAnchor in spawnAnchorPooling)
+        { 
+            Vector2 spawnAnchorPos = spawnAnchor.transform.position;
+            foreach(GameObject enemy in enemiesListPooling){
+                GameObject mob = Instantiate(enemy,spawnAnchorPos, Quaternion.identity);
+                mob.transform.parent = spawnAnchor.transform.GetChild(0).transform;
+                mob.SetActive(false);
+            }
+            foreach(GameObject collectable in collectableListPooling){
+                GameObject collect = Instantiate(collectable,spawnAnchorPos, Quaternion.identity);
+                collect.transform.parent = spawnAnchor.transform.GetChild(1).transform;
+                collect.SetActive(false);
+            }
+            platform.GetComponent<PlateformBehaviour>().spawnAnchorPooled.Add(spawnAnchor);
+        }
+        
+    }
     
 }
