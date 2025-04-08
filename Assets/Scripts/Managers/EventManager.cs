@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-// Types d'événements possibles dans notre jeu
+// Types d'ï¿½vï¿½nements possibles dans notre jeu
 public enum GameEventType
 {
     GameStart,
@@ -12,14 +12,14 @@ public enum GameEventType
     LifeCollected,
 }
 
-// Classe statique pour gérer les événements globaux
+// Classe statique pour gï¿½rer les Ã©vÃ©nements globaux
 public static class EventManager
 {
-    // Dictionnaire stockant les différents événements et leurs abonnés
+    // Dictionnaire stockant les diffï¿½rents ï¿½vï¿½nements et leurs abonnï¿½s
     private static Dictionary<GameEventType, Action<object>> eventDictionary =
         new Dictionary<GameEventType, Action<object>>();
 
-    // S'abonner à un événement
+    // S'abonner ï¿½ un ï¿½vï¿½nement
     public static void Subscribe(GameEventType eventType, Action<object> listener)
     {
         eventDictionary.TryAdd(eventType, null);
@@ -27,7 +27,7 @@ public static class EventManager
         eventDictionary[eventType] += listener;
     }
 
-    // Se désabonner d'un événement
+    // Se dï¿½sabonner d'un ï¿½vï¿½nement
     public static void Unsubscribe(GameEventType eventType, Action<object> listener)
     {
         if (eventDictionary.ContainsKey(eventType) && eventDictionary[eventType] != null)
@@ -36,7 +36,7 @@ public static class EventManager
         }
     }
 
-    // Déclencher un événement
+    // Dï¿½clencher un ï¿½vï¿½nement
     public static void TriggerEvent(GameEventType eventType, object data = null)
     {
         if (eventDictionary.ContainsKey(eventType) && eventDictionary[eventType] != null)

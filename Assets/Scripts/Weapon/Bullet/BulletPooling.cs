@@ -6,31 +6,30 @@ public class BulletPooling : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     
-    
-    public static BulletPooling SharedInstance;
+    private GameObject pooledBulletList;
     private List<GameObject> pooledObjects;
     [SerializeField] 
     private GameObject objectToPool;
-    private GameObject player;
+
 
     public int maxAmountToPool; // Futur réference à Ammo.
 
 
     void Awake()
     {
-        SharedInstance = this;
-        player = GameObject.Find("Player");
     }
 
 
 
     void Start()
     {
+        pooledBulletList = GameObject.FindGameObjectWithTag("BulletList");
         pooledObjects = new List<GameObject>();
         GameObject tmp;
         for(int i = 0 ; i<maxAmountToPool; i ++){
-            tmp = Instantiate(objectToPool, player.transform.position, player.transform.rotation);
+            tmp = Instantiate(objectToPool, transform.position, Quaternion.identity);
             tmp.SetActive(false);
+            tmp.transform.SetParent(pooledBulletList.transform);
             pooledObjects.Add(tmp);
         }
     }
@@ -43,15 +42,19 @@ public class BulletPooling : MonoBehaviour
 
     public GameObject GetPooledObject(Vector2 position)
     {
+        int inactiveCount = 0;
+        
         for(int i = 0; i < maxAmountToPool; i++)
         {
             if(!pooledObjects[i].activeInHierarchy)
             {
+                inactiveCount++;
                 pooledObjects[i].transform.position = position;
                 pooledObjects[i].SetActive(true);
                 return pooledObjects[i];
             }
-        }
+        }   
         return null;
-    }
+}
+
 }

@@ -7,7 +7,7 @@ public class PlayerJumping : MonoBehaviour
     public int jumpPower;
     public float fallMultiplier;
 
-    [Header("Réferences")]
+    [Header("Rï¿½ferences")]
     [SerializeField]
     private Rigidbody2D rb;
     public Transform groundCheck;

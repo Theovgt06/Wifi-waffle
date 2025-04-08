@@ -3,6 +3,7 @@
         "**/.DS_Store": true,
         "**/.git": true,
         "**/.vs": true,
+        "**/.csproj": true,
         "**/.gitmodules": true,
         "**/.vsconfig": true,
         "**/*.booproj": true,
@@ -54,7 +55,8 @@
         "ProjectSettings/": true,
         "UserSettings/": true,
         "temp/": true,
-        "Temp/": true
+        "Temp/": true,
+
     },
     "dotnet.defaultSolution": "Wifi_Waffle.sln"
 }

@@ -12,12 +12,12 @@ public class PlayerMovement : MonoBehaviour
     [Header("Réferences")]
     [SerializeField]
     private Rigidbody2D rb;
-    public Transform anchorRight;
-    public Transform anchorLeft;
+    public GameObject anchorRight;
+    public GameObject anchorLeft;
     public Transform playerTransform;
 
     private Vector2 moveDirection;
-    private bool isFacingRight = true;
+    private bool isFacingRight = false;
     
 
     private void Awake()
@@ -73,13 +73,13 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if(anchorLeft.position.x > playerTransform.position.x)
+        if(anchorLeft.transform.position.x > playerTransform.position.x)
         {
-            playerTransform.position = new Vector2((float)(anchorRight.position.x-0.01), playerTransform.position.y);
+            playerTransform.position = new Vector2((float)(anchorRight.transform.position.x-0.01), playerTransform.position.y);
         }
-        if(anchorRight.position.x < playerTransform.position.x)
+        if(anchorRight.transform.position.x < playerTransform.position.x)
         {
-            playerTransform.position = new Vector2((float)(anchorLeft.position.x+0.01), playerTransform.position.y);
+            playerTransform.position = new Vector2((float)(anchorLeft.transform.position.x+0.01), playerTransform.position.y);
         }
     }
 

@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4185469316317405627}
   - component: {fileID: 2662648830314443306}
   m_Layer: 6
-  m_Name: DirectBulletPlayer
+  m_Name: DirectBulletEnemy
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,7 +79,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: 7636413dc6d229a40ba953af79973270, type: 3}
+  m_Sprite: {fileID: -5728686177044832811, guid: a6060d26efb49124aa50d61f358d1828, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -103,7 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentBehaviour: 0
-  shootDistance: 8
+  shootDistance: 4
   bulletSpeed: 5
   peakDirectionXCalc: 5
   peakDirectionYCalc: 5
