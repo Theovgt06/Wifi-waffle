@@ -17,7 +17,7 @@ public class PlayerMovement : MonoBehaviour
     public Transform playerTransform;
 
     private Vector2 moveDirection;
-    private bool isFacingRight = false;
+    private bool isFacingRight = true;
     
 
     private void Awake()
