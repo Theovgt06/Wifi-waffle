@@ -18,6 +18,9 @@ GameObject:
   - component: {fileID: 5062527807939643126}
   - component: {fileID: 8700660388443188792}
   - component: {fileID: 3280355643379737532}
+  - component: {fileID: 9182343641253457510}
+  - component: {fileID: 4188825224735991487}
+  - component: {fileID: 3788147502972188031}
   m_Layer: 0
   m_Name: Player
   m_TagString: Player
@@ -271,6 +274,48 @@ MonoBehaviour:
   maxAmmo: 7
   currentAmmo: 0
   startingAmmo: 5
+--- !u!114 &9182343641253457510
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499331703694339047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d277ef372b970a045adc3aafc2f52912, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  objectToPool: {fileID: 6961699545419245025, guid: 6d7f18d80d63c984892741235fa58944, type: 3}
+  maxAmountToPool: 7
+--- !u!114 &4188825224735991487
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499331703694339047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 50e866bcfd281454bb43f9209e01c5c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerSystem: {fileID: 3788147502972188031}
+--- !u!114 &3788147502972188031
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499331703694339047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e7bd3fa033230364493b5e2aa2f5ffef, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ammoAmmount: 3
+  shootDelay: 0.5
+  bulletPooling: {fileID: 9182343641253457510}
 --- !u!1 &4880641739733864125
 GameObject:
   m_ObjectHideFlags: 0

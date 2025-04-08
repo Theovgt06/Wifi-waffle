@@ -64,16 +64,7 @@ public class BulletBehaviour : MonoBehaviour
         if (hasStartedDirectional) return; // Condition stopping Behavior actualisation.
         hasStartedDirectional = true; 
 
-        Vector2 startPos = startPoint.transform.localPosition;
-        // Set bullet Active and Shoot it.
-        // peakDirectionXCalc = (Mathf.Abs(aimPosition.x)+Mathf.Abs(startPos.x))/2;
-        // peakDirectionYCalc = peakDirectionXCalc;
-        // if(startPos.x>=aimPosition.x){
-        //     peakDirectionXCalc = startPos.x-peakDirectionXCalc;
-        // }else{
-        //     peakDirectionXCalc = startPos.x+peakDirectionXCalc;
-        // }
-        // peakDirectionYCalc = startPos.y+peakDirectionYCalc;
+        Vector2 startPos = fromWho.transform.position;
         LaunchBezierParabola(startPos,aimPosition,instantiateBullet);
 
     }
@@ -154,6 +145,7 @@ public class BulletBehaviour : MonoBehaviour
     public void LaunchBezierParabola(Vector2 startPos, Vector2 targetPos, GameObject bullet)
     {       
         bullet.SetActive(true);
+        Debug.Log(startPos);
         float distance = Vector2.Distance(startPos, aimPosition);
         float heightFactor = 0.5f;
         Vector2 peakPos = new Vector2(
@@ -174,9 +166,6 @@ public class BulletBehaviour : MonoBehaviour
             bullet.transform.position = pos;
 
         }, 0f, 1f, duration).SetEase(Ease.Linear);
-        Debug.Log("Startpos :"+ startPos.x +","+startPos.y);
-        Debug.Log("Peakpos :"+ peakPos.x +","+peakPos.y);
-        Debug.Log("Targetpos :"+ targetPos.x +","+targetPos.y);
         
     }
 }
