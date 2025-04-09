@@ -145,7 +145,6 @@ public class BulletBehaviour : MonoBehaviour
     public void LaunchBezierParabola(Vector2 startPos, Vector2 targetPos, GameObject bullet)
     {       
         bullet.SetActive(true);
-        Debug.Log(startPos);
         float distance = Vector2.Distance(startPos, aimPosition);
         float heightFactor = 0.5f;
         Vector2 peakPos = new Vector2(

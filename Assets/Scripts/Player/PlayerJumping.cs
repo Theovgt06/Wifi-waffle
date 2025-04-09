@@ -3,19 +3,18 @@ using UnityEngine;
 public class PlayerJumping : MonoBehaviour
 {
     [Header("Saut")]
-    [SerializeField]
-    public int jumpPower;
+    [SerializeField] public int jumpPower;
     public float fallMultiplier;
 
-    [Header("R�ferences")]
-    [SerializeField]
-    private Rigidbody2D rb;
+    [Header("Références")]
+    [SerializeField] private Rigidbody2D rb;
     public Transform groundCheck;
     public LayerMask groundLayer;
 
     public bool isGrounded;
+    private bool jumpRequested;
+    private bool isJumping;
     Vector2 vecGravity;
-    public bool jump;
 
     private void Start()
     {
@@ -23,71 +22,51 @@ public class PlayerJumping : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-     private void FixedUpdate()
+    private void FixedUpdate()
     {
-        // HandleGroundDetectionAndParenting();
-        JumpingLogic();
+        HandleGroundDetection();  // Détecter si le joueur est au sol
+        JumpingLogic();  // Appliquer la logique du saut
     }
 
-    // private void HandleGroundDetectionAndParenting()
-    // {
-    //     // On récupère le collider touché par la capsule
-    //     Collider2D groundHit = Physics2D.OverlapCapsule(
-    //         groundCheck.position,
-    //         new Vector2(0.43f, 0.08f),
-    //         CapsuleDirection2D.Horizontal,
-    //         0,
-    //         groundLayer
-    //     );
-
-    //     isGrounded = groundHit != null;
-
-    //     if (groundHit != null)
-    //     {
-    //         GameObject touchedObject = groundHit.gameObject;
-
-    //         // Si c'est une plateforme mobile, on devient son enfant
-    //         if (touchedObject.CompareTag("Plateform"))
-    //         {
-    //             transform.SetParent(touchedObject.transform);
-    //         }
-    //         else
-    //         {
-    //             // Sinon, on garde pas de parent
-    //             transform.SetParent(null);
-    //         }
-    //     }
-    //     else
-    //     {
-    //         // Pas au sol → pas de parent
-    //         transform.SetParent(null);
-    //     }
-    // }
+    private void HandleGroundDetection()
+    {
+        // Détecter si le joueur est au sol (selon le groundCheck)
+        isGrounded = Physics2D.OverlapCapsule(groundCheck.position, new Vector2(0.43f, 0.08f), CapsuleDirection2D.Horizontal, 0, groundLayer);
+    }
 
     private void JumpingLogic()
     {
-        isGrounded = Physics2D.OverlapCapsule(groundCheck.position, new Vector2(0.43f, 0.08f), CapsuleDirection2D.Horizontal, 0, groundLayer);
-        if(isGrounded){
-
-        }
-        if (jump && isGrounded)
+        // Si le joueur demande un saut et qu'il est au sol
+        if (jumpRequested && isGrounded)
         {
-            rb.linearVelocity = new Vector3(rb.linearVelocity.x, jumpPower, 0);
+            isJumping = true;  // Le joueur est en train de sauter
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);  // Appliquer la vitesse du saut
+            jumpRequested = false;  // Réinitialiser la demande de saut
         }
 
+        // Gérer la vitesse de chute
         if (rb.linearVelocity.y < 0)
         {
-            rb.linearVelocity -= vecGravity * fallMultiplier * Time.deltaTime;
+            rb.linearVelocity -= vecGravity * fallMultiplier * Time.deltaTime;  // Accélérer la chute
+        }
+
+        // Si le joueur touche le sol, on désactive le saut en l'air
+        if (isGrounded && rb.linearVelocity.y == 0)
+        {
+            isJumping = false;
         }
     }
 
     public void Jump()
     {
-        jump = true;
+        if (!isJumping)  // Si le joueur n'est pas déjà en train de sauter
+        {
+            jumpRequested = true;  // Demander un saut
+        }
     }
 
     public void NoJump()
     {
-        jump = false;
+        jumpRequested = false;
     }
 }

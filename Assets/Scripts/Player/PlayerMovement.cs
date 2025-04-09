@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     private float moveSpeed = 4f;
 
-    [Header("Réferences")]
+    [Header("Rï¿½ferences")]
     [SerializeField]
     private Rigidbody2D rb;
     public GameObject anchorRight;

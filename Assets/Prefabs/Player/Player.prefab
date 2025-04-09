@@ -87,7 +87,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 2
   m_Sprite: {fileID: -1155727321, guid: c7cdf402578e8864c887920e9b8ac3c9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -190,8 +190,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.012533605, y: -0.10313076}
-  m_Size: {x: 0.64070284, y: 0.7884742}
+  m_Offset: {x: 0, y: -0.115}
+  m_Size: {x: 0.7, y: 0.76}
   m_Direction: 0
 --- !u!114 &4995230654515268087
 MonoBehaviour:
@@ -325,8 +325,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9183858246643238724}
-  - component: {fileID: 7782774144958462843}
-  m_Layer: 12
+  - component: {fileID: 7192390557469710504}
+  - component: {fileID: 4037131153713179259}
+  m_Layer: 0
   m_Name: groundCheck
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -348,7 +349,44 @@ Transform:
   m_Children: []
   m_Father: {fileID: 4375773144679361795}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &7782774144958462843
+--- !u!70 &7192390557469710504
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4880641739733864125}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0.005}
+  m_Size: {x: 0.5, y: 0.01}
+  m_Direction: 1
+--- !u!114 &4037131153713179259
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -360,3 +398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76bb5727d3d31674883e54bbaffe2814, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  groundCheck: {fileID: 0}
+  groundLayer:
+    serializedVersion: 2
+    m_Bits: 4096

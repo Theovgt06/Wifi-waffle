@@ -1,36 +1,63 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ParentingPlatform : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    [SerializeField] private Transform groundCheck;
+    public LayerMask groundLayer;
+
+    // Capsule size & direction (utilisés aussi pour le gizmo)
+    private GameObject player;
+    // Référence au Rigidbody2D
+    private Rigidbody2D rb;
+
+    // Référence à la plateforme actuelle
+    private Transform currentPlatform;
+    private PlayerJumping playerJumping;
+
+    private float gravityScaleBackup;
     void Start()
     {
-        
+        rb = gameObject.GetComponentInParent<Rigidbody2D>();
+        player = transform.parent.gameObject;
+        playerJumping = player.GetComponent<PlayerJumping>();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+
+    void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log("touch");
-        if (collision.gameObject.CompareTag("Plateform"))
+        GameObject touchedObject = other.gameObject;
+
+        if (touchedObject.CompareTag("Plateform"))
         {
-            transform.parent.transform.parent = collision.transform;
-            Debug.Log("touch");
+            Debug.Log(playerJumping.isGrounded);
+            if (playerJumping.isGrounded)
+            {
+                // Sauvegarde de la gravité avant de la désactiver
+                // rb.gravityScale = 0;  // Désactiver la gravité pendant le parenting
+                // Vérifie la différence de hauteur entre le joueur et la plateforme
+                float platformTop = touchedObject.transform.position.y + touchedObject.GetComponent<Collider2D>().bounds.extents.y-14.5f;
+                float playerBottom = player.transform.position.y - player.GetComponent<Collider2D>().bounds.extents.y;
+                float yDifference = playerBottom - platformTop;
+                Debug.Log(yDifference);
+                // Si le joueur est au-dessus de la plateforme et qu'il descend
+                if (yDifference > 0 && rb.linearVelocity.y <= 0.05f)
+                {
+                    player.transform.SetParent(touchedObject.transform);  // Parenting du joueur
+                }
+            }
         }
     }
 
-    private void OnCollisionExit2D(Collision2D collision)
+
+
+    void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("touchplu");
-        if (collision.gameObject.CompareTag("Plateform"))
-            {
-                transform.parent.transform.parent = null;
-                Debug.Log("touchplu");
-            }
+        if (player.transform.parent != null && other.gameObject.CompareTag("Plateform"))
+        {
+            player.transform.SetParent(null);
+            currentPlatform = null;
+        }
     }
 }
