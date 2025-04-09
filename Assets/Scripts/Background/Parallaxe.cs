@@ -14,7 +14,8 @@ public class Parallaxe : MonoBehaviour
         //foreach (Material m in materials )
         for (int i = 0; i < materials.Length; i++)
         {
-            materials[i].SetTextureOffset("_MainTex", new Vector2(transform.position.y * speeds[i], 0));
+            Vector2 offset = materials[i].GetTextureOffset("_MainTex");
+            materials[i].SetTextureOffset("_MainTex", new Vector2(0,offset.y + speeds[i] * Time.deltaTime));
             // Déplacer le background
 
 
