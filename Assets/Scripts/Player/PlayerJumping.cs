@@ -30,7 +30,7 @@ public class PlayerJumping : MonoBehaviour
         {
             anim.SetBool("isJumping", true);
         }
-        else
+        else if (rb.linearVelocity.y < 0)
         {
             anim.SetBool("isJumping", false);
         }
