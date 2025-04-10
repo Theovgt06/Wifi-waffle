@@ -5,14 +5,17 @@ public class Collectible : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     public int randomValue;
     public Animator collectableAnimator;
+    private bool disabled = false;
 
-    void Start()
+    void OnEnable()
     {
         collectableAnimator = GetComponent<Animator>();
 
-        // Random seulement au début pour définir une animation
-        randomValue = Random.Range(0, 7);
-        collectableAnimator.SetInteger("Random", randomValue);
+        if(gameObject.CompareTag("Heal"))
+        {
+            randomValue = Random.Range(0, 7);
+            collectableAnimator.SetInteger("Random", randomValue);
+        }
     }
 
 
@@ -30,6 +33,9 @@ public class Collectible : MonoBehaviour
                 }
                 ammo.ChangeAmmo(1);
                 collectableAnimator.SetTrigger("Collect");
+                if(disabled == true){
+                    gameObject.SetActive(false);
+                }
             }
 
             if(gameObject.CompareTag("Heal"))
@@ -41,14 +47,17 @@ public class Collectible : MonoBehaviour
                     return;
                 }
                 health.ChangeHealth(1);
-                Debug.Log("CACA");
                 collectableAnimator.SetTrigger("Collect");
+                if(disabled == true){
+                    gameObject.SetActive(false);
+                }
             }   
         }
     }
-    void Disable()
+    public void DisableMe()
     {
         gameObject.SetActive(false);
     }
+
 
 }
