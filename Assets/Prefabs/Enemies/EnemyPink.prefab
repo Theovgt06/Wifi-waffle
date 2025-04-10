@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 5653801539732150602}
   - component: {fileID: 204336517295761732}
   - component: {fileID: 2644526402278351829}
+  - component: {fileID: 6606268072309486125}
   m_Layer: 0
   m_Name: EnemyPink
   m_TagString: Pink
@@ -158,6 +159,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d277ef372b970a045adc3aafc2f52912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledBulletList: {fileID: 0}
   objectToPool: {fileID: 6961699545419245025, guid: 4ef16bff260cc3a4d8c5e31060bc876a, type: 3}
   maxAmountToPool: 8
+--- !u!95 &6606268072309486125
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7019783470025798689}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7b89e152f330d0b41b3b765eee120b75, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

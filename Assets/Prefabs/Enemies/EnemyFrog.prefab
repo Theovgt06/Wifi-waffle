@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 668655868871434287}
   - component: {fileID: 7817489590912453692}
   - component: {fileID: 37102170191382173}
+  - component: {fileID: 566635427182231554}
   m_Layer: 0
   m_Name: EnemyFrog
   m_TagString: Frog
@@ -158,6 +159,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d277ef372b970a045adc3aafc2f52912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledBulletList: {fileID: 0}
   objectToPool: {fileID: 6961699545419245025, guid: 771a8dede53cadc47bdc23b34c2b31a0, type: 3}
   maxAmountToPool: 5
+--- !u!95 &566635427182231554
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690195951163592802}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 22efabe3c839b2c4e821e50d2f562cd3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
