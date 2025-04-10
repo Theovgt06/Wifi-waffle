@@ -229,10 +229,6 @@ PrefabInstance:
       value: 'Player '
       objectReference: {fileID: 0}
     - target: {fileID: 4375773144679361795, guid: add334a1ea86b964cba3d5c8d932fdd9, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 1.9926
-      objectReference: {fileID: 0}
-    - target: {fileID: 4375773144679361795, guid: add334a1ea86b964cba3d5c8d932fdd9, type: 3}
       propertyPath: m_LocalPosition.x
       value: -3.2972322
       objectReference: {fileID: 0}
@@ -273,15 +269,23 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 5062527807939643126, guid: add334a1ea86b964cba3d5c8d932fdd9, type: 3}
+      propertyPath: jumpPower
+      value: 20
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062527807939643126, guid: add334a1ea86b964cba3d5c8d932fdd9, type: 3}
       propertyPath: fallMultiplier
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5062527807939643126, guid: add334a1ea86b964cba3d5c8d932fdd9, type: 3}
+      propertyPath: speedMultiplier
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 6250933105276607023, guid: add334a1ea86b964cba3d5c8d932fdd9, type: 3}
       propertyPath: m_GravityScale
       value: 5
       objectReference: {fileID: 0}
-    - target: {fileID: 7192390557469710504, guid: add334a1ea86b964cba3d5c8d932fdd9, type: 3}
-      propertyPath: m_Offset.y
+    - target: {fileID: 7484297449342865250, guid: add334a1ea86b964cba3d5c8d932fdd9, type: 3}
+      propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8527438587698611968, guid: add334a1ea86b964cba3d5c8d932fdd9, type: 3}
@@ -1280,8 +1284,8 @@ Transform:
   m_GameObject: {fileID: 1927506318}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.21, y: -14, z: 0}
-  m_LocalScale: {x: 16.1421, y: 1, z: 1}
+  m_LocalPosition: {x: 0, y: -14.5, z: 0}
+  m_LocalScale: {x: 17, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}

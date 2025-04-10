@@ -4,10 +4,12 @@ public class PlayerJumping : MonoBehaviour
 {
     [Header("Saut")]
     [SerializeField] public int jumpPower;
-    public float fallMultiplier;
+    [SerializeField] private float fallMultiplier;
+
 
     [Header("Références")]
     [SerializeField] private Rigidbody2D rb;
+    [SerializeField] private PlayerMovement playerMovement;
     public Transform groundCheck;
     public LayerMask groundLayer;
 
@@ -20,6 +22,7 @@ public class PlayerJumping : MonoBehaviour
     {
         vecGravity = new Vector2(0, -Physics2D.gravity.y);
         rb = GetComponent<Rigidbody2D>();
+        playerMovement = GetComponent<PlayerMovement>();
     }
 
     private void FixedUpdate()

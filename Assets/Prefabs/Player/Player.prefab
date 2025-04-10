@@ -225,7 +225,6 @@ MonoBehaviour:
   anchorRight: {fileID: 0}
   anchorLeft: {fileID: 0}
   playerTransform: {fileID: 4375773144679361795}
-  anim: {fileID: 1347200488431223967}
 --- !u!114 &5062527807939643126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -241,12 +240,12 @@ MonoBehaviour:
   jumpPower: 20
   fallMultiplier: 5
   rb: {fileID: 6250933105276607023}
+  playerMovement: {fileID: 0}
   groundCheck: {fileID: 9183858246643238724}
   groundLayer:
     serializedVersion: 2
     m_Bits: 4096
   isGrounded: 0
-  isGrounded: 1
 --- !u!114 &8700660388443188792
 MonoBehaviour:
   m_ObjectHideFlags: 0
