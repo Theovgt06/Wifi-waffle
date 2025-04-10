@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 5653801539732150602}
   - component: {fileID: 204336517295761732}
   - component: {fileID: 2644526402278351829}
-  m_Layer: 0
+  - component: {fileID: -3412321114893179856}
+  m_Layer: 8
   m_Name: EnemyPink
   m_TagString: Pink
   m_Icon: {fileID: 0}
@@ -158,6 +159,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d277ef372b970a045adc3aafc2f52912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledBulletList: {fileID: 0}
   objectToPool: {fileID: 6961699545419245025, guid: 4ef16bff260cc3a4d8c5e31060bc876a, type: 3}
   maxAmountToPool: 8
+--- !u!114 &-3412321114893179856
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7019783470025798689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd289c62c6e7cb444a5432401bc2386d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1
+  currentHealth: 0

@@ -13,7 +13,8 @@ GameObject:
   - component: {fileID: 668655868871434287}
   - component: {fileID: 7817489590912453692}
   - component: {fileID: 37102170191382173}
-  m_Layer: 0
+  - component: {fileID: -232593550868458361}
+  m_Layer: 8
   m_Name: EnemyFrog
   m_TagString: Frog
   m_Icon: {fileID: 0}
@@ -158,6 +159,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d277ef372b970a045adc3aafc2f52912, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pooledBulletList: {fileID: 0}
   objectToPool: {fileID: 6961699545419245025, guid: 771a8dede53cadc47bdc23b34c2b31a0, type: 3}
   maxAmountToPool: 5
+--- !u!114 &-232593550868458361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690195951163592802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: dd289c62c6e7cb444a5432401bc2386d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxHealth: 1
+  currentHealth: 0

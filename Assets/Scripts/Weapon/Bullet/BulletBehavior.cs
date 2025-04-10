@@ -119,7 +119,7 @@ public class BulletBehaviour : MonoBehaviour
             {
                 gameObject.SetActive(false);
                 IDamageable target = hitObject.GetComponent<IDamageable>();
-                target.TakeDamage(1);
+                target.TakeDamage(-1);
                 BulletBehaviour bulletBehavior = gameObject.GetComponent<BulletBehaviour>();
                 bulletBehavior.SetBehaviourType(BulletBehaviour.BehaviourBullet.Inactive);
             }
@@ -127,7 +127,7 @@ public class BulletBehaviour : MonoBehaviour
             {
                 gameObject.SetActive(false);
                 IDamageable target = hitObject.GetComponent<IDamageable>();
-                target.TakeDamage(1);
+                target.TakeDamage(-1);
                 BulletBehaviour bulletBehavior = gameObject.GetComponent<BulletBehaviour>();
                 bulletBehavior.SetBehaviourType(BulletBehaviour.BehaviourBullet.Inactive);
             }

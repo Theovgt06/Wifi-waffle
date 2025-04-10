@@ -1,14 +1,23 @@
-using UnityEditor.SpeedTree.Importer;
+using System.Collections;
 using UnityEngine;
+
 
 public class Parallaxe : MonoBehaviour
 {
-    /*public GameObject[] backgrounds; // Les éléments de background*/
-    public float[] speeds; // Les vitesses de déplacement des éléments de background
-    public Material[] materials; // Les matériaux des éléments de background
+    /*public GameObject[] backgrounds; // Les ï¿½lï¿½ments de background*/
+    public float[] speeds; // Les vitesses de dï¿½placement des ï¿½lï¿½ments de background
+    public Material[] materials; // Les matï¿½riaux des ï¿½lï¿½ments de background
+    public Texture2D[] textures;
+    private int currentIndex = 0;
 
+    public Vector2[] tilingValues; // Valeurs de tiling diffÃ©rentes pour chaque sprite (ex : [1,1], [2,2], etc.)
 
-    // Update est appelé une fois par frame
+    // Update est appelï¿½ une fois par frame
+    void Start()
+    {
+        StartCoroutine(ChangeTextureRoutine());
+    }
+    
     void Update()
     {
         //foreach (Material m in materials )
@@ -16,11 +25,32 @@ public class Parallaxe : MonoBehaviour
         {
             Vector2 offset = materials[i].GetTextureOffset("_MainTex");
             materials[i].SetTextureOffset("_MainTex", new Vector2(0,offset.y + speeds[i] * Time.deltaTime));
-            // Déplacer le background
+            // Dï¿½placer le background
 
 
-            // Repositionner le background lorsqu'il sort de l'écran
+            // Repositionner le background lorsqu'il sort de l'ï¿½cran
 
         }
     }
+
+    IEnumerator ChangeTextureRoutine()
+    {
+        while (true)
+        {
+            Texture2D tex = textures[currentIndex];
+            
+            // Changer la texture
+            materials[0].mainTexture = tex;
+            
+            // Appliquer un nouveau tiling
+            materials[0].SetTextureScale("_MainTex", tilingValues[0]);
+            
+            // Passer Ã  l'index suivant
+            currentIndex = (currentIndex + 1) % textures.Length;
+            
+            yield return new WaitForSeconds(0.5f);
+        }
+    }
+
+
 }

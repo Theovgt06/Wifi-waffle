@@ -21,7 +21,7 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
     public LayerMask groundLayer;
     private bool isGrounded;
     private bool isFacingRight = true;
-   
+    private Health health;
     
     void Awake()
     {
@@ -31,6 +31,7 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
     {
         player = GameObject.FindGameObjectWithTag("Player");
         bulletPooling = gameObject.GetComponent<BulletPooling>();
+        health = gameObject.GetComponent<Health>();
     }
 
 
@@ -129,7 +130,7 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
 
     public void TakeDamage(int amount)
     {
-        
+        health.ChangeHealth(amount);
     }
 
     private void Flip()

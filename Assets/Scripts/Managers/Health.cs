@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    [SerializeField] private int maxHealth = 7;
+    [SerializeField] private int maxHealth;
     [SerializeField] private int currentHealth;
     public void ChangeHealth(int amount)
     {
@@ -13,7 +13,7 @@ public class Health : MonoBehaviour
         }
         else if (currentHealth <= 0)
         {
-            //a voir quoi faire un Eventzrrzrzr
+            gameObject.SetActive(false);
         }
     }
    
