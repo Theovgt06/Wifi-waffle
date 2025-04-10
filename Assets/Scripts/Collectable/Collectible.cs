@@ -3,16 +3,19 @@ using UnityEngine;
 public class Collectible : MonoBehaviour
 {
     // Start is called once before the first execution of Update after the MonoBehaviour is created
+    public int randomValue;
+    public Animator collectableAnimator;
+
     void Start()
     {
-        
+        collectableAnimator = GetComponent<Animator>();
+
+        // Random seulement au début pour définir une animation
+        randomValue = Random.Range(0, 7);
+        collectableAnimator.SetInteger("Random", randomValue);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+
     void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -26,7 +29,7 @@ public class Collectible : MonoBehaviour
                     return;
                 }
                 ammo.ChangeAmmo(1);
-                Destroy(gameObject);
+                collectableAnimator.SetTrigger("Collect");
             }
 
             if(gameObject.CompareTag("Heal"))
@@ -38,8 +41,14 @@ public class Collectible : MonoBehaviour
                     return;
                 }
                 health.ChangeHealth(1);
-                Destroy(gameObject);
+                Debug.Log("CACA");
+                collectableAnimator.SetTrigger("Collect");
             }   
         }
     }
+    void Disable()
+    {
+        gameObject.SetActive(false);
+    }
+
 }

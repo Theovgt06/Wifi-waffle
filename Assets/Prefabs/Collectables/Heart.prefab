@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: -6347244837084100229}
   - component: {fileID: 2362034020199677038}
   - component: {fileID: 6606405184264513855}
-  m_Layer: 0
+  m_Layer: 13
   m_Name: Heart
   m_TagString: Heal
   m_Icon: {fileID: 0}
@@ -31,7 +31,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 1}
+  m_LocalScale: {x: 4, y: 4, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -80,7 +80,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 6191934235342210578, guid: 0b093bb4cc0cfc44db21a40e8a783854, type: 3}
+  m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -88,7 +88,7 @@ SpriteRenderer:
   m_Size: {x: 0.16, y: 0.15}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 1
+  m_WasSpriteAssigned: 0
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!58 &-1216125209286898478
@@ -126,7 +126,7 @@ CircleCollider2D:
   m_CompositeOperation: 0
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
-  m_Radius: 0.08
+  m_Radius: 0.2
 --- !u!50 &-6347244837084100229
 Rigidbody2D:
   serializedVersion: 5
@@ -166,6 +166,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6d783c4e97514cd4d8cd3cc4c56f2a31, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  randomValue: 0
+  collectableAnimator: {fileID: 6606405184264513855}
 --- !u!95 &6606405184264513855
 Animator:
   serializedVersion: 7
@@ -176,7 +178,7 @@ Animator:
   m_GameObject: {fileID: 3695498007392717152}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b6c7b87ed60faf04eb2d899a30f0b0df, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
