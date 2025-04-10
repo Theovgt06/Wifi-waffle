@@ -246,9 +246,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 4096
   isGrounded: 0
-=======
   isGrounded: 1
->>>>>>> Stashed changes
 --- !u!114 &8700660388443188792
 MonoBehaviour:
   m_ObjectHideFlags: 0
