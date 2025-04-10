@@ -18,6 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 moveDirection;
     private bool isFacingRight = true;
+    public Animator anim;
     
 
     private void Awake()
@@ -73,7 +74,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
-        if(anchorLeft.transform.position.x > playerTransform.position.x)
+        anim.SetFloat("Move", moveDirection.magnitude);
+
+        if (anchorLeft.transform.position.x > playerTransform.position.x)
         {
             playerTransform.position = new Vector2((float)(anchorRight.transform.position.x-0.01), playerTransform.position.y);
         }
