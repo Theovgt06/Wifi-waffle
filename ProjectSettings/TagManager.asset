@@ -15,6 +15,8 @@ TagManager:
   - Vodoo
   - Managers
   - BulletList
+  - Ammo
+  - Heal
   layers:
   - Default
   - TransparentFX

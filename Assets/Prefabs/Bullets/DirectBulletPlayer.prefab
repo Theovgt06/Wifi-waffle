@@ -103,8 +103,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currentBehaviour: 0
-  shootDistance: 8
-  bulletSpeed: 5
+  bulletSpeed: 15
   peakDirectionXCalc: 5
   peakDirectionYCalc: 5
 --- !u!50 &4185469316317405627
