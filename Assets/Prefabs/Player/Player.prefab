@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 9182343641253457510}
   - component: {fileID: 4188825224735991487}
   - component: {fileID: 3788147502972188031}
+  - component: {fileID: 1347200488431223967}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -224,6 +225,7 @@ MonoBehaviour:
   anchorRight: {fileID: 0}
   anchorLeft: {fileID: 0}
   playerTransform: {fileID: 4375773144679361795}
+  anim: {fileID: 1347200488431223967}
 --- !u!114 &5062527807939643126
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -243,8 +245,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 4096
-  isGrounded: 1
-  jump: 0
+  isGrounded: 0
 --- !u!114 &8700660388443188792
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -316,6 +317,28 @@ MonoBehaviour:
   ammoAmmount: 3
   shootDelay: 0.5
   bulletPooling: {fileID: 9182343641253457510}
+--- !u!95 &1347200488431223967
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499331703694339047}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: af65afcc9bdc23d4ba7a3fa776842b1d, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4880641739733864125
 GameObject:
   m_ObjectHideFlags: 0
