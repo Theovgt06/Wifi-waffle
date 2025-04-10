@@ -15,11 +15,26 @@ public class PlayerJumping : MonoBehaviour
     private bool jumpRequested;
     private bool isJumping;
     Vector2 vecGravity;
+    private Animator anim;
 
     private void Start()
     {
         vecGravity = new Vector2(0, -Physics2D.gravity.y);
         rb = GetComponent<Rigidbody2D>();
+        anim = GetComponent<Animator>();
+    }
+
+    private void Update()
+    {
+        if (rb.linearVelocity.y > 0)
+        {
+            anim.SetBool("isJumping", true);
+        }
+        else
+        {
+            anim.SetBool("isJumping", false);
+        }
+           anim.SetBool("isGrounded", isGrounded);
     }
 
     private void FixedUpdate()
@@ -40,6 +55,7 @@ public class PlayerJumping : MonoBehaviour
         if (jumpRequested && isGrounded)
         {
             isJumping = true;  // Le joueur est en train de sauter
+            anim.SetTrigger("Jump");
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);  // Appliquer la vitesse du saut
             jumpRequested = false;  // Réinitialiser la demande de saut
         }
