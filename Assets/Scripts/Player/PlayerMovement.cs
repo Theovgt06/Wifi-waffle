@@ -7,9 +7,9 @@ public class PlayerMovement : MonoBehaviour
 {
     [Header("Mouvement")]
     [SerializeField]
-    private float moveSpeed = 4f;
+    public float moveSpeed = 4f;
 
-    [Header("R�ferences")]
+    [Header("Réferences")]
     [SerializeField]
     private Rigidbody2D rb;
     public GameObject anchorRight;
@@ -18,7 +18,7 @@ public class PlayerMovement : MonoBehaviour
 
     private Vector2 moveDirection;
     private bool isFacingRight = true;
-    public Animator anim;
+    private Animator anim;
     
 
     private void Awake()
@@ -27,6 +27,7 @@ public class PlayerMovement : MonoBehaviour
         {
             rb = GetComponent<Rigidbody2D>();
         }
+        anim = GetComponent<Animator>();
     }
 
     private void Start()

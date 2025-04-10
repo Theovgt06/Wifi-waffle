@@ -11,7 +11,6 @@ public class BulletBehaviour : MonoBehaviour
     private GameObject instantiateBullet;
     private GameObject startPoint;
     private bool hasStartedDirectional = false;
-    [SerializeField] private float shootDistance = 8f;
     [SerializeField] private float bulletSpeed = 8f;
     [SerializeField] public float peakDirectionXCalc;
 
