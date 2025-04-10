@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using System;
 
 public class BulletBehaviour : MonoBehaviour
 {
@@ -87,7 +88,7 @@ public class BulletBehaviour : MonoBehaviour
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
         bulletTransform.rotation = Quaternion.AngleAxis(angle-90, Vector3.forward);
         // Compute Movement 
-        Vector2 extendedTarget = startPos + ((aimPosition - startPos)*shootDistance);  
+        Vector2 extendedTarget = startPos + ((aimPosition - startPos)*int.MaxValue);  
         float distance = Vector2.Distance(startPos, extendedTarget);
         float duration = distance / bulletSpeed;
         
@@ -147,6 +148,7 @@ public class BulletBehaviour : MonoBehaviour
         bullet.SetActive(true);
         float distance = Vector2.Distance(startPos, aimPosition);
         float heightFactor = 0.5f;
+        Vector2 targetPosLose = new Vector2(targetPos.x, targetPos.y-30f);
         Vector2 peakPos = new Vector2(
             (startPos.x + aimPosition.x) / 2,
             Mathf.Max(startPos.y, aimPosition.y) + (distance * heightFactor));        
@@ -156,12 +158,11 @@ public class BulletBehaviour : MonoBehaviour
             Vector2 p0 = startPos;
             Vector2 p1 = peakPos;
             Vector2 p2 = targetPos;
+            Vector2 p3 = targetPosLose;
 
             float oneMinusT = 1f - t;
-            Vector2 pos = oneMinusT * oneMinusT * p0 + 
-                        2f * oneMinusT * t * p1 + 
-                        t * t * p2;
-
+            Vector2 pos = Mathf.Pow(oneMinusT,3)*p0 + 3*(Mathf.Pow(oneMinusT,2))*t*p1
+                        + 3*oneMinusT*Mathf.Pow(t,2)*p2 + Mathf.Pow(t,3)*p3 ;
             bullet.transform.position = pos;
 
         }, 0f, 1f, duration).SetEase(Ease.Linear);
