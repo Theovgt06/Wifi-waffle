@@ -36,7 +36,6 @@ public class ParentingPlatform : MonoBehaviour
             float platformTop = touchedObject.transform.position.y + touchedObject.GetComponent<Collider2D>().bounds.extents.y-14.5f;
             float playerBottom = player.transform.position.y - player.GetComponent<Collider2D>().bounds.extents.y;
             float yDifference = playerBottom - platformTop;
-            Debug.Log(yDifference);
             // Si le joueur est au-dessus de la plateforme et qu'il descend
             if (yDifference > 0 && rb.linearVelocity.y <= 0.05f)
             {

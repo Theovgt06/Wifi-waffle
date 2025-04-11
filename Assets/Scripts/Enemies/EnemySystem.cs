@@ -6,49 +6,52 @@ using UnityEngine.UIElements;
 public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
     // Références aux objets
 
+    
+    private enum EnemyType {Frog, Pink, Vodoo}
     public enum VodooState { Chase, Explode, Routine};
     [SerializeField] private float shootDelay = 1f;
+    [SerializeField] private float vodooSpeed;
+    [SerializeField] private float maxSpeed;
+    [SerializeField] private EnemyType enemyType;
+
     private float lastShoot;
-    private string enemyTag;
     [SerializeField]
     private BulletPooling bulletPooling;
-
     private GameObject player;
-
+    
     public VodooState currentVodooState = VodooState.Routine;
-
-    public Transform groundCheck;
+    private Transform groundCheck;
     public LayerMask groundLayer;
     private bool isGrounded;
     private bool isFacingRight = true;
     private Animator anim;
+    private Rigidbody2D rb;
+    private DataChanger dataChanger;
    
     
-    void Awake()
-    {
-        enemyTag = gameObject.tag;
-    }
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         bulletPooling = gameObject.GetComponent<BulletPooling>();
         anim = GetComponent<Animator>();
-    }
-
-
-    // void GetGroundCheck;
-    void Update() 
-    {
-        
-        switch (enemyTag) 
+        rb = GetComponent<Rigidbody2D>();
+        dataChanger = GetComponent<DataChanger>();
+        if(enemyType == EnemyType.Vodoo)
         {
-            case "Frog":
+            groundCheck = gameObject.transform.GetChild(0).transform;
+        }
+    }
+    void FixedUpdate() 
+    {
+        switch (enemyType) 
+        {
+            case EnemyType.Frog:
                 ShootDirect();
                 break;
-            case "Pink":
+            case EnemyType.Pink:
                 ShootParabolic();
                 break;
-            case "Vodoo":
+            case EnemyType.Vodoo:
                 switch(currentVodooState)
                     {
                     case VodooState.Routine:
@@ -62,11 +65,16 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
                         break;
                     }
                 break;
-        }
-
-        
-        
+        }  
     }
+
+
+    void Update()
+    {
+
+    }
+
+
     public void ShootDirect()
     {
         if(CanShoot())
@@ -119,6 +127,14 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
     public void Routine()
     {
         isGrounded = Physics2D.OverlapCapsule(groundCheck.position, new Vector2(0.43f, 0.08f), CapsuleDirection2D.Horizontal, 0, groundLayer);
+        if(isGrounded){
+
+            float direction = isFacingRight ? 1f : -1f;
+            float newVelocityX = Mathf.Clamp(rb.linearVelocity.x + direction * vodooSpeed * Time.fixedDeltaTime, -maxSpeed, maxSpeed);
+            rb.linearVelocity = new Vector2(newVelocityX, rb.linearVelocity.y);            
+        }else{
+            Flip();
+        }
     }
 
     public void Chase()
@@ -134,7 +150,7 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
 
     public void TakeDamage(int amount)
     {
-        
+        dataChanger.ChangeHealth(amount);
     }
 
     private void Flip()
@@ -143,5 +159,14 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
         Vector3 scale = transform.localScale;
         scale.x *= -1;
         transform.localScale = scale;
+    }
+
+
+    private void DetectPlayer()
+    {
+        if(gameObject.transform.parent.gameObject.transform.parent)
+        {
+            
+        }
     }
 }
