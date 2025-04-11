@@ -4,7 +4,7 @@ public class DataChanger : MonoBehaviour
 {
     public int maxAmmo = 7;
     [SerializeField] public int currentAmmo;
-    [SerializeField] private int startingAmmo = 5;
+    [SerializeField] public int startingAmmo = 5;
     [SerializeField] private int maxHealth;
     [SerializeField] private int currentHealth;
 

@@ -9,14 +9,15 @@ public class PlayerSystem : MonoBehaviour, IWeapons, IDamageable {
 
     private float lastShoot;
     private GameObject shootIndicator;
-    private Health health;
+    private DataChanger dataChanger;
     
     void Start()
     {
         // Idéalement, ces références devraient être configurées via l'inspecteur
         shootIndicator = GameObject.Find("Shoot Indicator");
         bulletPooling = gameObject.GetComponent<BulletPooling>();
-        health = gameObject.GetComponent<Health>();
+        dataChanger = gameObject.GetComponent<DataChanger>();
+        dataChanger.currentAmmo = dataChanger.startingAmmo;
     }
 
     void Update() 
@@ -48,6 +49,6 @@ public class PlayerSystem : MonoBehaviour, IWeapons, IDamageable {
 
     public void TakeDamage(int amount)
     {
-        health.ChangeHealth(amount);
+        dataChanger.ChangeHealth(amount);
     }
 }

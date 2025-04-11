@@ -41,8 +41,8 @@ public class Collectible : MonoBehaviour
 
             if(gameObject.CompareTag("Heal"))
             {
-                Health health = collision.gameObject.GetComponent<Health>();
-                if (health == null)
+                DataChanger health = collision.gameObject.GetComponent<DataChanger>();
+                if (dataChanger == null)
                 {
                     Debug.LogError("Health component not found on player.");
                     return;
