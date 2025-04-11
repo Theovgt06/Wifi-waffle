@@ -11,10 +11,12 @@ public class PlayerSystem : MonoBehaviour, IWeapons, IDamageable {
     private GameObject shootIndicator;
 
     private DataChanger dataChanger;
+    private Animator anim;
 
     
     void Start()
     {
+        anim = GetComponent<Animator>();
         // Idéalement, ces références devraient être configurées via l'inspecteur
         shootIndicator = GameObject.Find("Shoot Indicator");
         bulletPooling = gameObject.GetComponent<BulletPooling>();
@@ -53,6 +55,6 @@ public class PlayerSystem : MonoBehaviour, IWeapons, IDamageable {
     public void TakeDamage(int amount)
     {
         dataChanger.ChangeHealth(amount);
-
+        anim.SetTrigger("Hit");
     }
 }
