@@ -1,0 +1,40 @@
+using UnityEngine;
+
+public class DataChanger : MonoBehaviour
+{
+    public int maxAmmo = 7;
+    [SerializeField] public int currentAmmo;
+    [SerializeField] private int startingAmmo = 5;
+    [SerializeField] private int maxHealth;
+    [SerializeField] private int currentHealth;
+
+    public void ChangeAmmo(int amount)
+    {
+        currentAmmo += amount;
+        if (currentAmmo > maxAmmo)
+        {
+            currentAmmo = maxAmmo;
+        }
+        else if (currentAmmo <= 0)
+        {
+            currentAmmo = 0;
+        }
+    }
+    public void ChangeHealth(int amount)
+    {
+        currentHealth += amount;
+        if (currentHealth > maxHealth)
+        {
+            currentHealth = maxHealth;
+        }
+        else if (currentHealth <= 0)
+        {
+            gameObject.SetActive(false);
+        }
+    }
+}
+
+
+
+
+

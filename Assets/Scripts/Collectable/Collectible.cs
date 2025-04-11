@@ -6,7 +6,8 @@ public class Collectible : MonoBehaviour
     public int randomValue;
     public Animator collectableAnimator;
     private bool disabled = false;
-
+    DataChanger dataChanger;
+    
     void OnEnable()
     {
         collectableAnimator = GetComponent<Animator>();
@@ -25,13 +26,13 @@ public class Collectible : MonoBehaviour
         {
             if(gameObject.CompareTag("Ammo"))
             {
-                Ammo ammo = collision.gameObject.GetComponent<Ammo>();
-                if (ammo == null)
+                DataChanger dataChanger = collision.gameObject.GetComponent<DataChanger>();
+                if (dataChanger == null)
                 {
                     Debug.LogError("Ammo component not found on player.");
                     return;
                 }
-                ammo.ChangeAmmo(1);
+                dataChanger.ChangeAmmo(1);
                 collectableAnimator.SetTrigger("Collect");
                 if(disabled == true){
                     gameObject.SetActive(false);
@@ -46,7 +47,7 @@ public class Collectible : MonoBehaviour
                     Debug.LogError("Health component not found on player.");
                     return;
                 }
-                health.ChangeHealth(1);
+                dataChanger.ChangeHealth(1);
                 collectableAnimator.SetTrigger("Collect");
                 if(disabled == true){
                     gameObject.SetActive(false);
