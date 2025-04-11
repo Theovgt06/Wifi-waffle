@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 5653801539732150602}
   - component: {fileID: 204336517295761732}
   - component: {fileID: 2644526402278351829}
-  - component: {fileID: -3412321114893179856}
   - component: {fileID: 5688290390074043914}
+  - component: {fileID: 2906561508947209145}
   m_Layer: 8
   m_Name: EnemyPink
   m_TagString: Pink
@@ -162,20 +162,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToPool: {fileID: 6961699545419245025, guid: 4ef16bff260cc3a4d8c5e31060bc876a, type: 3}
   maxAmountToPool: 8
---- !u!114 &-3412321114893179856
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7019783470025798689}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd289c62c6e7cb444a5432401bc2386d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 1
-  currentHealth: 0
 --- !u!95 &5688290390074043914
 Animator:
   serializedVersion: 7
@@ -198,3 +184,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2906561508947209145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7019783470025798689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56aa86e2d5059a42ab698e5debf5bb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAmmo: 7
+  currentAmmo: 0
+  startingAmmo: 5
+  maxHealth: 0
+  currentHealth: 0

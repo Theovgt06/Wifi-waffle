@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 3457033783183988421}
   - component: {fileID: 2343998958476501694}
   - component: {fileID: 6356561440564604366}
-  - component: {fileID: 1365181650161362087}
+  - component: {fileID: 3274903234211449784}
   - component: {fileID: 5224126229169729809}
   m_Layer: 8
   m_Name: EnemyVodoo
@@ -175,7 +175,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1365181650161362087
+--- !u!114 &3274903234211449784
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -184,10 +184,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 8725788879697167305}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd289c62c6e7cb444a5432401bc2386d, type: 3}
+  m_Script: {fileID: 11500000, guid: e56aa86e2d5059a42ab698e5debf5bb6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHealth: 1
+  maxAmmo: 7
+  currentAmmo: 0
+  startingAmmo: 5
+  maxHealth: 0
   currentHealth: 0
 --- !u!95 &5224126229169729809
 Animator:

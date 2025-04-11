@@ -21,6 +21,7 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
     public LayerMask groundLayer;
     private bool isGrounded;
     private bool isFacingRight = true;
+    private Animator anim;
    
     
     void Awake()
@@ -31,6 +32,7 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
     {
         player = GameObject.FindGameObjectWithTag("Player");
         bulletPooling = gameObject.GetComponent<BulletPooling>();
+        anim = GetComponent<Animator>();
     }
 
 
@@ -80,7 +82,8 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
             BulletBehaviour bulletBehaviourInstance = bullet.GetComponent<BulletBehaviour>();
             bulletBehaviourInstance.GetValues(gameObject, bullet,playerPosition, gameObject);
             bulletBehaviourInstance.SetBehaviourType(BulletBehaviour.BehaviourBullet.Directional);
-        } 
+            anim.SetTrigger("Attack");
+        }
     }
 
     public void ShootParabolic()
@@ -99,6 +102,7 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
             BulletBehaviour bulletBehaviourInstance = bullet.GetComponent<BulletBehaviour>();
             bulletBehaviourInstance.GetValues(gameObject, bullet,playerPosition, gameObject);
             bulletBehaviourInstance.SetBehaviourType(BulletBehaviour.BehaviourBullet.Parabolic);
+            anim.SetTrigger("Attack");
         } 
     }
      

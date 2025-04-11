@@ -8,6 +8,12 @@ public class DataChanger : MonoBehaviour
     [SerializeField] private int maxHealth;
     [SerializeField] private int currentHealth;
 
+    private Animator anim;
+    private void Start()
+    {
+        anim = GetComponent<Animator>();
+    }
+
     public void ChangeAmmo(int amount)
     {
         currentAmmo += amount;
@@ -29,7 +35,7 @@ public class DataChanger : MonoBehaviour
         }
         else if (currentHealth <= 0)
         {
-        //rediriger vers l'animation de mort
+            anim.SetTrigger("Die");
         }
     }
     private void PlayerDied()
@@ -38,6 +44,8 @@ public class DataChanger : MonoBehaviour
         LevelManager.Instance.GameOver();
         GameObject.Find("Player").SetActive(false);
     }
+
+
 }
 
 

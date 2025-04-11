@@ -13,8 +13,8 @@ GameObject:
   - component: {fileID: 668655868871434287}
   - component: {fileID: 7817489590912453692}
   - component: {fileID: 37102170191382173}
-  - component: {fileID: -232593550868458361}
   - component: {fileID: 510586692521126813}
+  - component: {fileID: 4814250344593190691}
   m_Layer: 8
   m_Name: EnemyFrog
   m_TagString: Frog
@@ -162,20 +162,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   objectToPool: {fileID: 6961699545419245025, guid: 771a8dede53cadc47bdc23b34c2b31a0, type: 3}
   maxAmountToPool: 5
---- !u!114 &-232593550868458361
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4690195951163592802}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dd289c62c6e7cb444a5432401bc2386d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHealth: 1
-  currentHealth: 0
 --- !u!95 &510586692521126813
 Animator:
   serializedVersion: 7
@@ -198,3 +184,20 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &4814250344593190691
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4690195951163592802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56aa86e2d5059a42ab698e5debf5bb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAmmo: 7
+  currentAmmo: 0
+  startingAmmo: 5
+  maxHealth: 0
+  currentHealth: 0
