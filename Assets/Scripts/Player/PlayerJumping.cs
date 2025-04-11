@@ -38,9 +38,8 @@ public class PlayerJumping : MonoBehaviour
             anim.SetBool("isJumping", false);
         }
            anim.SetBool("isGrounded", isGrounded);
-
     }
-
+    
     private void FixedUpdate()
     {
         HandleGroundDetection();  // Détecter si le joueur est au sol
