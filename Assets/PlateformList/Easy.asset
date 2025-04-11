@@ -14,39 +14,147 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   plateformBiome: Easy
   plateformByBiomes:
-  - plateformeColor: Brown
+  - plateformeColor: LightBlue 1
     plateformeByType:
-    - {fileID: 7038361949373587475, guid: 49246dbcd0d90dc4fb2ff471a931a5e5, type: 3}
-    - {fileID: 6184298531104407454, guid: 00de226da3c23f24ca181ec3fe729642, type: 3}
-    - {fileID: 3202365729011338567, guid: 7428e4d0a9917a7489a9bac7118e27f6, type: 3}
-    - {fileID: 155392858532526733, guid: cc52a3480162d2f4ca9c0d8fccdaacc1, type: 3}
-    - {fileID: 8411264388883211930, guid: 045684b9d1661d74782284cba1eea44e, type: 3}
-    - {fileID: 4027633377651653420, guid: 76a5387b0a182e1438d6ed56f48a4676, type: 3}
-    - {fileID: 5942906473208332912, guid: 3515319e832770f4ca8ead7e83aaf619, type: 3}
-  - plateformeColor: Brown
+    - {fileID: 7038361949373587475, guid: 5033f2bfdeafdfa448b49716e05360a4, type: 3}
+    - {fileID: 6184298531104407454, guid: 6faef1b696587cb47a985fd0fa6fb820, type: 3}
+    - {fileID: 3202365729011338567, guid: 8068187994d33754aaa577a773e32db5, type: 3}
+    - {fileID: 155392858532526733, guid: 5a0e2c15d6de37e48a4a037c7c0fb7a5, type: 3}
+    - {fileID: 8411264388883211930, guid: 87e734ae931cb9043bc2a66234f81684, type: 3}
+    - {fileID: 4027633377651653420, guid: 1e2f11d44c78c854d9dd8c5fca458eb0, type: 3}
+    - {fileID: 5942906473208332912, guid: fe20d4a80a5f9444e819ed43a70c73a7, type: 3}
+  - plateformeColor: LightBlue 6
     plateformeByType:
-    - {fileID: 7038361949373587475, guid: 49246dbcd0d90dc4fb2ff471a931a5e5, type: 3}
-    - {fileID: 6184298531104407454, guid: 00de226da3c23f24ca181ec3fe729642, type: 3}
-    - {fileID: 3202365729011338567, guid: 7428e4d0a9917a7489a9bac7118e27f6, type: 3}
-    - {fileID: 155392858532526733, guid: cc52a3480162d2f4ca9c0d8fccdaacc1, type: 3}
-    - {fileID: 8411264388883211930, guid: 045684b9d1661d74782284cba1eea44e, type: 3}
-    - {fileID: 4027633377651653420, guid: 76a5387b0a182e1438d6ed56f48a4676, type: 3}
-    - {fileID: 5942906473208332912, guid: 3515319e832770f4ca8ead7e83aaf619, type: 3}
-  - plateformeColor: Brown
+    - {fileID: 7038361949373587475, guid: f724ce614d859f84eaf18c8854e2b1a5, type: 3}
+    - {fileID: 6184298531104407454, guid: 8114ef38b95c89548951ccc9f474b800, type: 3}
+    - {fileID: 3202365729011338567, guid: 5d732eb05c6a0b747b334d27397b58ff, type: 3}
+    - {fileID: 155392858532526733, guid: 020b591ebd930494eb10c86ea0fabcc3, type: 3}
+    - {fileID: 8411264388883211930, guid: 4485efe01af7ee549b9e52778a2e7412, type: 3}
+    - {fileID: 4027633377651653420, guid: 9667d4645ac7dc14186b423e8f2e0797, type: 3}
+    - {fileID: 5942906473208332912, guid: 9e05df2de04a46e4eb1650a93b8d251f, type: 3}
+  - plateformeColor: LightGrey 1
     plateformeByType:
-    - {fileID: 7038361949373587475, guid: 49246dbcd0d90dc4fb2ff471a931a5e5, type: 3}
-    - {fileID: 6184298531104407454, guid: 00de226da3c23f24ca181ec3fe729642, type: 3}
-    - {fileID: 3202365729011338567, guid: 7428e4d0a9917a7489a9bac7118e27f6, type: 3}
-    - {fileID: 155392858532526733, guid: cc52a3480162d2f4ca9c0d8fccdaacc1, type: 3}
-    - {fileID: 8411264388883211930, guid: 045684b9d1661d74782284cba1eea44e, type: 3}
-    - {fileID: 4027633377651653420, guid: 76a5387b0a182e1438d6ed56f48a4676, type: 3}
-    - {fileID: 5942906473208332912, guid: 3515319e832770f4ca8ead7e83aaf619, type: 3}
-  - plateformeColor: Brown
+    - {fileID: 7038361949373587475, guid: b588253c2384a304ab6e3219bf6a3c0c, type: 3}
+    - {fileID: 6184298531104407454, guid: b0e32109e92fcb64499ca415542a0a19, type: 3}
+    - {fileID: 3202365729011338567, guid: 57d14d2626f51cc46924280c887236af, type: 3}
+    - {fileID: 155392858532526733, guid: ff6a4af8011a3b44fa467e2e2f1a5cde, type: 3}
+    - {fileID: 8411264388883211930, guid: 8a2abe5ced06b5c44a2427e0917b86d5, type: 3}
+    - {fileID: 4027633377651653420, guid: 8256e66d8a51c8a4797392b8e2cb5ff4, type: 3}
+    - {fileID: 5942906473208332912, guid: 28c76059ffd557e4d9395f2bc73335d4, type: 3}
+  - plateformeColor: LightGrey 6
     plateformeByType:
-    - {fileID: 7038361949373587475, guid: 49246dbcd0d90dc4fb2ff471a931a5e5, type: 3}
-    - {fileID: 6184298531104407454, guid: 00de226da3c23f24ca181ec3fe729642, type: 3}
-    - {fileID: 3202365729011338567, guid: 7428e4d0a9917a7489a9bac7118e27f6, type: 3}
-    - {fileID: 155392858532526733, guid: cc52a3480162d2f4ca9c0d8fccdaacc1, type: 3}
-    - {fileID: 8411264388883211930, guid: 045684b9d1661d74782284cba1eea44e, type: 3}
-    - {fileID: 4027633377651653420, guid: 76a5387b0a182e1438d6ed56f48a4676, type: 3}
-    - {fileID: 5942906473208332912, guid: 3515319e832770f4ca8ead7e83aaf619, type: 3}
+    - {fileID: 7038361949373587475, guid: 56de3644c65b23348a8224f5dd3f52c5, type: 3}
+    - {fileID: 6184298531104407454, guid: fbd20bb918cf00e46a55d8431a9fdd07, type: 3}
+    - {fileID: 3202365729011338567, guid: 2ca28f84ed76ff04198a993acc869dda, type: 3}
+    - {fileID: 155392858532526733, guid: 9a8066db513d4ee4c81ade580c6cb91d, type: 3}
+    - {fileID: 8411264388883211930, guid: 4af2b3603bfe1a146a51a20880d6194d, type: 3}
+    - {fileID: 4027633377651653420, guid: 3cad02abfe2339f498b2593a5e1d6283, type: 3}
+    - {fileID: 5942906473208332912, guid: 5f57382062e4aeb43bff48860085d700, type: 3}
+  - plateformeColor: DarkGrey 1
+    plateformeByType:
+    - {fileID: 7038361949373587475, guid: 97e37b9e757063a4d91d09eba1b8c942, type: 3}
+    - {fileID: 6184298531104407454, guid: ad4683abdcc83a54c90e2803e23db92e, type: 3}
+    - {fileID: 3202365729011338567, guid: 645571a2cc539744eb7950c66738c81a, type: 3}
+    - {fileID: 155392858532526733, guid: 130dfbb45ec07af4f808ec4a255c9a10, type: 3}
+    - {fileID: 8411264388883211930, guid: 5913403d0ae18a24f8b67a2a2d4abbaa, type: 3}
+    - {fileID: 4027633377651653420, guid: 0eea6e28a139c784282db3e3600740d3, type: 3}
+    - {fileID: 5942906473208332912, guid: 042019e6938a3b84995167646aadfeee, type: 3}
+  - plateformeColor: DarkGrey 6
+    plateformeByType:
+    - {fileID: 7038361949373587475, guid: 68a1da1a72f2eeb4dbc01a6c2ae7e882, type: 3}
+    - {fileID: 6184298531104407454, guid: e833e0a60f3a1a74a80c7fc00efe1b90, type: 3}
+    - {fileID: 3202365729011338567, guid: 6f6010848b941e54580224409c188b2b, type: 3}
+    - {fileID: 155392858532526733, guid: 543ef8b6364618a4d9e9d876c39b592f, type: 3}
+    - {fileID: 8411264388883211930, guid: 85f07b52f0ee89846b716b114719d9b6, type: 3}
+    - {fileID: 4027633377651653420, guid: d4dd0992b785ded438b906514891079a, type: 3}
+    - {fileID: 5942906473208332912, guid: 21a84aa9137429d4995b409bc52a58ef, type: 3}
+  - plateformeColor: Red 1
+    plateformeByType:
+    - {fileID: 7038361949373587475, guid: 1ceb6409e17adee45b987b0f862e6bb4, type: 3}
+    - {fileID: 6184298531104407454, guid: 25be9a730ea2688459a5b3a727b323f5, type: 3}
+    - {fileID: 3202365729011338567, guid: bcecc2f29d03ca1429f21a3996c5dfd2, type: 3}
+    - {fileID: 155392858532526733, guid: 4bf01c66e0c79ea4faae54336ea6926a, type: 3}
+    - {fileID: 8411264388883211930, guid: 03cbad0326cba9442972ad377a26eab1, type: 3}
+    - {fileID: 4027633377651653420, guid: 622173a7b46f4e944ae4dfd4fc3476d9, type: 3}
+    - {fileID: 5942906473208332912, guid: 47048c71f846578429d1a2708ed0e650, type: 3}
+  - plateformeColor: Red 6
+    plateformeByType:
+    - {fileID: 7038361949373587475, guid: a8b0a96701826c144932b855b1593e0b, type: 3}
+    - {fileID: 6184298531104407454, guid: c7e9f4841363d934fad08b347860440b, type: 3}
+    - {fileID: 3202365729011338567, guid: 7e13f2491e9c29d46a4cbfd4b672c9ad, type: 3}
+    - {fileID: 155392858532526733, guid: c342fe230607a4a4db1d3adfb8b7f767, type: 3}
+    - {fileID: 8411264388883211930, guid: fe38c42d289c2004ebbdd1afdedb8ad0, type: 3}
+    - {fileID: 4027633377651653420, guid: daeb8e4e3311ed947af15de62129c5fb, type: 3}
+    - {fileID: 5942906473208332912, guid: d1329e2f6a7a3fa4fab9b7acf36d1e08, type: 3}
+  - plateformeColor: Green 1
+    plateformeByType:
+    - {fileID: 7038361949373587475, guid: 1cf22b8828c536d48bcd7269c87362df, type: 3}
+    - {fileID: 6184298531104407454, guid: 3c18c991909dee24fb6ac61576eb3024, type: 3}
+    - {fileID: 3202365729011338567, guid: eb71ed26a90695f4f847cb4d98704118, type: 3}
+    - {fileID: 155392858532526733, guid: 1354393bfd33e064aaaa652f7b6f6fd6, type: 3}
+    - {fileID: 8411264388883211930, guid: 50465b1b1e5079746b333c854bf7989a, type: 3}
+    - {fileID: 4027633377651653420, guid: ab317487ecccedf45925630d4ad0ca04, type: 3}
+    - {fileID: 5942906473208332912, guid: db79ae3521cf28d49ae344f4711e1cf4, type: 3}
+  - plateformeColor: Green 6
+    plateformeByType:
+    - {fileID: 7038361949373587475, guid: 1c94b89aff574bc4db7b6670784fb543, type: 3}
+    - {fileID: 6184298531104407454, guid: 0164d872b80f0b5459c526c20c499371, type: 3}
+    - {fileID: 3202365729011338567, guid: 07196ad5b10542f43b235effcb9681e0, type: 3}
+    - {fileID: 155392858532526733, guid: ff0d5c8deabcd1b429bc100dc554e0db, type: 3}
+    - {fileID: 8411264388883211930, guid: 45bb66b1114670145a454c07dc5036d4, type: 3}
+    - {fileID: 4027633377651653420, guid: cebed04137eae2445bceeae752471aef, type: 3}
+    - {fileID: 5942906473208332912, guid: f59b5f0763406a642adbb9b4317834cc, type: 3}
+  - plateformeColor: Orange 1
+    plateformeByType:
+    - {fileID: 7038361949373587475, guid: d871d76a136296f4eb8500c8330d32bd, type: 3}
+    - {fileID: 6184298531104407454, guid: 831fe4a6da3dd1a48b3d38c20a08f8df, type: 3}
+    - {fileID: 3202365729011338567, guid: 7f0d1b033b08b224db4f57b7d5c9f61d, type: 3}
+    - {fileID: 155392858532526733, guid: 0cf8482c3936c634796214eed99aaf93, type: 3}
+    - {fileID: 8411264388883211930, guid: e8d34d1ecb4aadc4fb45b5c9a810a45f, type: 3}
+    - {fileID: 4027633377651653420, guid: d73a4febed309664c8bd19b54a02dbf5, type: 3}
+    - {fileID: 5942906473208332912, guid: fad230da7c792f647912f3930924d9fc, type: 3}
+  - plateformeColor: Orange 6
+    plateformeByType:
+    - {fileID: 7038361949373587475, guid: 2c6fde1a80bf379419d855c939fb371f, type: 3}
+    - {fileID: 6184298531104407454, guid: 060a3c4410b678248a00746be13efd05, type: 3}
+    - {fileID: 3202365729011338567, guid: e16f76d21c70ba84ca4cd1ac72f32cc2, type: 3}
+    - {fileID: 155392858532526733, guid: 8db2dcf9559a73f43b347d4701c584ad, type: 3}
+    - {fileID: 8411264388883211930, guid: 371c829f626e3014297fd640943edc1f, type: 3}
+    - {fileID: 4027633377651653420, guid: 8ca8303bafc36d446a6a48f316f2eed1, type: 3}
+    - {fileID: 5942906473208332912, guid: 655fcf5e9ab2d54449c42570f49ca6db, type: 3}
+  - plateformeColor: Black 1
+    plateformeByType:
+    - {fileID: 7038361949373587475, guid: 314dc685768c82240ade699ed0594f95, type: 3}
+    - {fileID: 6184298531104407454, guid: e6a44f1c35fd1814bbfc37a63433f687, type: 3}
+    - {fileID: 3202365729011338567, guid: 87f77e0c2e1f57c4ca1efd1644cedc06, type: 3}
+    - {fileID: 155392858532526733, guid: 6871ac6e2497c124889d87da21ad2ee6, type: 3}
+    - {fileID: 8411264388883211930, guid: d92f8b50b0b9283409f5fff3a667de11, type: 3}
+    - {fileID: 4027633377651653420, guid: c6a08f243b00da74db6fac6ccc301194, type: 3}
+    - {fileID: 5942906473208332912, guid: f3e545b731ca5e44081365aa06dcf179, type: 3}
+  - plateformeColor: Black 6
+    plateformeByType:
+    - {fileID: 7038361949373587475, guid: b22e40804e3bbdf4b8943415b6670a56, type: 3}
+    - {fileID: 6184298531104407454, guid: 401819a40eaa4ce40bdc3c4d0272fb85, type: 3}
+    - {fileID: 3202365729011338567, guid: e8b22a7675350e346ae72928347510cb, type: 3}
+    - {fileID: 155392858532526733, guid: de966645429537c43b89f550d5b93d32, type: 3}
+    - {fileID: 8411264388883211930, guid: af55d05674f702e4b985628a7b337c09, type: 3}
+    - {fileID: 4027633377651653420, guid: d601c0ef732c9a942ae640500c02509a, type: 3}
+    - {fileID: 5942906473208332912, guid: 9a3f2bf710b67fc49af105f827bc9b9a, type: 3}
+  - plateformeColor: Purple 1
+    plateformeByType:
+    - {fileID: 7038361949373587475, guid: e8357cc7aaf2d944182f40d1d7eafe3d, type: 3}
+    - {fileID: 6184298531104407454, guid: 608db0b1845e6234e9eb54ecc9df7b1b, type: 3}
+    - {fileID: 3202365729011338567, guid: 41948e42de732b1499c26addc700e8e5, type: 3}
+    - {fileID: 155392858532526733, guid: b034790f856d6e344847b2798cc8ab98, type: 3}
+    - {fileID: 8411264388883211930, guid: e7877ea9b3fda3c41868a1fa502fd196, type: 3}
+    - {fileID: 4027633377651653420, guid: c8e7e482681e9f14dbaaa9144f29bf14, type: 3}
+    - {fileID: 5942906473208332912, guid: e68cf862d76125e46b9606bc3bfa2962, type: 3}
+  - plateformeColor: Purple 6
+    plateformeByType:
+    - {fileID: 7038361949373587475, guid: 8d0dd9cc92673584f8b7c99845ca9337, type: 3}
+    - {fileID: 6184298531104407454, guid: 63866548e195cbf478b08d6e460f0562, type: 3}
+    - {fileID: 3202365729011338567, guid: b0d3a8292a1e29e4ba0c691ad6f93a1b, type: 3}
+    - {fileID: 155392858532526733, guid: d85d886dd4e8f844387fc83ba3fcd9f9, type: 3}
+    - {fileID: 8411264388883211930, guid: 82e133ec629db92428f7b6953b87d95c, type: 3}
+    - {fileID: 4027633377651653420, guid: 15aeba1f3d8975c4c92fe9603fcb900a, type: 3}
+    - {fileID: 5942906473208332912, guid: c17fc547abad41d4b88cf897cec8ae67, type: 3}

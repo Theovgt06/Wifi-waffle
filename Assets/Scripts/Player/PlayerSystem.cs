@@ -9,15 +9,24 @@ public class PlayerSystem : MonoBehaviour, IWeapons, IDamageable {
 
     private float lastShoot;
     private GameObject shootIndicator;
+<<<<<<< Updated upstream
     private DataChanger dataChanger;
+=======
+    private DataChanger dataChange;
+
+>>>>>>> Stashed changes
     
     void Start()
     {
         // Idéalement, ces références devraient être configurées via l'inspecteur
         shootIndicator = GameObject.Find("Shoot Indicator");
         bulletPooling = gameObject.GetComponent<BulletPooling>();
+<<<<<<< Updated upstream
         dataChanger = gameObject.GetComponent<DataChanger>();
         dataChanger.currentAmmo = dataChanger.startingAmmo;
+=======
+        dataChange = gameObject.GetComponent<DataChanger>();
+>>>>>>> Stashed changes
     }
 
     void Update() 
@@ -49,6 +58,10 @@ public class PlayerSystem : MonoBehaviour, IWeapons, IDamageable {
 
     public void TakeDamage(int amount)
     {
+<<<<<<< Updated upstream
         dataChanger.ChangeHealth(amount);
+=======
+        dataChange.ChangeHealth(amount);
+>>>>>>> Stashed changes
     }
 }

@@ -15,7 +15,6 @@ public class ParentingPlatform : MonoBehaviour
     private Rigidbody2D rb;
 
     // Référence à la plateforme actuelle
-    private Transform currentPlatform;
     private PlayerJumping playerJumping;
     private Vector3 previousPlatformPosition;
 
@@ -52,7 +51,6 @@ public class ParentingPlatform : MonoBehaviour
         if (player.transform.parent != null && other.gameObject.CompareTag("Plateform"))
         {
             player.transform.SetParent(null);
-            currentPlatform = null;
             rb.interpolation = RigidbodyInterpolation2D.Interpolate;
 
         }

@@ -2,9 +2,12 @@ using UnityEngine;
 
 public class DataChanger : MonoBehaviour
 {
-    public int maxAmmo = 7;
+    [SerializeField] public int maxAmmo;
     [SerializeField] public int currentAmmo;
+<<<<<<< Updated upstream
     [SerializeField] public  int startingAmmo = 5;
+=======
+>>>>>>> Stashed changes
     [SerializeField] private int maxHealth;
     [SerializeField] private int currentHealth;
 
