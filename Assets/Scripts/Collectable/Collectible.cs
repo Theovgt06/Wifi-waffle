@@ -22,24 +22,15 @@ public class Collectible : MonoBehaviour
     {
         if (collision.gameObject.CompareTag("Player"))
         {
+            dataChanger = collision.gameObject.GetComponent<DataChanger>();
             if(gameObject.CompareTag("Ammo"))
             {
                 dataChanger.ChangeAmmo(1);
                 collectableAnimator.SetTrigger("Collect");
-
             }
 
             if(gameObject.CompareTag("Heal"))
             {
-<<<<<<< Updated upstream
-                DataChanger health = collision.gameObject.GetComponent<DataChanger>();
-                if (dataChanger == null)
-                {
-                    Debug.LogError("Health component not found on player.");
-                    return;
-                }
-=======
->>>>>>> Stashed changes
                 dataChanger.ChangeHealth(1);
                 collectableAnimator.SetTrigger("Collect");
             }   

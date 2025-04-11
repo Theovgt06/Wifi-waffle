@@ -4,15 +4,13 @@ public class DataChanger : MonoBehaviour
 {
     [SerializeField] public int maxAmmo;
     [SerializeField] public int currentAmmo;
-<<<<<<< Updated upstream
-    [SerializeField] public  int startingAmmo = 5;
-=======
->>>>>>> Stashed changes
     [SerializeField] private int maxHealth;
     [SerializeField] private int currentHealth;
 
     private Animator anim;
-    private void Start()
+
+
+    void Start()
     {
         anim = GetComponent<Animator>();
     }
@@ -41,13 +39,17 @@ public class DataChanger : MonoBehaviour
             anim.SetTrigger("Die");
         }
     }
-    private void PlayerDied()
+
+    public void PlayerDied()
     {
-        // Appeler la méthode de gestion de la mort ici
         LevelManager.Instance.GameOver();
         GameObject.Find("Player").SetActive(false);
     }
 
+    public void EnemyDied()
+    {
+        
+    }
 
 }
 
