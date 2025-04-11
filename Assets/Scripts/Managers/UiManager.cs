@@ -2,15 +2,12 @@ using UnityEngine;
 
 public class UiManager : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    [SerializeField] GameObject DeathScreen;
+
+    public void ToggleDeathScreen()
     {
-        
+        DeathScreen.SetActive(!DeathScreen.activeSelf);
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+   
 }

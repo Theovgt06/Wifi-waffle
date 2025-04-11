@@ -4,7 +4,7 @@ public class DataChanger : MonoBehaviour
 {
     public int maxAmmo = 7;
     [SerializeField] public int currentAmmo;
-    [SerializeField] public int startingAmmo = 5;
+    [SerializeField] public  int startingAmmo = 5;
     [SerializeField] private int maxHealth;
     [SerializeField] private int currentHealth;
 
@@ -29,8 +29,14 @@ public class DataChanger : MonoBehaviour
         }
         else if (currentHealth <= 0)
         {
-            gameObject.SetActive(false);
+        //rediriger vers l'animation de mort
         }
+    }
+    private void PlayerDied()
+    {
+        // Appeler la méthode de gestion de la mort ici
+        LevelManager.Instance.GameOver();
+        GameObject.Find("Player").SetActive(false);
     }
 }
 

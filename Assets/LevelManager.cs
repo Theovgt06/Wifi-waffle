@@ -1,0 +1,30 @@
+using UnityEngine;
+
+public class LevelManager : MonoBehaviour
+{
+    public static LevelManager Instance;
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
+    public void GameOver()
+    {
+        UiManager _ui = GetComponent<UiManager>();
+        if (_ui != null)
+        {
+            _ui.ToggleDeathScreen();
+        }
+        else
+        {
+            Debug.LogError("UiManager component not found on LevelManager.");
+        }
+    }
+}
