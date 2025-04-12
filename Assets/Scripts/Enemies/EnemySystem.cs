@@ -128,7 +128,6 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
     {
         isGrounded = Physics2D.OverlapCapsule(groundCheck.position, new Vector2(0.43f, 0.08f), CapsuleDirection2D.Horizontal, 0, groundLayer);
         if(isGrounded){
-
             float direction = isFacingRight ? 1f : -1f;
             float newVelocityX = Mathf.Clamp(rb.linearVelocity.x + direction * vodooSpeed * Time.fixedDeltaTime, -maxSpeed, maxSpeed);
             rb.linearVelocity = new Vector2(newVelocityX, rb.linearVelocity.y);            

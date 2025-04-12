@@ -3,7 +3,7 @@ using DG.Tweening;
 
 public class PlayerSystem : MonoBehaviour, IWeapons, IDamageable {
     // Références aux objets
-    [SerializeField] private int ammoAmmount = 3; 
+    [SerializeField] private int ammoAmmount; 
     [SerializeField] private float shootDelay = 0.5f;
     [SerializeField] private BulletPooling bulletPooling;
 

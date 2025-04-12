@@ -13,9 +13,10 @@ public class BulletBehaviour : MonoBehaviour
     private bool hasStartedDirectional = false;
     [SerializeField] private float bulletSpeed = 8f;
     [SerializeField] public float peakDirectionXCalc;
-
+    
     [SerializeField] public float peakDirectionYCalc;
     private GameObject fromWho;
+    private Rigidbody2D rb;
     void Start()
     {
 
@@ -142,7 +143,7 @@ public class BulletBehaviour : MonoBehaviour
         }
     }
 
-    public void LaunchBezierParabola(Vector2 startPos, Vector2 targetPos, GameObject bullet)
+    public void LaunchBezierParabola(Vector2 startPos, Vector3 targetPos, GameObject bullet)
     {       
         bullet.SetActive(true);
         float distance = Vector2.Distance(startPos, aimPosition);
@@ -157,14 +158,16 @@ public class BulletBehaviour : MonoBehaviour
             Vector2 p0 = startPos;
             Vector2 p1 = peakPos;
             Vector2 p2 = targetPos;
-            Vector2 p3 = targetPosLose;
 
             float oneMinusT = 1f - t;
-            Vector2 pos = Mathf.Pow(oneMinusT,3)*p0 + 3*(Mathf.Pow(oneMinusT,2))*t*p1
-                        + 3*oneMinusT*Mathf.Pow(t,2)*p2 + Mathf.Pow(t,3)*p3 ;
+            Vector2 pos = Mathf.Pow(oneMinusT,2)*p0 + 2*oneMinusT*t*p1
+                        + Mathf.Pow(t,2)*p2;
             bullet.transform.position = pos;
 
-        }, 0f, 1f, duration).SetEase(Ease.Linear);
-        
+        }, 0f, 1f, duration).SetEase(Ease.Linear)
+        .OnComplete(() => {
+        bullet.transform.DOMove(targetPosLose, 0.3f); // petite chute finale
+        });
+
     }
 }

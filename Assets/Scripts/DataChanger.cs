@@ -4,8 +4,10 @@ public class DataChanger : MonoBehaviour
 {
     [SerializeField] public int maxAmmo;
     [SerializeField] public int currentAmmo;
+    [SerializeField] private int startingAmmo;
     [SerializeField] private int maxHealth;
     [SerializeField] private int currentHealth;
+    [SerializeField] private int startingHealth;
 
     private Animator anim;
 
@@ -13,6 +15,8 @@ public class DataChanger : MonoBehaviour
     void Start()
     {
         anim = GetComponent<Animator>();
+        currentHealth = startingHealth;
+        currentAmmo = startingAmmo; 
     }
 
     public void ChangeAmmo(int amount)
@@ -44,8 +48,8 @@ public class DataChanger : MonoBehaviour
     {
         LevelManager.Instance.GameOver();
         GameObject.Find("Player").SetActive(false);
-    }
-
+    } 
+    
     public void EnemyDied()
     {
         

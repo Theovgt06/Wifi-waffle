@@ -19,8 +19,8 @@ GameObject:
   - component: {fileID: 9182343641253457510}
   - component: {fileID: 4188825224735991487}
   - component: {fileID: 3788147502972188031}
-  - component: {fileID: 1347200488431223967}
   - component: {fileID: 3350007436936178436}
+  - component: {fileID: 1347200488431223967}
   m_Layer: 7
   m_Name: Player
   m_TagString: Player
@@ -287,6 +287,24 @@ MonoBehaviour:
   ammoAmmount: 3
   shootDelay: 0.5
   bulletPooling: {fileID: 9182343641253457510}
+--- !u!114 &3350007436936178436
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 499331703694339047}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e56aa86e2d5059a42ab698e5debf5bb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxAmmo: 7
+  currentAmmo: 0
+  startingAmmo: 0
+  maxHealth: 0
+  currentHealth: 0
+  startingHealth: 0
 --- !u!95 &1347200488431223967
 Animator:
   serializedVersion: 7
@@ -309,22 +327,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &3350007436936178436
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 499331703694339047}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e56aa86e2d5059a42ab698e5debf5bb6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxAmmo: 7
-  currentAmmo: 0
-  maxHealth: 0
-  currentHealth: 0
 --- !u!1 &4880641739733864125
 GameObject:
   m_ObjectHideFlags: 0
