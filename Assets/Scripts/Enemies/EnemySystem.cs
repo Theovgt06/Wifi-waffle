@@ -38,6 +38,7 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        playerGroundCheck = player.transform.GetChild(0).gameObject;
         bulletPooling = gameObject.GetComponent<BulletPooling>();
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
@@ -216,13 +217,17 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
     {
         isFacingRight = !isFacingRight;
         GetComponent<SpriteRenderer>().flipX = !isFacingRight;
-        Vector3 groundPos = groundCheck.localPosition;
-        if(isFacingRight){
+        if(enemyType == EnemyType.Vodoo)
+        {
+            Vector3 groundPos = groundCheck.localPosition;
+            if(isFacingRight){
             groundPos.x = 0.35f;
-        }else{
-            groundPos.x = -0.35f;
+            }else{
+                groundPos.x = -0.35f;
+            }
+            groundCheck.localPosition = groundPos;
         }
-        groundCheck.localPosition = groundPos;
+        
     }
 
 
