@@ -1,34 +1,28 @@
 fileFormatVersion: 2
-guid: 7bfcf7a957af6ed468828f4ec6130392
+guid: 613f565d2600e5f4fbd70e4821ec1200
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2853566114444752598
-    second: ammo_0
+      213: -8784107829972837999
+    second: WifiAnim_0
   - first:
-      213: -6741822026156145403
-    second: ammo_1
+      213: 3613076447160960882
+    second: WifiAnim_1
   - first:
-      213: -6058229231348979346
-    second: ammo_2
+      213: 7608480716093218002
+    second: WifiAnim_2
   - first:
-      213: -1887406100666834301
-    second: ammo_3
+      213: -2490559755537813789
+    second: WifiAnim_3
   - first:
-      213: -6089983605151344639
-    second: ammo_4
+      213: 8741683244901259016
+    second: WifiAnim_4
   - first:
-      213: -2751462336349532636
-    second: ammo_5
+      213: 922966597334293260
+    second: WifiAnim_5
   - first:
-      213: 3482018132300699491
-    second: ammo_6
-  - first:
-      213: -5481352989808727958
-    second: ammo_7
-  - first:
-      213: -4927307701287025854
-    second: ammo_8
+      213: 3942303305726986813
+    second: WifiAnim_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -75,7 +69,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 32
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -96,10 +90,10 @@ TextureImporter:
   platformSettings:
   - serializedVersion: 4
     buildTarget: DefaultTexturePlatform
-    maxTextureSize: 2048
+    maxTextureSize: 128
     resizeAlgorithm: 0
-    textureFormat: 4
-    textureCompression: 1
+    textureFormat: -1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -124,23 +118,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ammo_0
+      name: WifiAnim_0
       rect:
         serializedVersion: 2
-        x: 287
-        y: 291
-        width: 552
-        height: 190
-      alignment: 9
-      pivot: {x: 0.5013769, y: 0.5098438}
+        x: 0
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 6d632922347e99720800000000000000
-      internalID: 2853566114444752598
+      spriteID: 199ddb50874981680800000000000000
+      internalID: -8784107829972837999
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WifiAnim_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2770c53c2e9342230800000000000000
+      internalID: 3613076447160960882
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WifiAnim_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2dc552b56e0c69960800000000000000
+      internalID: 7608480716093218002
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: WifiAnim_3
+      rect:
+        serializedVersion: 2
+        x: 96
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3eee84f0911cf6dd0800000000000000
+      internalID: -2490559755537813789
       vertices: []
       indices: 
       edges: []
@@ -149,7 +209,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b106127237992b44993ef80fa232fb74
+    spriteID: 9e81bd181a6690f40808c127ec016254
     internalID: 0
     vertices: []
     indices: 
@@ -159,15 +219,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ammo_0: 2853566114444752598
-      ammo_1: -6741822026156145403
-      ammo_2: -6058229231348979346
-      ammo_3: -1887406100666834301
-      ammo_4: -6089983605151344639
-      ammo_5: -2751462336349532636
-      ammo_6: 3482018132300699491
-      ammo_7: -5481352989808727958
-      ammo_8: -4927307701287025854
+      WifiAnim_0: -8784107829972837999
+      WifiAnim_1: 3613076447160960882
+      WifiAnim_2: 7608480716093218002
+      WifiAnim_3: -2490559755537813789
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

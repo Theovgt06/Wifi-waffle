@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: An_pinkHit
+  m_Name: An_frogDeath
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -737122742, guid: 6fb44a0bb904d46408e727c8c73d982e, type: 3}
+      value: {fileID: 1708294661, guid: ffc2341ee36232a4e98b2e752019bbce, type: 3}
     - time: 0.083333336
-      value: {fileID: 1996378235, guid: 6fb44a0bb904d46408e727c8c73d982e, type: 3}
+      value: {fileID: 222429718, guid: ffc2341ee36232a4e98b2e752019bbce, type: 3}
     - time: 0.16666667
-      value: {fileID: -162420713, guid: 6fb44a0bb904d46408e727c8c73d982e, type: 3}
+      value: {fileID: -1818880739, guid: ffc2341ee36232a4e98b2e752019bbce, type: 3}
     - time: 0.25
-      value: {fileID: -2006221889, guid: 6fb44a0bb904d46408e727c8c73d982e, type: 3}
+      value: {fileID: -30958473, guid: ffc2341ee36232a4e98b2e752019bbce, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -50,10 +50,10 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -737122742, guid: 6fb44a0bb904d46408e727c8c73d982e, type: 3}
-    - {fileID: 1996378235, guid: 6fb44a0bb904d46408e727c8c73d982e, type: 3}
-    - {fileID: -162420713, guid: 6fb44a0bb904d46408e727c8c73d982e, type: 3}
-    - {fileID: -2006221889, guid: 6fb44a0bb904d46408e727c8c73d982e, type: 3}
+    - {fileID: 1708294661, guid: ffc2341ee36232a4e98b2e752019bbce, type: 3}
+    - {fileID: 222429718, guid: ffc2341ee36232a4e98b2e752019bbce, type: 3}
+    - {fileID: -1818880739, guid: ffc2341ee36232a4e98b2e752019bbce, type: 3}
+    - {fileID: -30958473, guid: ffc2341ee36232a4e98b2e752019bbce, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
