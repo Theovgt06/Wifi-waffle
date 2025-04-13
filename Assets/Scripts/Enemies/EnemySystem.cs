@@ -1,8 +1,5 @@
 using UnityEngine;
 using DG.Tweening;
-using Unity.VisualScripting;
-using UnityEngine.UIElements;
-
 public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
     // Références aux objets
 
