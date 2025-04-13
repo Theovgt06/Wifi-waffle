@@ -64,7 +64,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 3, y: 4, z: 0}
   m_LocalScale: {x: 2, y: 2, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 8192606085369159763}
   m_Father: {fileID: 0}
@@ -112,7 +112,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 3
   m_Sprite: {fileID: 1018023937, guid: 328153bcc8dbc2d42866f7f4c5a6b4c7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -174,14 +174,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootDelay: 1.5
-  vodooSpeed: 30
-  maxSpeed: 5
-  enemyType: 0
+  vodooSpeed: 20
+  maxSpeed: 3
+  vodooChaseSpeed: 40
+  maxChaseSpeed: 8
+  isFacingRight: 0
+  enemyType: 2
+  isGrounded: 0
   bulletPooling: {fileID: 0}
-  currentVodooState: 2
+  currentVodooState: 3
   groundLayer:
     serializedVersion: 2
     m_Bits: 4096
+  playerGroundCheck: {fileID: 0}
+  currentVodooPlatform: {fileID: 0}
+  currentPlayerPlatform: {fileID: 0}
 --- !u!50 &6356561440564604366
 Rigidbody2D:
   serializedVersion: 5
@@ -194,7 +201,7 @@ Rigidbody2D:
   m_Simulated: 1
   m_UseFullKinematicContacts: 0
   m_UseAutoMass: 0
-  m_Mass: 1
+  m_Mass: 10000
   m_LinearDamping: 0
   m_AngularDamping: 0.05
   m_GravityScale: 1
@@ -223,8 +230,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxAmmo: 0
   currentAmmo: 0
+  startingAmmo: 0
   maxHealth: 1
   currentHealth: 0
+  startingHealth: 0
 --- !u!95 &5224126229169729809
 Animator:
   serializedVersion: 7

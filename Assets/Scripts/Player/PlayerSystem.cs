@@ -11,12 +11,13 @@ public class PlayerSystem : MonoBehaviour, IWeapons, IDamageable {
     private GameObject shootIndicator;
 
     private DataChanger dataChanger;
-    private Animator anim;
-
+    public Animator anim;
+    public Rigidbody2D rb;
     
     void Start()
     {
         anim = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
         // Idéalement, ces références devraient être configurées via l'inspecteur
         shootIndicator = GameObject.Find("Shoot Indicator");
         bulletPooling = gameObject.GetComponent<BulletPooling>();

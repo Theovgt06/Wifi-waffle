@@ -52,7 +52,7 @@ public class DataChanger : MonoBehaviour
     
     public void EnemyDied()
     {
-        
+        gameObject.SetActive(false);
     }
 
 }

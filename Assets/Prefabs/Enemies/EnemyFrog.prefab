@@ -142,12 +142,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootDelay: 1
+  vodooSpeed: 0
+  maxSpeed: 0
+  enemyType: 0
   bulletPooling: {fileID: 37102170191382173}
   currentVodooState: 2
-  groundCheck: {fileID: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 4096
+  playerGroundCheck: {fileID: 0}
+  currentVodooPlatform: {fileID: 0}
+  currentPlayerPlatform: {fileID: 0}
 --- !u!114 &37102170191382173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -201,3 +206,4 @@ MonoBehaviour:
   startingAmmo: 5
   maxHealth: 0
   currentHealth: 0
+  startingHealth: 0

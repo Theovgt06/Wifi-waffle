@@ -8,25 +8,31 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
 
     
     private enum EnemyType {Frog, Pink, Vodoo}
-    public enum VodooState { Chase, Explode, Routine};
+    public enum VodooState { Chase, Explode, Routine, Inactive,Dead};
     [SerializeField] private float shootDelay = 1f;
     [SerializeField] private float vodooSpeed;
     [SerializeField] private float maxSpeed;
+    [SerializeField] private float vodooChaseSpeed;
+    [SerializeField] private float maxChaseSpeed;
+    [SerializeReference] private bool isFacingRight = true;
+
     [SerializeField] private EnemyType enemyType;
+    [SerializeField]private bool isGrounded;
 
     private float lastShoot;
     [SerializeField]
     private BulletPooling bulletPooling;
     private GameObject player;
     
-    public VodooState currentVodooState = VodooState.Routine;
+    public VodooState currentVodooState = VodooState.Inactive;
     private Transform groundCheck;
     public LayerMask groundLayer;
-    private bool isGrounded;
-    private bool isFacingRight = true;
     private Animator anim;
     private Rigidbody2D rb;
     private DataChanger dataChanger;
+    [SerializeField] private GameObject playerGroundCheck;
+    [SerializeField] private GameObject currentVodooPlatform;
+    [SerializeField] private GameObject currentPlayerPlatform;
    
     
     void Start()
@@ -38,8 +44,9 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
         dataChanger = GetComponent<DataChanger>();
         if(enemyType == EnemyType.Vodoo)
         {
-            groundCheck = gameObject.transform.GetChild(0).transform;
+            groundCheck = gameObject.transform.GetChild(0).transform; 
         }
+
     }
     void FixedUpdate() 
     {
@@ -54,6 +61,9 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
             case EnemyType.Vodoo:
                 switch(currentVodooState)
                     {
+                    case VodooState.Inactive:
+                        Inactive();
+                        break;
                     case VodooState.Routine:
                         Routine();
                         break;
@@ -63,6 +73,9 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
                     case VodooState.Explode:
                         Explode();
                         break;
+                    case VodooState.Dead:
+                        Dead();
+                        break;
                     }
                 break;
         }  
@@ -71,7 +84,9 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
 
     void Update()
     {
-
+        if(currentVodooState == VodooState.Routine){
+            DetectPlayer();
+        }
     }
 
 
@@ -124,27 +139,72 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
         return false;
     }
 
+
+    void Inactive(){
+        if(rb.linearVelocity.y==0){
+            currentVodooState = VodooState.Routine;
+        }
+    }
+
     public void Routine()
     {
-        isGrounded = Physics2D.OverlapCapsule(groundCheck.position, new Vector2(0.43f, 0.08f), CapsuleDirection2D.Horizontal, 0, groundLayer);
-        if(isGrounded){
+        isGrounded = Physics2D.OverlapCapsule(
+            groundCheck.position,
+            new Vector2(0.43f, 0.08f),
+            CapsuleDirection2D.Horizontal,
+            0f,
+            groundLayer
+        );
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, 0.1f, groundLayer);
+
+        if (hit.collider != null && hit.collider.gameObject.CompareTag("Plateform"))
+        {
+            currentVodooPlatform = hit.collider.gameObject;
+        }
+        if (isGrounded)
+        {
             float direction = isFacingRight ? 1f : -1f;
             float newVelocityX = Mathf.Clamp(rb.linearVelocity.x + direction * vodooSpeed * Time.fixedDeltaTime, -maxSpeed, maxSpeed);
-            rb.linearVelocity = new Vector2(newVelocityX, rb.linearVelocity.y);            
-        }else{
+            rb.linearVelocity = new Vector2(newVelocityX, rb.linearVelocity.y);  
+        }
+        else
+        {
             Flip();
         }
     }
 
     public void Chase()
     {
+        isGrounded = Physics2D.OverlapCapsule(
+            groundCheck.position,
+            new Vector2(0.43f, 0.08f),
+            CapsuleDirection2D.Horizontal,
+            0f,
+            groundLayer
+        );
+        if (isGrounded)
+        {
+            float direction = isFacingRight ? 1f : -1f;
+            float newVelocityX = Mathf.Clamp(rb.linearVelocity.x + direction * vodooChaseSpeed * Time.fixedDeltaTime, -maxChaseSpeed, maxChaseSpeed);
+            rb.linearVelocity = new Vector2(newVelocityX, rb.linearVelocity.y);  
+        }
+        if(!isGrounded){
+            currentVodooState = VodooState.Explode;
+        }
 
     }
     public void Explode()
     {
+        rb.linearVelocity = Vector2.zero;
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
+        anim.SetTrigger("Die");        
+        currentVodooState = VodooState.Dead;
 
     }
 
+    public void Dead()
+    {
+    }
 
 
     public void TakeDamage(int amount)
@@ -155,17 +215,53 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
     private void Flip()
     {
         isFacingRight = !isFacingRight;
-        Vector3 scale = transform.localScale;
-        scale.x *= -1;
-        transform.localScale = scale;
+        GetComponent<SpriteRenderer>().flipX = !isFacingRight;
+        Vector3 groundPos = groundCheck.localPosition;
+        if(isFacingRight){
+            groundPos.x = 0.35f;
+        }else{
+            groundPos.x = -0.35f;
+        }
+        groundCheck.localPosition = groundPos;
     }
 
 
     private void DetectPlayer()
     {
-        if(gameObject.transform.parent.gameObject.transform.parent)
+        currentPlayerPlatform = playerGroundCheck.GetComponent<ParentingPlatform>().currentPlatformOn;         
+        if(currentVodooPlatform == currentPlayerPlatform && currentVodooPlatform!=null && currentPlayerPlatform!=null)
         {
-            
+            if((isFacingRight && transform.position.x<= player.transform.position.x) || (!isFacingRight && transform.position.x> player.transform.position.x))
+            {
+                currentVodooState = VodooState.Chase;
+            }
         }
     }
+
+    private Vector2 KnockbackDirection(Vector2 playerPos, Vector2 enemyPos)
+    {
+        float direction = (playerPos.x>enemyPos.x) ? 1f : -1f;
+        return new Vector2(playerPos.x+1f*direction,playerPos.y+0.5f*direction);
+    }
+
+    void OnCollisionEnter2D(Collision2D other)
+    {
+        if(!other.gameObject.CompareTag("Player"))
+        {
+            return;
+        }
+        if(enemyType == EnemyType.Vodoo)
+        {
+            other.gameObject.GetComponent<PlayerSystem>().TakeDamage(-2);
+            if(currentVodooState != VodooState.Explode)
+            {
+                currentVodooState = VodooState.Explode;
+            }
+            // other.gameObject.GetComponent<PlayerSystem>().rb.DOMove(KnockbackDirection(other.transform.position,transform.position),0.5f);
+        }else{
+            other.gameObject.GetComponent<PlayerSystem>().TakeDamage(-1);
+            // other.gameObject.GetComponent<PlayerSystem>().rb.DOMove(KnockbackDirection(other.transform.position,transform.position),0.5f);
+        }
+    }
+
 }

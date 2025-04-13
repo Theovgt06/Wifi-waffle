@@ -10,16 +10,18 @@ public class BulletBehaviour : MonoBehaviour
     private Vector2 aimPosition; 
     private GameObject instantiateBullet;
     private GameObject startPoint;
-    private bool hasStartedDirectional = false;
+    private bool hasStartedMoving = false;
     [SerializeField] private float bulletSpeed = 8f;
     [SerializeField] public float peakDirectionXCalc;
     
     [SerializeField] public float peakDirectionYCalc;
     private GameObject fromWho;
     private Rigidbody2D rb;
-    void Start()
-    {
-
+    private Animator animator;
+    void OnEnable()
+    {   
+        animator = GetComponent<Animator>();
+        rb = GetComponent<Rigidbody2D>();
     } 
 
     public void GetValues(GameObject startingPoint, GameObject instantiateBulletRef, Vector2 aimingPosition, GameObject fromWhoRef)
@@ -34,7 +36,7 @@ public class BulletBehaviour : MonoBehaviour
     public void SetBehaviourType(BehaviourBullet behavior)
     {
         currentBehaviour = behavior;
-        hasStartedDirectional = false;
+        hasStartedMoving = false;
     }
     void FixedUpdate()
     {
@@ -57,13 +59,15 @@ public class BulletBehaviour : MonoBehaviour
 
     private void HandleInactive()
     {
-        
+        rb.linearVelocity = Vector2.zero;
+        rb.constraints = RigidbodyConstraints2D.FreezeAll;
     }
 
     private void HandleParabolic()
     {
-        if (hasStartedDirectional) return; // Condition stopping Behavior actualisation.
-        hasStartedDirectional = true; 
+        rb.constraints = RigidbodyConstraints2D.None;
+        if (hasStartedMoving) return; // Condition stopping Behavior actualisation.
+        hasStartedMoving = true; 
 
         Vector2 startPos = fromWho.transform.position;
         LaunchBezierParabola(startPos,aimPosition,instantiateBullet);
@@ -72,8 +76,9 @@ public class BulletBehaviour : MonoBehaviour
 
     private void HandleDirectional()
     {
-        if (hasStartedDirectional) return; // Condition stopping Behavior actualisation.
-        hasStartedDirectional = true;  // ---> 
+        rb.constraints = RigidbodyConstraints2D.None;
+        if (hasStartedMoving) return; // Condition stopping Behavior actualisation.
+        hasStartedMoving = true;  // ---> 
 
 
           // Get bullet components 
@@ -86,7 +91,7 @@ public class BulletBehaviour : MonoBehaviour
 
         // Compute Rotation
         float angle = Mathf.Atan2(direction.y, direction.x) * Mathf.Rad2Deg;
-        bulletTransform.rotation = Quaternion.AngleAxis(angle-90, Vector3.forward);
+        bulletTransform.rotation = Quaternion.AngleAxis(angle-180, Vector3.forward);
         // Compute Movement 
         Vector2 extendedTarget = startPos + ((aimPosition - startPos)*int.MaxValue);  
         float distance = Vector2.Distance(startPos, extendedTarget);
@@ -108,7 +113,7 @@ public class BulletBehaviour : MonoBehaviour
     {
         // Annuler tous les tweens associés à cet objet quand il est désactivé
         DOTween.Kill(GetComponent<Rigidbody2D>());
-        hasStartedDirectional = false; // Reset the flag
+        hasStartedMoving = false; // Reset the flag
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -118,11 +123,12 @@ public class BulletBehaviour : MonoBehaviour
         {
             if(hitObject.CompareTag("Player"))
             {
-                gameObject.SetActive(false);
+                BulletBehaviour bulletBehavior = gameObject.GetComponent<BulletBehaviour>();
+                bulletBehavior.SetBehaviourType(BehaviourBullet.Inactive);
+                animator.SetTrigger("Explode");
                 IDamageable target = hitObject.GetComponent<IDamageable>();
                 target.TakeDamage(-1);
-                BulletBehaviour bulletBehavior = gameObject.GetComponent<BulletBehaviour>();
-                bulletBehavior.SetBehaviourType(BulletBehaviour.BehaviourBullet.Inactive);
+
             }
             if(hitObject.CompareTag("Pink") || hitObject.CompareTag("Frog") | hitObject.CompareTag("Vodoo"))
             {
@@ -130,7 +136,7 @@ public class BulletBehaviour : MonoBehaviour
                 IDamageable target = hitObject.GetComponent<IDamageable>();
                 target.TakeDamage(-1);
                 BulletBehaviour bulletBehavior = gameObject.GetComponent<BulletBehaviour>();
-                bulletBehavior.SetBehaviourType(BulletBehaviour.BehaviourBullet.Inactive);
+                bulletBehavior.SetBehaviourType(BehaviourBullet.Inactive);
             }
             if(hitObject.CompareTag("Edge Collider"))
             {
@@ -162,12 +168,17 @@ public class BulletBehaviour : MonoBehaviour
             float oneMinusT = 1f - t;
             Vector2 pos = Mathf.Pow(oneMinusT,2)*p0 + 2*oneMinusT*t*p1
                         + Mathf.Pow(t,2)*p2;
-            bullet.transform.position = pos;
+            rb.MovePosition(pos);
 
         }, 0f, 1f, duration).SetEase(Ease.Linear)
         .OnComplete(() => {
-        bullet.transform.DOMove(targetPosLose, 0.3f); // petite chute finale
+        animator.SetTrigger("Explode"); // petite chute finale
         });
 
+    }
+
+    public void DestroyBullet()
+    {
+        gameObject.SetActive(false);
     }
 }

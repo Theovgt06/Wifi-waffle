@@ -8,16 +8,11 @@ public class ParentingPlatform : MonoBehaviour
 {
     [SerializeField] private Transform groundCheck;
     public LayerMask groundLayer;
-
-    // Capsule size & direction (utilisés aussi pour le gizmo)
     private GameObject player;
-    // Référence au Rigidbody2D
     private Rigidbody2D rb;
-
-    // Référence à la plateforme actuelle
     private PlayerJumping playerJumping;
     private Vector3 previousPlatformPosition;
-
+    public GameObject currentPlatformOn;
 
     void Start()
     {
@@ -29,17 +24,17 @@ public class ParentingPlatform : MonoBehaviour
 
     void OnTriggerStay2D(Collider2D other)
     {
-        GameObject touchedObject = other.gameObject;
+        currentPlatformOn = other.gameObject;
 
-        if (touchedObject.CompareTag("Plateform"))
+        if (currentPlatformOn.CompareTag("Plateform"))
         {
-            float platformTop = touchedObject.transform.position.y + touchedObject.GetComponent<Collider2D>().bounds.extents.y-14.5f;
+            float platformTop = currentPlatformOn.transform.position.y + currentPlatformOn.GetComponent<Collider2D>().bounds.extents.y-14.5f;
             float playerBottom = player.transform.position.y - player.GetComponent<Collider2D>().bounds.extents.y;
             float yDifference = playerBottom - platformTop;
             // Si le joueur est au-dessus de la plateforme et qu'il descend
             if (yDifference > 0 && rb.linearVelocity.y <= 0.05f)
             {
-                player.transform.SetParent(touchedObject.transform);
+                player.transform.SetParent(currentPlatformOn.transform);
                 rb.interpolation = RigidbodyInterpolation2D.None;
             }      
         }
@@ -51,6 +46,7 @@ public class ParentingPlatform : MonoBehaviour
         {
             player.transform.SetParent(null);
             rb.interpolation = RigidbodyInterpolation2D.Interpolate;
+            currentPlatformOn = null;
 
         }
     }
