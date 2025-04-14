@@ -239,7 +239,7 @@ MonoBehaviour:
   jumpPower: 20
   fallMultiplier: 5
   rb: {fileID: 6250933105276607023}
-  playerMovement: {fileID: 0}
+  playerMovement: {fileID: 8527438587698611968}
   groundCheck: {fileID: 9183858246643238724}
   groundLayer:
     serializedVersion: 2
@@ -287,6 +287,8 @@ MonoBehaviour:
   ammoAmmount: 3
   shootDelay: 0.5
   bulletPooling: {fileID: 9182343641253457510}
+  anim: {fileID: 1347200488431223967}
+  rb: {fileID: 6250933105276607023}
 --- !u!114 &3350007436936178436
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -414,6 +416,7 @@ MonoBehaviour:
   groundLayer:
     serializedVersion: 2
     m_Bits: 4096
+  currentPlatformOn: {fileID: 0}
 --- !u!70 &5912892982960105658
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

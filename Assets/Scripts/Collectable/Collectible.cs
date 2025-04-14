@@ -14,6 +14,7 @@ public class Collectible : MonoBehaviour
         {
             randomValue = Random.Range(0, 7);
             collectableAnimator.SetInteger("Random", randomValue);
+            gameObject.GetComponent<SpriteRenderer>().enabled = true;
         }
     }
 

@@ -277,7 +277,7 @@ public class PlateformPooling : MonoBehaviour
             }
             foreach(GameObject collectable in collectableListPooling){
                 GameObject collect = Instantiate(collectable,spawnAnchorPos, Quaternion.identity);
-                collect.transform.parent = spawnAnchor.transform.GetChild(1).transform;
+                collect.transform.SetParent(spawnAnchor.transform.GetChild(1).transform);
                 collect.SetActive(false);
             }
             platform.GetComponent<PlateformBehaviour>().spawnAnchorPooled.Add(spawnAnchor);
