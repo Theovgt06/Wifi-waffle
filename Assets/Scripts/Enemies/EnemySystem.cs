@@ -129,7 +129,7 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
      
     private bool CanShoot()
     {
-        if (Time.time - lastShoot > shootDelay) // Comparaison avec le temps global
+        if (Time.time - lastShoot > shootDelay && player.transform.position.y<transform.position.y) // Comparaison avec le temps global
         {
             lastShoot = Time.time; // Mise à jour du dernier tir
             return true;

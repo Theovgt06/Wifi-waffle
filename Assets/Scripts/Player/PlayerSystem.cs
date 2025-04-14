@@ -9,7 +9,6 @@ public class PlayerSystem : MonoBehaviour, IWeapons, IDamageable {
 
     private float lastShoot;
     private GameObject shootIndicator;
-
     private DataChanger dataChanger;
     public Animator anim;
     public Rigidbody2D rb;
@@ -20,14 +19,14 @@ public class PlayerSystem : MonoBehaviour, IWeapons, IDamageable {
         rb = GetComponent<Rigidbody2D>();
         // Idéalement, ces références devraient être configurées via l'inspecteur
         shootIndicator = GameObject.Find("Shoot Indicator");
-        bulletPooling = gameObject.GetComponent<BulletPooling>();
-        dataChanger = gameObject.GetComponent<DataChanger>();
+        bulletPooling = GetComponent<BulletPooling>();
+        dataChanger = GetComponent<DataChanger>();
 
     }
 
     void Update() 
     {
-
+        ammoAmmount = dataChanger.currentAmmo;
     }
     public void Shoot()
     {
@@ -45,7 +44,7 @@ public class PlayerSystem : MonoBehaviour, IWeapons, IDamageable {
     
     private bool CanShoot()
     {
-        if (ammoAmmount>0 &&Time.time - lastShoot > shootDelay) // Comparaison avec le temps global
+        if (ammoAmmount>0 &&Time.time - lastShoot > shootDelay && ammoAmmount>0) // Comparaison avec le temps global
         {
             lastShoot = Time.time; // Mise à jour du dernier tir
             return true;
