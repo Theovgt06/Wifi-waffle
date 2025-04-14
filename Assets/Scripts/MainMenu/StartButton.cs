@@ -6,6 +6,6 @@ public class StartButton : MonoBehaviour
     public void PlayGame()
     {
         // Load the game scene
-        UnityEngine.SceneManagement.SceneManager.LoadScene("Theo"/*mettre la scene principale*/);
+        UnityEngine.SceneManagement.SceneManager.LoadScene("Adam"/*mettre la scene principale*/);
     }
 }
