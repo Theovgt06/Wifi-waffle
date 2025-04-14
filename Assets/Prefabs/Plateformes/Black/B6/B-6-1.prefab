@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 231680368227805262}
   - component: {fileID: 1558472268479438861}
   - component: {fileID: 6284390451857416955}
-  - component: {fileID: 111507200534022033}
+  - component: {fileID: 8882320136312738212}
   m_Layer: 12
   m_Name: B-6-1
   m_TagString: Plateform
@@ -243,7 +243,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 2
-      m_TileSpriteIndex: 1
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -334,10 +334,10 @@ Tilemap:
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: -972066518, guid: c1fc39f1e8e42e24bab6817483b2d0ef, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -972066518, guid: c1fc39f1e8e42e24bab6817483b2d0ef, type: 3}
   - m_RefCount: 6
     m_Data: {fileID: 312979052, guid: c1fc39f1e8e42e24bab6817483b2d0ef, type: 3}
   - m_RefCount: 1
@@ -515,7 +515,7 @@ PlatformEffector2D:
   m_UseSideFriction: 1
   m_UseSideBounce: 0
   m_SideArc: 0
---- !u!61 &111507200534022033
+--- !u!61 &8882320136312738212
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -546,10 +546,10 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: -14.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -559,7 +559,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 8, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &7299296025579474824
 GameObject:

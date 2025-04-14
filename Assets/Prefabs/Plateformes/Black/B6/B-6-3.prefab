@@ -111,7 +111,7 @@ GameObject:
   - component: {fileID: 5767093177313698786}
   - component: {fileID: 1413628053675800765}
   - component: {fileID: 3229829175987638917}
-  - component: {fileID: -3337002300546057048}
+  - component: {fileID: 7112181019805547607}
   m_Layer: 12
   m_Name: B-6-3
   m_TagString: Plateform
@@ -150,7 +150,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 1
+      m_TileSpriteIndex: 3
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -231,12 +231,12 @@ Tilemap:
   m_TileSpriteArray:
   - m_RefCount: 0
     m_Data: {fileID: 0}
-  - m_RefCount: 1
-    m_Data: {fileID: -972066518, guid: c1fc39f1e8e42e24bab6817483b2d0ef, type: 3}
-  - m_RefCount: 1
-    m_Data: {fileID: -1217327396, guid: c1fc39f1e8e42e24bab6817483b2d0ef, type: 3}
   - m_RefCount: 0
     m_Data: {fileID: 0}
+  - m_RefCount: 1
+    m_Data: {fileID: -1217327396, guid: c1fc39f1e8e42e24bab6817483b2d0ef, type: 3}
+  - m_RefCount: 1
+    m_Data: {fileID: -972066518, guid: c1fc39f1e8e42e24bab6817483b2d0ef, type: 3}
   - m_RefCount: 5
     m_Data: {fileID: 312979052, guid: c1fc39f1e8e42e24bab6817483b2d0ef, type: 3}
   m_TileMatrixArray:
@@ -412,7 +412,7 @@ PlatformEffector2D:
   m_UseSideFriction: 1
   m_UseSideBounce: 0
   m_SideArc: 0
---- !u!61 &-3337002300546057048
+--- !u!61 &7112181019805547607
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -443,10 +443,10 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 4.5, y: -14.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -456,7 +456,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 7, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &4487395762584803275
 GameObject:

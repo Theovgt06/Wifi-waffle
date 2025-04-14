@@ -237,7 +237,7 @@ GameObject:
   - component: {fileID: -2442022474008250204}
   - component: {fileID: -2666708015538936491}
   - component: {fileID: -2343948445434823838}
-  - component: {fileID: -3388426874103146582}
+  - component: {fileID: 2529083533231416665}
   m_Layer: 12
   m_Name: B-6-2
   m_TagString: Plateform
@@ -538,7 +538,7 @@ PlatformEffector2D:
   m_UseSideFriction: 1
   m_UseSideBounce: 0
   m_SideArc: 0
---- !u!61 &-3388426874103146582
+--- !u!61 &2529083533231416665
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -569,10 +569,10 @@ BoxCollider2D:
     serializedVersion: 2
     m_Bits: 4294967295
   m_IsTrigger: 0
-  m_UsedByEffector: 0
+  m_UsedByEffector: 1
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: -4.5, y: -14.5}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0, y: 0}
@@ -582,7 +582,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 7, y: 1}
   m_EdgeRadius: 0
 --- !u!1 &6405159340093099853
 GameObject:
