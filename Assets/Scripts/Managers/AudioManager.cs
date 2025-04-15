@@ -18,7 +18,9 @@ public class AudioManager : MonoBehaviour
     public AudioClip screenWarp;
     public AudioClip itemCollected;
     public AudioClip buttons;
-    public AudioClip enemyDamaged;
+    public AudioClip frogDamaged;
+    public AudioClip pinkDamaged;
+    public AudioClip voodooDamaged;
     public AudioClip spotted;
 
     private void Start()
