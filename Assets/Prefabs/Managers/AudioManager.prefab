@@ -41,7 +41,7 @@ AudioSource:
   m_GameObject: {fileID: 1001134764756580010}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 0}
+  OutputAudioMixerGroup: {fileID: 24300002, guid: 7741749e3f98c5e44b5fa88f4952ae06, type: 2}
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 1
@@ -270,7 +270,7 @@ GameObject:
   - component: {fileID: 980655872737372632}
   m_Layer: 0
   m_Name: AudioManager
-  m_TagString: Untagged
+  m_TagString: Audio
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -306,8 +306,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1588091510742122481}
   SfxSource: {fileID: 7577207682197880353}
-  backgroundmusic: {fileID: 0}
-  backgroundnoise: {fileID: 0}
+  backgroundmusic: {fileID: 8300000, guid: 5db83353fb3fb3f48a87055cc4acdf97, type: 3}
+  backgroundnoise: {fileID: 8300000, guid: f20e502caa2143a48a0b601e46ff3cef, type: 3}
   death: {fileID: 0}
   walk: {fileID: 8300000, guid: 6acb40d1cfa05eb4491e2a1117767dec, type: 3}
   jump: {fileID: 8300000, guid: cbe9ff56d9a993f40b1a2c728b7e4575, type: 3}
