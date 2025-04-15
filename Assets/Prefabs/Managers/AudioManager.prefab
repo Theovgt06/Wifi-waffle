@@ -313,7 +313,7 @@ MonoBehaviour:
   jump: {fileID: 8300000, guid: cbe9ff56d9a993f40b1a2c728b7e4575, type: 3}
   damageTaken: {fileID: 8300000, guid: 1c25303d87fe3c346855b85e6c92c781, type: 3}
   landing: {fileID: 8300000, guid: 5de171305ca37874a8811caab4fe4719, type: 3}
-  shooting: {fileID: 0}
+  shooting: {fileID: 8300000, guid: 58f5f49868cb95348a032f8dffe3d9c1, type: 3}
   screenWarp: {fileID: 0}
   itemCollected: {fileID: 8300000, guid: b23afd065cf0599428533f4e8b3633b8, type: 3}
   buttons: {fileID: 8300000, guid: 57b2ca863fdfa664b9c24e3de5405488, type: 3}
