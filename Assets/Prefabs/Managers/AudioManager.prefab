@@ -308,7 +308,7 @@ MonoBehaviour:
   SfxSource: {fileID: 7577207682197880353}
   backgroundmusic: {fileID: 8300000, guid: 5db83353fb3fb3f48a87055cc4acdf97, type: 3}
   backgroundnoise: {fileID: 8300000, guid: f20e502caa2143a48a0b601e46ff3cef, type: 3}
-  death: {fileID: 0}
+  death: {fileID: 8300000, guid: 7885d1975e8878d41ab13882fda8091d, type: 3}
   walk: {fileID: 8300000, guid: 6acb40d1cfa05eb4491e2a1117767dec, type: 3}
   jump: {fileID: 8300000, guid: cbe9ff56d9a993f40b1a2c728b7e4575, type: 3}
   damageTaken: {fileID: 8300000, guid: 1c25303d87fe3c346855b85e6c92c781, type: 3}
@@ -316,6 +316,6 @@ MonoBehaviour:
   shooting: {fileID: 0}
   screenWarp: {fileID: 0}
   itemCollected: {fileID: 0}
-  buttons: {fileID: 0}
+  buttons: {fileID: 8300000, guid: 57b2ca863fdfa664b9c24e3de5405488, type: 3}
   enemyDamaged: {fileID: 0}
   spotted: {fileID: 0}
