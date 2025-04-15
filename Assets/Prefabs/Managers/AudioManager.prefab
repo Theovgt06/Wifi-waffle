@@ -317,5 +317,7 @@ MonoBehaviour:
   screenWarp: {fileID: 0}
   itemCollected: {fileID: 8300000, guid: b23afd065cf0599428533f4e8b3633b8, type: 3}
   buttons: {fileID: 8300000, guid: 57b2ca863fdfa664b9c24e3de5405488, type: 3}
-  enemyDamaged: {fileID: 0}
+  frogDamaged: {fileID: 8300000, guid: e0b652f52a6f63646a7f6f5765fdaf67, type: 3}
+  pinkDamaged: {fileID: 0}
+  voodooDamaged: {fileID: 0}
   spotted: {fileID: 8300000, guid: 25a9ec4179cc886418575eda1ec19251, type: 3}
