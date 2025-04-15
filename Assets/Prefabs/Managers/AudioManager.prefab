@@ -306,12 +306,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   musicSource: {fileID: 1588091510742122481}
   SfxSource: {fileID: 7577207682197880353}
-  background: {fileID: 0}
+  backgroundmusic: {fileID: 0}
+  backgroundnoise: {fileID: 0}
   death: {fileID: 0}
-  walk: {fileID: 0}
-  jump: {fileID: 0}
-  damageTaken: {fileID: 0}
-  landing: {fileID: 0}
+  walk: {fileID: 8300000, guid: 6acb40d1cfa05eb4491e2a1117767dec, type: 3}
+  jump: {fileID: 8300000, guid: cbe9ff56d9a993f40b1a2c728b7e4575, type: 3}
+  damageTaken: {fileID: 8300000, guid: 1c25303d87fe3c346855b85e6c92c781, type: 3}
+  landing: {fileID: 8300000, guid: 5de171305ca37874a8811caab4fe4719, type: 3}
   shooting: {fileID: 0}
   screenWarp: {fileID: 0}
   itemCollected: {fileID: 0}
