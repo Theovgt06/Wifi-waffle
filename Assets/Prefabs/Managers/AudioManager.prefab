@@ -314,7 +314,7 @@ MonoBehaviour:
   damageTaken: {fileID: 8300000, guid: 1c25303d87fe3c346855b85e6c92c781, type: 3}
   landing: {fileID: 8300000, guid: 5de171305ca37874a8811caab4fe4719, type: 3}
   shooting: {fileID: 8300000, guid: 58f5f49868cb95348a032f8dffe3d9c1, type: 3}
-  screenWarp: {fileID: 0}
+  screenWarp: {fileID: 8300000, guid: 759d2338c55895c458ff1251b40d905f, type: 3}
   itemCollected: {fileID: 8300000, guid: b23afd065cf0599428533f4e8b3633b8, type: 3}
   buttons: {fileID: 8300000, guid: 57b2ca863fdfa664b9c24e3de5405488, type: 3}
   frogDamaged: {fileID: 8300000, guid: e0b652f52a6f63646a7f6f5765fdaf67, type: 3}
