@@ -7,6 +7,7 @@ public class PlateformingDisable : MonoBehaviour
     public PlateformSpawning plateformSpawning;
     [SerializeField] UIUpdate uIUpdate;
     [SerializeField] private int passedPlatformScoreAdd;
+    [SerializeField] private GameObject player;
    
     void Start()
     {
@@ -22,7 +23,7 @@ public class PlateformingDisable : MonoBehaviour
     void OnCollisionEnter2D(Collision2D other)
     {
         if(other.gameObject.CompareTag("Plateform") && other.gameObject.activeInHierarchy){
-            Debug.Log("Dégager la platform" + other.gameObject.name);
+            player.transform.parent = null;
             plateformPooling.ReturnToPool(other.gameObject, plateformSpawning.currentBiome);
             uIUpdate.ChangeScore(passedPlatformScoreAdd);
         }
