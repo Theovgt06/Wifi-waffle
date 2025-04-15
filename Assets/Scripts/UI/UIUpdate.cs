@@ -10,11 +10,14 @@ public class UIUpdate : MonoBehaviour
     private int previousScore = -1;
     private int previousAmmoNumber = -1;
     public int previousHealthNumber = 7;
+    private int actualScore = 0;
+    private int bestScore;
     [SerializeField] public GameObject heartPrefab;
     [SerializeField] private GameObject score;
     [SerializeField] private GameObject ammoNumber;
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject healthBarGrid;
+    [SerializeField] private int maxScore;
 
     void Start()
     {
@@ -23,17 +26,16 @@ public class UIUpdate : MonoBehaviour
         ammoAmountText = ammoNumber.GetComponent<TextMeshProUGUI>();
         for(int i = 0; i<7;i++)
         {
-            GameObject heart = Instantiate(heartPrefab);
-            heart.transform.SetParent(healthBarGrid.transform);
+            GameObject heart = Instantiate(heartPrefab, healthBarGrid.transform, false);
         }
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (dataChanger.actualScore != previousScore)
+        if (actualScore != previousScore)
         {   
-            previousScore = dataChanger.actualScore;
+            previousScore = actualScore;
             scoreText.text = previousScore.ToString();
         }
 
@@ -62,5 +64,18 @@ public class UIUpdate : MonoBehaviour
             }
             previousHealthNumber = dataChanger.currentHealth;
         }
+    }
+
+    public void ChangeScore(int amount)
+    {
+        if(actualScore+amount >= maxScore){
+            actualScore = maxScore;
+            return;
+        }
+        actualScore+= amount;
+    }
+    public void SetBestScore()
+    {
+        bestScore = actualScore;
     }
 }

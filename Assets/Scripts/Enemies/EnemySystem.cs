@@ -40,6 +40,7 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         dataChanger = GetComponent<DataChanger>();
+        dataChanger.currentHealth = 1;
         if(enemyType == EnemyType.Vodoo)
         {
             groundCheck = gameObject.transform.GetChild(0).transform; 
@@ -48,6 +49,7 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
     }
     void FixedUpdate() 
     {
+        
         switch (enemyType) 
         {
             case EnemyType.Frog:

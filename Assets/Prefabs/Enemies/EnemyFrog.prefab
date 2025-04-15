@@ -144,7 +144,11 @@ MonoBehaviour:
   shootDelay: 1
   vodooSpeed: 0
   maxSpeed: 0
+  vodooChaseSpeed: 0
+  maxChaseSpeed: 0
+  isFacingRight: 1
   enemyType: 0
+  isGrounded: 0
   bulletPooling: {fileID: 37102170191382173}
   currentVodooState: 2
   groundLayer:
@@ -203,7 +207,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxAmmo: 7
   currentAmmo: 0
-  startingAmmo: 5
-  maxHealth: 0
+  startingAmmo: 0
+  maxHealth: 1
   currentHealth: 0
-  startingHealth: 0
+  startingHealth: 1
+  getCollectableScoreAdd: 0
+  killEnemyScoreAdd: 0
+  uIUpdate: {fileID: 0}

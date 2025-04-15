@@ -76,6 +76,7 @@ public class PlateformSpawning : MonoBehaviour
             plateformeEasy.transform.position = spawningArea.transform.position;
             PlateformBehaviour plateformBehaviour = plateformeEasy.GetComponent<PlateformBehaviour>();
             plateformeEasy.SetActive(true);
+            Debug.Log("Spawner la platform" + plateformeEasy.name);
             plateformBehaviour.currentSpeed = easySpeed;
             plateformBehaviour.currentBiome = Biome.Easy;
 

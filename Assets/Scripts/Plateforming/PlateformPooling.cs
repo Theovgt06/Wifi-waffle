@@ -248,18 +248,22 @@ public class PlateformPooling : MonoBehaviour
         switch (currentBiome)
         {
             case Biome.Easy:
-                inactiveEasyIndices.Add(index);
+                if (!inactiveEasyIndices.Contains(index))
+                    inactiveEasyIndices.Add(index);
                 break;
             case Biome.Normal:
-                inactiveNormalIndices.Add(index);
+                if (!inactiveNormalIndices.Contains(index))
+                    inactiveNormalIndices.Add(index);
                 break;
             case Biome.Hard:
-                inactiveHardIndices.Add(index);
+                if (!inactiveHardIndices.Contains(index))
+                    inactiveHardIndices.Add(index);
                 break;
             case Biome.Expert:
-                inactiveExpertIndices.Add(index);
+                if (!inactiveExpertIndices.Contains(index))
+                    inactiveExpertIndices.Add(index);
                 break;
-        }   
+        }    
     }
     
     public void InstantiateEverything(GameObject platform)

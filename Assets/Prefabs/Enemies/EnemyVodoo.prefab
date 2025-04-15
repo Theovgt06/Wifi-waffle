@@ -233,7 +233,10 @@ MonoBehaviour:
   startingAmmo: 0
   maxHealth: 1
   currentHealth: 0
-  startingHealth: 0
+  startingHealth: 1
+  getCollectableScoreAdd: 0
+  killEnemyScoreAdd: 0
+  uIUpdate: {fileID: 0}
 --- !u!95 &5224126229169729809
 Animator:
   serializedVersion: 7

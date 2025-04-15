@@ -8,12 +8,9 @@ public class DataChanger : MonoBehaviour
     [SerializeField] private int maxHealth;
     [SerializeField] public int currentHealth;
     [SerializeField] private int startingHealth;
-    [SerializeField] private int startingScore;
-    [SerializeField] private int maxScore;
-    [SerializeField] public int actualScore;
-    [SerializeField] public int bestScore;
     [SerializeField] private int getCollectableScoreAdd;
     [SerializeField] private int killEnemyScoreAdd;
+    [SerializeField] private UIUpdate uIUpdate;
     private Animator anim;
 
 
@@ -22,7 +19,7 @@ public class DataChanger : MonoBehaviour
         anim = GetComponent<Animator>();
         currentHealth = startingHealth;
         currentAmmo = startingAmmo; 
-        actualScore = startingScore;
+        uIUpdate = GameObject.FindGameObjectWithTag("Managers").GetComponent<UIUpdate>();
     }
 
     public void ChangeAmmo(int amount)
@@ -30,7 +27,7 @@ public class DataChanger : MonoBehaviour
         currentAmmo += amount;
         if(amount>0)
         {
-            ChangeScore(getCollectableScoreAdd);
+            uIUpdate.ChangeScore(getCollectableScoreAdd);
         }
         if (currentAmmo > maxAmmo)
         {
@@ -45,40 +42,32 @@ public class DataChanger : MonoBehaviour
     {
         currentHealth += amount;
         if(amount>0){
-            ChangeScore(getCollectableScoreAdd);
+            uIUpdate.ChangeScore(getCollectableScoreAdd);
         }
         if (currentHealth > maxHealth)
         {
             currentHealth = maxHealth;
         }
-        else if (currentHealth <= 0)
+        if (currentHealth <= 0)
         {
-            currentHealth = 0;
             anim.SetTrigger("Die");
         }
     }
 
 
-    public void ChangeScore(int amount)
-    {
-        if(actualScore+amount >= maxScore){
-            actualScore = maxScore;
-            return;
-        }
-        actualScore+= amount;
-    }
+    
 
     public void PlayerDied()
     {
         LevelManager.Instance.GameOver();
         GameObject.Find("Player").SetActive(false);
-        bestScore = actualScore;
+        uIUpdate.SetBestScore();
     } 
     
     public void EnemyDied()
     {
         gameObject.SetActive(false);
-        ChangeScore(killEnemyScoreAdd);
+        uIUpdate.ChangeScore(killEnemyScoreAdd);
     }
 
 }
