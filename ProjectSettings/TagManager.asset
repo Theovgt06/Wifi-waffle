@@ -18,6 +18,8 @@ TagManager:
   - Ammo
   - Heal
   - Score
+  - Audio
+  - PlayerDeath
   layers:
   - Default
   - TransparentFX
@@ -33,7 +35,7 @@ TagManager:
   - Bottom Layer
   - Ground
   - Collectible
-  - 
+  - DeadZone
   - 
   - 
   - 

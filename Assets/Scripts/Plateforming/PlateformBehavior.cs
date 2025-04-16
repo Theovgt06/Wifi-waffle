@@ -9,10 +9,7 @@ public class PlateformBehaviour : MonoBehaviour
     public float currentSpeed;
     private PlatformEffector2D platformEffector;
     public Biome currentBiome;
-    [SerializeField] private  float enemySpawnChances;
-    [SerializeField] private  float collectableSpawnChances;
 
-    
     [Header("Spawn Anchors")]
     [SerializeField]
     public List<GameObject> spawnAnchorToPool = new List<GameObject>();
@@ -24,37 +21,39 @@ public class PlateformBehaviour : MonoBehaviour
     [SerializeField]
     public List<GameObject> collectableList = new List<GameObject>();
 
+    
+    
     public List<GameObject> spawnAnchorPooled = new List<GameObject>();
-
-    private int maxLevel;
-    private int numberOfPoolInstantiated;
+    private Evolution evolution;
 
 
     void Start()
     {
+        evolution = GameObject.FindGameObjectWithTag("Managers").GetComponent<Evolution>();
+        currentSpeed = evolution.currentSpeed;
         platformEffector = GetComponent<PlatformEffector2D>();
         if (platformEffector != null)
         {
             platformEffector.useOneWay = true;
         }
-        numberOfPoolInstantiated = GameObject.FindGameObjectWithTag("Managers").GetComponent<Evolution>().spawnedPlatform;
-        maxLevel = GameObject.FindGameObjectWithTag("Managers").GetComponent<Evolution>().maxLevel;
-        if(WhatSpawn(maxLevel,numberOfPoolInstantiated) == "enemy" && numberOfPoolInstantiated%2==0)
+        if(WhatSpawn() == "Enemy")
         {
             GameObject enemies  = spawnAnchorToPool[GetRandomAnchor(spawnAnchorToPool.Count)].transform.GetChild(0).gameObject;
             enemies.transform.GetChild(GetRandomEnemies()).gameObject.SetActive(true);
-        }else if(WhatSpawn(maxLevel,numberOfPoolInstantiated) == "collectable" &&  numberOfPoolInstantiated%2==0)
+        }else if(WhatSpawn() == "Collectable")
         {
             GameObject collectables = spawnAnchorToPool[GetRandomAnchor(spawnAnchorToPool.Count)].transform.GetChild(1).gameObject;
             collectables.transform.GetChild(GetRandomCollectable()).gameObject.SetActive(true);
+        }else if(WhatSpawn() == "Nothing") 
+        {
+            Debug.Log("rien n'a spawn");
         }
     }
 
     // Update is called once per frame
     void Update()
-    {
+    { 
         transform.position -= Vector3.up * currentSpeed * Time.deltaTime;
-       
     }
 
     void OnEnable()
@@ -63,54 +62,87 @@ public class PlateformBehaviour : MonoBehaviour
     }
     private int GetRandomAnchor(int anchorSize)
     {
-        return Random.Range(0, anchorSize-1); 
+        return Random.Range(0, anchorSize); 
 
     }
 
     private int GetRandomEnemies()
     {
-        return Random.Range(0,2);
+        return Random.Range(0,3);
     }
 
     private int GetRandomCollectable()
     {
-        return Random.Range(0,1);
+        return Random.Range(0,2);
     }
     
 
-    private string WhatSpawn(int highestLevel, int currentPlatformCount)
+    private string WhatSpawn()
     {
-        
-        // Valeurs initiales (difficultyIndex = 0)
-        float baseEnemyProb = 20f;
-        float baseCollectableProb = 20f;
-        
-        // Valeurs maximales (difficultyIndex = 800)
-        float maxEnemyProb = 95f;
-        float minCollectableProb = 5f;
-        
-        // Calcul du facteur de progression (entre 0 et 1)
-        float progressFactor = Mathf.Min(currentPlatformCount / highestLevel, 1f);
-        
-        // Calcul des probabilités actuelles
-        float enemyProbability = baseEnemyProb + (maxEnemyProb - baseEnemyProb) * progressFactor;
-        float collectableProbability = baseCollectableProb - (baseCollectableProb - minCollectableProb) * progressFactor;
-        float nothingProbability = 100f - enemyProbability - collectableProbability;
-        
-        // Génération aléatoire
-        float randomChance = Random.Range(0, 100);
-        
-        if (randomChance < enemyProbability)
+        switch (currentBiome)
         {
-            return "enemy";
+            case Biome.Easy:
+                return EasyChances();
+            case Biome.Normal:
+                return NormalChances();
+            case Biome.Hard:
+                return HardChances();
+            default:
+                return "none";
         }
-        else if (randomChance < enemyProbability + collectableProbability)
-        {
-            return "collectable";
-        }
-        else
-        {
-            return "none";
-        }
-    } 
+    }
+
+
+    private string EasyChances()
+    {
+        return easyTable[Random.Range(0, easyTable.Count)];
+    }   
+
+    private string NormalChances()
+    {
+        return normalTable[Random.Range(0, normalTable.Count)];
+    }
+
+    private string HardChances()
+    {
+        return hardTable[Random.Range(0, hardTable.Count)];
+    }
+
+
+
+
+
+    // Weighted Lists
+    private List<string> easyTable = new List<string>() 
+    {
+        // Easy (40% / 10% / 50%)
+        "Collectable", "Collectable", "Collectable", "Collectable",
+        "Collectable", "Collectable", "Collectable", "Collectable",
+
+        "Enemy", "Enemy",
+
+        "Nothing", "Nothing", "Nothing", "Nothing", "Nothing",
+        "Nothing", "Nothing", "Nothing", "Nothing", "Nothing"
+    };
+    private List<string> normalTable = new List<string>()
+    {
+        //  Normal (25% / 30% / 45%)
+        "Collectable", "Collectable", "Collectable", "Collectable", "Collectable",
+
+        "Enemy", "Enemy", "Enemy", "Enemy", "Enemy", "Enemy",
+
+        "Nothing", "Nothing", "Nothing", "Nothing", "Nothing",
+        "Nothing", "Nothing", "Nothing", "Nothing"
+    };
+    private List<string> hardTable = new List<string>()
+    {
+        // Hard (15% / 50% / 35%)
+        "Collectable", "Collectable", "Collectable",
+
+        "Enemy", "Enemy", "Enemy", "Enemy", "Enemy",
+        "Enemy", "Enemy", "Enemy", "Enemy", "Enemy",
+
+        "Nothing", "Nothing", "Nothing", "Nothing", "Nothing",
+        "Nothing", "Nothing"
+    };
 }  

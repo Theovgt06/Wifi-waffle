@@ -28,11 +28,15 @@ public class AudioManager : MonoBehaviour
         PlayMusic();
     }
 
+    public void ToggleMusic()
+    {
+        musicSource.mute = !musicSource.mute ;
+    }
     public void PlayMusic()
     {
         if (musicSource != null && backgroundmusic != null)
         {
-            Debug.Log("PlayMusic() appelé");
+            Debug.Log("PlayMusic() appelï¿½");
             musicSource.clip = backgroundmusic;
          
             musicSource.loop = true; // Set the music to loop
@@ -41,7 +45,7 @@ public class AudioManager : MonoBehaviour
         }
         else
         {
-            Debug.LogWarning("MusicSource ou Backgroundmusic n'est pas assigné !");
+            Debug.LogWarning("MusicSource ou Backgroundmusic n'est pas assignï¿½ !");
         }
     }
 
