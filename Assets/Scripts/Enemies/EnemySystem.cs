@@ -43,7 +43,8 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
         dataChanger.currentHealth = 1;
         if(enemyType == EnemyType.Vodoo)
         {
-            groundCheck = gameObject.transform.GetChild(0).transform; 
+            groundCheck = gameObject.transform.GetChild(0).transform;
+            isFacingRight = true;
         }
 
     }

@@ -21,4 +21,10 @@ public class SpawningPlatformDespawn : MonoBehaviour
             gameObject.SetActive(false);
         }
     }
+
+    void OnTriggerExit2D() 
+    {
+        player.transform.parent = null;
+        gameObject.SetActive(false);
+    }
 }

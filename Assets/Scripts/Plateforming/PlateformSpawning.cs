@@ -2,33 +2,36 @@ using System;
 using UnityEngine;
 
 
-public enum Biome {Stop, Easy, Normal, Hard, Expert};
+public enum Biome {Stop, Easy, Normal, Hard};
 
 public class PlateformSpawning : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    [Header("Speed Plateforme Parametres ")]
-    [Tooltip("Ratio de *10?")]
-    [SerializeField]   
-    private float easySpeed;
-    private float normalSpeed;
-    private float hardSpeed;
-    private float expertSpeed;
-
-    
-    
+    // Start is called once before the first execution of Update after the MonoBehaviour is created    
     private GameObject spawningArea;
-    public Biome currentBiome = Biome.Easy;
-
-    [SerializeField] 
-    private float spawnRate =  2f;
-
+    public Biome currentBiome;
     public Evolution evolutionScript;
+    public float spawnRate; 
+    private float previousSpawnRate;
     void Start()
     {
         spawningArea = GameObject.FindGameObjectWithTag("Spawning Area");
         evolutionScript = GameObject.FindGameObjectWithTag("Managers").GetComponent<Evolution>();
+        currentBiome = evolutionScript.currentBiome;
+        spawnRate = evolutionScript.spawnRate;
+        previousSpawnRate = spawnRate;
+    }
 
+    void Update()
+    {
+        currentBiome = evolutionScript.currentBiome;
+        spawnRate = evolutionScript.spawnRate;
+        // Si le spawnRate a changé, on relance le InvokeRepeating
+        if (spawnRate != previousSpawnRate)
+        {
+            CancelInvoke(nameof(Spawn));
+            InvokeRepeating(nameof(Spawn), spawnRate, spawnRate);
+            previousSpawnRate = spawnRate;
+        }
     }
     private void OnEnable()
     {
@@ -53,11 +56,6 @@ public class PlateformSpawning : MonoBehaviour
             case Biome.Hard:
                 HardSpawning();
                 break;
-            case Biome.Expert:
-                ExpertSpawning();
-                break;
-            
-
         }
     }
 
@@ -76,8 +74,7 @@ public class PlateformSpawning : MonoBehaviour
             plateformeEasy.transform.position = spawningArea.transform.position;
             PlateformBehaviour plateformBehaviour = plateformeEasy.GetComponent<PlateformBehaviour>();
             plateformeEasy.SetActive(true);
-            Debug.Log("Spawner la platform" + plateformeEasy.name);
-            plateformBehaviour.currentSpeed = easySpeed;
+            plateformBehaviour.currentSpeed = evolutionScript.currentSpeed;
             plateformBehaviour.currentBiome = Biome.Easy;
 
         }
@@ -86,16 +83,30 @@ public class PlateformSpawning : MonoBehaviour
     
     void NormalSpawning()
     {
+        GameObject plateformeNormal = PlateformPooling.SharedInstance.GetPooledPlateformeNormal(gameObject.transform.position);
+        if(plateformeNormal!=null)
+        {
+            plateformeNormal.transform.position = spawningArea.transform.position;
+            PlateformBehaviour plateformBehaviour = plateformeNormal.GetComponent<PlateformBehaviour>();
+            plateformeNormal.SetActive(true);
+            plateformBehaviour.currentSpeed = evolutionScript.currentSpeed;
+            plateformBehaviour.currentBiome = Biome.Normal;
 
+        }
     }
 
     void HardSpawning()
     {
+        GameObject plateformeHard = PlateformPooling.SharedInstance.GetPooledPlateformeHard(gameObject.transform.position);
+        if(plateformeHard!=null)
+        {
+            plateformeHard.transform.position = spawningArea.transform.position;
+            PlateformBehaviour plateformBehaviour = plateformeHard.GetComponent<PlateformBehaviour>();
+            plateformeHard.SetActive(true);
+            plateformBehaviour.currentSpeed = evolutionScript.currentSpeed;
+            plateformBehaviour.currentBiome = Biome.Hard;
 
+        }
     }
-    
-    void ExpertSpawning()
-    {
 
-    }
 }
