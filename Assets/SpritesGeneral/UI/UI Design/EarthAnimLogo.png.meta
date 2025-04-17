@@ -1,0 +1,1437 @@
+fileFormatVersion: 2
+guid: 68c1c48fb567ad14eb59bc9421869265
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4605042822875149220
+    second: EarthAnimLogo_0
+  - first:
+      213: -4798506407656131872
+    second: EarthAnimLogo_1
+  - first:
+      213: -2671324261260323414
+    second: EarthAnimLogo_2
+  - first:
+      213: -313029900787204163
+    second: EarthAnimLogo_3
+  - first:
+      213: 4603362036093702620
+    second: EarthAnimLogo_4
+  - first:
+      213: 2391681423429456352
+    second: EarthAnimLogo_5
+  - first:
+      213: -2289262778474190577
+    second: EarthAnimLogo_6
+  - first:
+      213: -262973823100870950
+    second: EarthAnimLogo_7
+  - first:
+      213: -1273644238942596772
+    second: EarthAnimLogo_8
+  - first:
+      213: -2509350302107454194
+    second: EarthAnimLogo_9
+  - first:
+      213: 3255507266681835483
+    second: EarthAnimLogo_10
+  - first:
+      213: -7003306139014898196
+    second: EarthAnimLogo_11
+  - first:
+      213: -2512579622265570761
+    second: EarthAnimLogo_12
+  - first:
+      213: -2480182001130764648
+    second: EarthAnimLogo_13
+  - first:
+      213: -7569968527619286205
+    second: EarthAnimLogo_14
+  - first:
+      213: -1593532970880913759
+    second: EarthAnimLogo_15
+  - first:
+      213: -8298673433707525345
+    second: EarthAnimLogo_16
+  - first:
+      213: 2572574473598128426
+    second: EarthAnimLogo_17
+  - first:
+      213: -2190319663624291046
+    second: EarthAnimLogo_18
+  - first:
+      213: 4615823093124258356
+    second: EarthAnimLogo_19
+  - first:
+      213: 5023393371054006257
+    second: EarthAnimLogo_20
+  - first:
+      213: 2641918907112999873
+    second: EarthAnimLogo_21
+  - first:
+      213: 2231802088449204625
+    second: EarthAnimLogo_22
+  - first:
+      213: 5290696702875798371
+    second: EarthAnimLogo_23
+  - first:
+      213: -67915424899081217
+    second: EarthAnimLogo_24
+  - first:
+      213: 6652159966005359785
+    second: EarthAnimLogo_25
+  - first:
+      213: -32392025569376909
+    second: EarthAnimLogo_26
+  - first:
+      213: 7592983344422324138
+    second: EarthAnimLogo_27
+  - first:
+      213: -7304069712042652390
+    second: EarthAnimLogo_28
+  - first:
+      213: 9170957592683342011
+    second: EarthAnimLogo_29
+  - first:
+      213: -2345900309095890953
+    second: EarthAnimLogo_30
+  - first:
+      213: -4441417809322130658
+    second: EarthAnimLogo_31
+  - first:
+      213: 4828436548580010089
+    second: EarthAnimLogo_32
+  - first:
+      213: 5768934412119159999
+    second: EarthAnimLogo_33
+  - first:
+      213: -92216353499373118
+    second: EarthAnimLogo_34
+  - first:
+      213: -4661589011238791843
+    second: EarthAnimLogo_35
+  - first:
+      213: 3522480964231046396
+    second: EarthAnimLogo_36
+  - first:
+      213: 8422378156867484798
+    second: EarthAnimLogo_37
+  - first:
+      213: -6829477155101828774
+    second: EarthAnimLogo_38
+  - first:
+      213: -1397891803174957035
+    second: EarthAnimLogo_39
+  - first:
+      213: -1823481185447299791
+    second: EarthAnimLogo_40
+  - first:
+      213: -3512253606690588547
+    second: EarthAnimLogo_41
+  - first:
+      213: -1486519909231343281
+    second: EarthAnimLogo_42
+  - first:
+      213: -5318417979271363631
+    second: EarthAnimLogo_43
+  - first:
+      213: -5238097041142115957
+    second: EarthAnimLogo_44
+  - first:
+      213: 6019347417018919427
+    second: EarthAnimLogo_45
+  - first:
+      213: -7838548512070261410
+    second: EarthAnimLogo_46
+  - first:
+      213: -9171048728584432215
+    second: EarthAnimLogo_47
+  - first:
+      213: 7465005149272646968
+    second: EarthAnimLogo_48
+  - first:
+      213: 2112100177450887559
+    second: EarthAnimLogo_49
+  - first:
+      213: -7060835438602741349
+    second: EarthAnimLogo_50
+  - first:
+      213: 5393839716618392358
+    second: EarthAnimLogo_51
+  - first:
+      213: -1250358700620175927
+    second: EarthAnimLogo_52
+  - first:
+      213: -2304850633169305200
+    second: EarthAnimLogo_53
+  - first:
+      213: -6854455970782437247
+    second: EarthAnimLogo_54
+  - first:
+      213: -8438154275761939334
+    second: EarthAnimLogo_55
+  - first:
+      213: 780031542555895182
+    second: EarthAnimLogo_56
+  - first:
+      213: -7093399813671127054
+    second: EarthAnimLogo_57
+  - first:
+      213: -2887314307925746043
+    second: EarthAnimLogo_58
+  - first:
+      213: 161600814482383407
+    second: EarthAnimLogo_59
+  - first:
+      213: -8609177020537396414
+    second: EarthAnimLogo_60
+  - first:
+      213: 3805955880026891855
+    second: EarthAnimLogo_61
+  - first:
+      213: -4021371606908669643
+    second: EarthAnimLogo_62
+  - first:
+      213: 898988495205785980
+    second: EarthAnimLogo_63
+  - first:
+      213: -1482174735564509754
+    second: EarthAnimLogo_64
+  - first:
+      213: 7664131062327559251
+    second: EarthAnimLogo_65
+  - first:
+      213: -8480409056648469644
+    second: EarthAnimLogo_66
+  - first:
+      213: -2057655601365019277
+    second: EarthAnimLogo_67
+  - first:
+      213: 468989117337067594
+    second: EarthAnimLogo_68
+  - first:
+      213: 7723720782330162805
+    second: EarthAnimLogo_69
+  - first:
+      213: -4853564716488392902
+    second: EarthAnimLogo_70
+  - first:
+      213: 5199894144680224414
+    second: EarthAnimLogo_71
+  - first:
+      213: -7098329172508786167
+    second: EarthAnimLogo_72
+  - first:
+      213: 2354201711108310275
+    second: EarthAnimLogo_73
+  - first:
+      213: -2801377464797985341
+    second: EarthAnimLogo_74
+  - first:
+      213: -152383680108103872
+    second: EarthAnimLogo_75
+  - first:
+      213: -6673235913611659809
+    second: EarthAnimLogo_76
+  - first:
+      213: -2437821389971297459
+    second: EarthAnimLogo_77
+  - first:
+      213: 4693297501584038807
+    second: EarthAnimLogo_78
+  - first:
+      213: -2574648974746572640
+    second: EarthAnimLogo_79
+  - first:
+      213: -8506074784604834697
+    second: EarthAnimLogo_80
+  - first:
+      213: -1559224201314717659
+    second: EarthAnimLogo_81
+  - first:
+      213: -7319392962530705678
+    second: EarthAnimLogo_82
+  - first:
+      213: -1880064704269060751
+    second: EarthAnimLogo_83
+  - first:
+      213: 5839257046240744630
+    second: EarthAnimLogo_84
+  - first:
+      213: -71562054288318546
+    second: EarthAnimLogo_85
+  - first:
+      213: 7432294979127659308
+    second: EarthAnimLogo_86
+  - first:
+      213: 7202335206194198667
+    second: EarthAnimLogo_87
+  - first:
+      213: 1130199857472694680
+    second: EarthAnimLogo_88
+  - first:
+      213: -5427637447138646953
+    second: EarthAnimLogo_89
+  - first:
+      213: -1037211777789499549
+    second: EarthAnimLogo_90
+  - first:
+      213: 4726506813206044642
+    second: EarthAnimLogo_91
+  - first:
+      213: 3522701230495274256
+    second: EarthAnimLogo_92
+  - first:
+      213: -359837244627074810
+    second: EarthAnimLogo_93
+  - first:
+      213: 1790260042075469667
+    second: EarthAnimLogo_94
+  - first:
+      213: 5506879221706565280
+    second: EarthAnimLogo_95
+  - first:
+      213: 5111203510503085314
+    second: EarthAnimLogo_96
+  - first:
+      213: 6561552144715585996
+    second: EarthAnimLogo_97
+  - first:
+      213: -7106498390545291834
+    second: EarthAnimLogo_98
+  - first:
+      213: -1938323324183128878
+    second: EarthAnimLogo_99
+  - first:
+      213: -2509222699144399786
+    second: EarthAnimLogo_100
+  - first:
+      213: 528526938626534929
+    second: EarthAnimLogo_101
+  - first:
+      213: -7513730754234449479
+    second: EarthAnimLogo_102
+  - first:
+      213: 1310015872188204845
+    second: EarthAnimLogo_103
+  - first:
+      213: 5893289981035958096
+    second: EarthAnimLogo_104
+  - first:
+      213: 8917459115087859895
+    second: EarthAnimLogo_105
+  - first:
+      213: -873047678780234354
+    second: EarthAnimLogo_106
+  - first:
+      213: 6214102780611508118
+    second: EarthAnimLogo_107
+  - first:
+      213: -6476631667754637640
+    second: EarthAnimLogo_108
+  - first:
+      213: -1342238156309892477
+    second: EarthAnimLogo_109
+  - first:
+      213: -4275319306435071962
+    second: EarthAnimLogo_110
+  - first:
+      213: -4768263006463795789
+    second: EarthAnimLogo_111
+  - first:
+      213: 1015320501317473657
+    second: EarthAnimLogo_112
+  - first:
+      213: -8431757249670729282
+    second: EarthAnimLogo_113
+  - first:
+      213: 6053364752532708105
+    second: EarthAnimLogo_114
+  - first:
+      213: -8656787574883713139
+    second: EarthAnimLogo_115
+  - first:
+      213: -1553145060346446726
+    second: EarthAnimLogo_116
+  - first:
+      213: -3555607816624416199
+    second: EarthAnimLogo_117
+  - first:
+      213: 6497575708097199413
+    second: EarthAnimLogo_118
+  - first:
+      213: -4841866245152632503
+    second: EarthAnimLogo_119
+  - first:
+      213: 508928226147273762
+    second: EarthAnimLogo_120
+  - first:
+      213: -6641031374130855567
+    second: EarthAnimLogo_121
+  - first:
+      213: -2929234112160700908
+    second: EarthAnimLogo_122
+  - first:
+      213: -861932436673474100
+    second: EarthAnimLogo_123
+  - first:
+      213: 8880214635593369895
+    second: EarthAnimLogo_124
+  - first:
+      213: -8027580087076533322
+    second: EarthAnimLogo_125
+  - first:
+      213: -3234969536948669433
+    second: EarthAnimLogo_126
+  - first:
+      213: -4695189634454242644
+    second: EarthAnimLogo_127
+  - first:
+      213: 2594588491747864511
+    second: EarthAnimLogo_128
+  - first:
+      213: 8896743050177252593
+    second: EarthAnimLogo_129
+  - first:
+      213: 7732518519581709084
+    second: EarthAnimLogo_130
+  - first:
+      213: 1265276370661224504
+    second: EarthAnimLogo_131
+  - first:
+      213: -771193562653610238
+    second: EarthAnimLogo_132
+  - first:
+      213: -4664363849426231444
+    second: EarthAnimLogo_133
+  - first:
+      213: -892217202838663675
+    second: EarthAnimLogo_134
+  - first:
+      213: 3565293518724201587
+    second: EarthAnimLogo_135
+  - first:
+      213: 7228130653371308772
+    second: EarthAnimLogo_136
+  - first:
+      213: 8756797072118233503
+    second: EarthAnimLogo_137
+  - first:
+      213: -5746769514804868480
+    second: EarthAnimLogo_138
+  - first:
+      213: -6254975782137005306
+    second: EarthAnimLogo_139
+  - first:
+      213: 2634110229589637000
+    second: EarthAnimLogo_140
+  - first:
+      213: -2862169965701377015
+    second: EarthAnimLogo_141
+  - first:
+      213: -8242073883876679647
+    second: EarthAnimLogo_142
+  - first:
+      213: -7264613348362031437
+    second: EarthAnimLogo_143
+  - first:
+      213: 2860193552870056243
+    second: EarthAnimLogo_144
+  - first:
+      213: -871794964964972344
+    second: EarthAnimLogo_145
+  - first:
+      213: -3042729926191683998
+    second: EarthAnimLogo_146
+  - first:
+      213: -2866386652032214839
+    second: EarthAnimLogo_147
+  - first:
+      213: 5456880028660013095
+    second: EarthAnimLogo_148
+  - first:
+      213: 3585082487429545205
+    second: EarthAnimLogo_149
+  - first:
+      213: 235431658280390729
+    second: EarthAnimLogo_150
+  - first:
+      213: -1467712213859274265
+    second: EarthAnimLogo_151
+  - first:
+      213: -3532773420198722973
+    second: EarthAnimLogo_152
+  - first:
+      213: -235097148342239878
+    second: EarthAnimLogo_153
+  - first:
+      213: 2371343814469704940
+    second: EarthAnimLogo_154
+  - first:
+      213: 4702868233673940966
+    second: EarthAnimLogo_155
+  - first:
+      213: -316661848845401265
+    second: EarthAnimLogo_156
+  - first:
+      213: -188949282325729111
+    second: EarthAnimLogo_157
+  - first:
+      213: -7529549854348465763
+    second: EarthAnimLogo_158
+  - first:
+      213: -7153396683789090769
+    second: EarthAnimLogo_159
+  - first:
+      213: 1207550329247987498
+    second: EarthAnimLogo_160
+  - first:
+      213: -8968112614889411532
+    second: EarthAnimLogo_161
+  - first:
+      213: -3733920249941326454
+    second: EarthAnimLogo_162
+  - first:
+      213: 7181660813388689068
+    second: EarthAnimLogo_163
+  - first:
+      213: -5077021461407608542
+    second: EarthAnimLogo_164
+  - first:
+      213: -6225545798807768571
+    second: EarthAnimLogo_165
+  - first:
+      213: 1201326635426320174
+    second: EarthAnimLogo_166
+  - first:
+      213: 4871701674280348717
+    second: EarthAnimLogo_167
+  - first:
+      213: -3669667710338078035
+    second: EarthAnimLogo_168
+  - first:
+      213: 5026513497158055065
+    second: EarthAnimLogo_169
+  - first:
+      213: -9016394864775089659
+    second: EarthAnimLogo_170
+  - first:
+      213: -2245274376711388418
+    second: EarthAnimLogo_171
+  - first:
+      213: 7364041407858527801
+    second: EarthAnimLogo_172
+  - first:
+      213: 1888356077177182924
+    second: EarthAnimLogo_173
+  - first:
+      213: -915760399136678905
+    second: EarthAnimLogo_174
+  - first:
+      213: 6887038254360437233
+    second: EarthAnimLogo_175
+  - first:
+      213: -7486788134119419856
+    second: EarthAnimLogo_176
+  - first:
+      213: -3590445047456446525
+    second: EarthAnimLogo_177
+  - first:
+      213: -8175467170520159138
+    second: EarthAnimLogo_178
+  - first:
+      213: 2730717255439046516
+    second: EarthAnimLogo_179
+  - first:
+      213: 344871327740921089
+    second: EarthAnimLogo_180
+  - first:
+      213: -7004197280164377912
+    second: EarthAnimLogo_181
+  - first:
+      213: -2589012270263469000
+    second: EarthAnimLogo_182
+  - first:
+      213: -3094695638441877765
+    second: EarthAnimLogo_183
+  - first:
+      213: -7161179570522448626
+    second: EarthAnimLogo_184
+  - first:
+      213: 5234794551400171959
+    second: EarthAnimLogo_185
+  - first:
+      213: -5787445028640944320
+    second: EarthAnimLogo_186
+  - first:
+      213: 5389518403720424273
+    second: EarthAnimLogo_187
+  - first:
+      213: 7448711905396122463
+    second: EarthAnimLogo_188
+  - first:
+      213: 3696570624057995752
+    second: EarthAnimLogo_189
+  - first:
+      213: -1726424454626126916
+    second: EarthAnimLogo_190
+  - first:
+      213: 8422603403163565907
+    second: EarthAnimLogo_191
+  - first:
+      213: 7272237753112390118
+    second: EarthAnimLogo_192
+  - first:
+      213: -5224804344124507809
+    second: EarthAnimLogo_193
+  - first:
+      213: -2230441532498319767
+    second: EarthAnimLogo_194
+  - first:
+      213: 790590330218042665
+    second: EarthAnimLogo_195
+  - first:
+      213: -3905369578886302691
+    second: EarthAnimLogo_196
+  - first:
+      213: 6984488916426370494
+    second: EarthAnimLogo_197
+  - first:
+      213: -2249221717395654506
+    second: EarthAnimLogo_198
+  - first:
+      213: 9141992705389191890
+    second: EarthAnimLogo_199
+  - first:
+      213: 3839813773512602852
+    second: EarthAnimLogo_200
+  - first:
+      213: -908906495012136907
+    second: EarthAnimLogo_201
+  - first:
+      213: 6799841997715868283
+    second: EarthAnimLogo_202
+  - first:
+      213: 9047861313918450752
+    second: EarthAnimLogo_203
+  - first:
+      213: 7415871083069882826
+    second: EarthAnimLogo_204
+  - first:
+      213: 7548653092388558867
+    second: EarthAnimLogo_205
+  - first:
+      213: -6810473070412476837
+    second: EarthAnimLogo_206
+  - first:
+      213: 1542415805803553939
+    second: EarthAnimLogo_207
+  - first:
+      213: -1977150174421146784
+    second: EarthAnimLogo_208
+  - first:
+      213: 4190941177403616736
+    second: EarthAnimLogo_209
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 0
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 8192
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 0
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: EarthAnimLogo_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c5c801f73f99710c0800000000000000
+      internalID: -4605042822875149220
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_1
+      rect:
+        serializedVersion: 2
+        x: 200
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e2783788d7486db0800000000000000
+      internalID: -4798506407656131872
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_2
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa512b7dcbc8dead0800000000000000
+      internalID: -2671324261260323414
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_3
+      rect:
+        serializedVersion: 2
+        x: 600
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: dbfb087b6f4e7abf0800000000000000
+      internalID: -313029900787204163
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_4
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: cd152e5d16d62ef30800000000000000
+      internalID: 4603362036093702620
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_5
+      rect:
+        serializedVersion: 2
+        x: 1000
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 0e1d96b3595f03120800000000000000
+      internalID: 2391681423429456352
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_6
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f09a58bc1a7ea30e0800000000000000
+      internalID: -2289262778474190577
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_7
+      rect:
+        serializedVersion: 2
+        x: 1400
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ade98d083bab95cf0800000000000000
+      internalID: -262973823100870950
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_8
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c519a9f005b135ee0800000000000000
+      internalID: -1273644238942596772
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_9
+      rect:
+        serializedVersion: 2
+        x: 1800
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e05bdd1023ffc2dd0800000000000000
+      internalID: -2509350302107454194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_10
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bdf06425c92ed2d20800000000000000
+      internalID: 3255507266681835483
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_11
+      rect:
+        serializedVersion: 2
+        x: 2200
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ced54b2fb224fce90800000000000000
+      internalID: -7003306139014898196
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_12
+      rect:
+        serializedVersion: 2
+        x: 2400
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 73ab9f05526812dd0800000000000000
+      internalID: -2512579622265570761
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_13
+      rect:
+        serializedVersion: 2
+        x: 2600
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 896884c4c9f949dd0800000000000000
+      internalID: -2480182001130764648
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_14
+      rect:
+        serializedVersion: 2
+        x: 2800
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34b9d564bb112f690800000000000000
+      internalID: -7569968527619286205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_15
+      rect:
+        serializedVersion: 2
+        x: 3000
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ae25c4b432a2e9e0800000000000000
+      internalID: -1593532970880913759
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_16
+      rect:
+        serializedVersion: 2
+        x: 3200
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1b44e4fa7035dc80800000000000000
+      internalID: -8298673433707525345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_17
+      rect:
+        serializedVersion: 2
+        x: 3400
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a21dd098ade93b320800000000000000
+      internalID: 2572574473598128426
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_18
+      rect:
+        serializedVersion: 2
+        x: 3600
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1dfe19eedb6a91e0800000000000000
+      internalID: -2190319663624291046
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_19
+      rect:
+        serializedVersion: 2
+        x: 3800
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 43a57b3c5a2be0040800000000000000
+      internalID: 4615823093124258356
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_20
+      rect:
+        serializedVersion: 2
+        x: 4000
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1ffd9b8e7ada6b540800000000000000
+      internalID: 5023393371054006257
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_21
+      rect:
+        serializedVersion: 2
+        x: 4200
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1cbcbdf9f3bf9a420800000000000000
+      internalID: 2641918907112999873
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_22
+      rect:
+        serializedVersion: 2
+        x: 4400
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1916df2cc24f8fe10800000000000000
+      internalID: 2231802088449204625
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_23
+      rect:
+        serializedVersion: 2
+        x: 4600
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 36b0e35be945c6940800000000000000
+      internalID: 5290696702875798371
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_24
+      rect:
+        serializedVersion: 2
+        x: 4800
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ffbde18e747be0ff0800000000000000
+      internalID: -67915424899081217
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_25
+      rect:
+        serializedVersion: 2
+        x: 5000
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9a4f2d29e38315c50800000000000000
+      internalID: 6652159966005359785
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_26
+      rect:
+        serializedVersion: 2
+        x: 5200
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 375c166df9bec8ff0800000000000000
+      internalID: -32392025569376909
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_27
+      rect:
+        serializedVersion: 2
+        x: 5400
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa700c55f12bf5960800000000000000
+      internalID: 7592983344422324138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_28
+      rect:
+        serializedVersion: 2
+        x: 5600
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a1d0207ab4bb2aa90800000000000000
+      internalID: -7304069712042652390
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: EarthAnimLogo_29
+      rect:
+        serializedVersion: 2
+        x: 5800
+        y: 0
+        width: 200
+        height: 185
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bb8ef0a3759c54f70800000000000000
+      internalID: 9170957592683342011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: aae4a90cb70d1684bb4b1b103ee79d2d
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      EarthAnimLogo_0: -4605042822875149220
+      EarthAnimLogo_1: -4798506407656131872
+      EarthAnimLogo_10: 3255507266681835483
+      EarthAnimLogo_11: -7003306139014898196
+      EarthAnimLogo_12: -2512579622265570761
+      EarthAnimLogo_13: -2480182001130764648
+      EarthAnimLogo_14: -7569968527619286205
+      EarthAnimLogo_15: -1593532970880913759
+      EarthAnimLogo_16: -8298673433707525345
+      EarthAnimLogo_17: 2572574473598128426
+      EarthAnimLogo_18: -2190319663624291046
+      EarthAnimLogo_19: 4615823093124258356
+      EarthAnimLogo_2: -2671324261260323414
+      EarthAnimLogo_20: 5023393371054006257
+      EarthAnimLogo_21: 2641918907112999873
+      EarthAnimLogo_22: 2231802088449204625
+      EarthAnimLogo_23: 5290696702875798371
+      EarthAnimLogo_24: -67915424899081217
+      EarthAnimLogo_25: 6652159966005359785
+      EarthAnimLogo_26: -32392025569376909
+      EarthAnimLogo_27: 7592983344422324138
+      EarthAnimLogo_28: -7304069712042652390
+      EarthAnimLogo_29: 9170957592683342011
+      EarthAnimLogo_3: -313029900787204163
+      EarthAnimLogo_4: 4603362036093702620
+      EarthAnimLogo_5: 2391681423429456352
+      EarthAnimLogo_6: -2289262778474190577
+      EarthAnimLogo_7: -262973823100870950
+      EarthAnimLogo_8: -1273644238942596772
+      EarthAnimLogo_9: -2509350302107454194
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
