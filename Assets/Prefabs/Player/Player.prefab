@@ -238,7 +238,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   jumpPower: 20
-  fallMultiplier: 5
+  fallMultiplier: 6
   rb: {fileID: 6250933105276607023}
   playerMovement: {fileID: 8527438587698611968}
   groundCheck: {fileID: 9183858246643238724}

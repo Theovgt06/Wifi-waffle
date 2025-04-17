@@ -18,7 +18,7 @@ public class PlayerSystem : MonoBehaviour, IWeapons, IDamageable {
         anim = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
         // Idéalement, ces références devraient être configurées via l'inspecteur
-        shootIndicator = GameObject.Find("Shoot Indicator");
+        shootIndicator = GameObject.FindGameObjectWithTag("ShootIndicator");
         bulletPooling = GetComponent<BulletPooling>();
         dataChanger = GetComponent<DataChanger>();
 

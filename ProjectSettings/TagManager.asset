@@ -20,6 +20,7 @@ TagManager:
   - Score
   - Audio
   - PlayerDeath
+  - ShootIndicator
   layers:
   - Default
   - TransparentFX

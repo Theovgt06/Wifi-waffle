@@ -101,8 +101,9 @@ GameObject:
   - component: {fileID: 6026797559336238887}
   - component: {fileID: 8062995524243114551}
   - component: {fileID: 8690804527375133912}
+  - component: {fileID: 5813992598470053809}
   m_Layer: 0
-  m_Name: Managers 1
+  m_Name: Managers1
   m_TagString: Managers
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -179,7 +180,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eab56c164bafabd4d9abb33378649160, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  easySpeed: 3.5
+  easySpeed: 3.25
   normalSpeed: 3.5
   hardSpeed: 4
   rationSpeedRate: 4.05
@@ -201,11 +202,24 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dataChanger: {fileID: 0}
   scoreText: {fileID: 0}
-  ammoAmountText: {fileID: 2093503700979771741, guid: a15750c5af0a92449b0d9c0ef183e36e, type: 3}
+  ammoAmountText: {fileID: 0}
   previousHealthNumber: 7
   heartPrefab: {fileID: 785898071852218398, guid: 2dea5569217d3dc47981113d6b9fbc71, type: 3}
   score: {fileID: 0}
-  ammoNumber: {fileID: 7225973117083805517, guid: a15750c5af0a92449b0d9c0ef183e36e, type: 3}
   player: {fileID: 0}
   healthBarGrid: {fileID: 0}
   maxScore: 999999
+--- !u!114 &5813992598470053809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7606811446543034067}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3ed5aa6a1572922409746f1aea3b7f4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  menuPause: {fileID: 0}
+  mouseIndicator: {fileID: 0}

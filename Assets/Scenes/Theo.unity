@@ -179,7 +179,7 @@ MonoBehaviour:
   m_text: YOU DIED
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4635d0516aebf894295ad5ae39d74efc, type: 2}
-  m_sharedMaterial: {fileID: 5948152825398993670, guid: 4635d0516aebf894295ad5ae39d74efc, type: 2}
+  m_sharedMaterial: {fileID: -9015723501222005113, guid: 4635d0516aebf894295ad5ae39d74efc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -907,7 +907,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1142493634
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1651,7 +1651,7 @@ MonoBehaviour:
   m_text: RETRY
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 4635d0516aebf894295ad5ae39d74efc, type: 2}
-  m_sharedMaterial: {fileID: 5948152825398993670, guid: 4635d0516aebf894295ad5ae39d74efc, type: 2}
+  m_sharedMaterial: {fileID: -9015723501222005113, guid: 4635d0516aebf894295ad5ae39d74efc, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []

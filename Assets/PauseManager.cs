@@ -1,30 +1,36 @@
 using UnityEngine;
-using UnityEngine.WSA;
-using static UnityEngine.Rendering.DebugUI;
 
 
 public class PauseManager : MonoBehaviour
 {
     [SerializeField]
-    private GameObject pause;
-    private void Start()
+    private GameObject menuPause;
+    [SerializeField]
+    private GameObject mouseIndicator;
+    private void Awake()
     {
         Resume();
     }
 
     private void Paused()
     {
+        menuPause.SetActive(true);
+        mouseIndicator.SetActive(false);
+        Cursor.visible = true;
         Time.timeScale = 0f;
         AudioListener.pause = true;
-        pause.SetActive(true);
+        menuPause.SetActive(true);
         Debug.Log("Game Paused");
 
     }
     private void Resume()
     {
+        menuPause.SetActive(false);
+        mouseIndicator.SetActive(true);
+        Cursor.visible = false;
         Time.timeScale = 1f;
         AudioListener.pause = false;
-        pause.SetActive(false);
+        menuPause.SetActive(false);
         Debug.Log("Game Resumed");
     }
 
