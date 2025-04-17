@@ -10,8 +10,8 @@ public class UIUpdate : MonoBehaviour
     private int previousScore = -1;
     private int previousAmmoNumber = -1;
     public int previousHealthNumber = 7;
-    private int actualScore = 0;
-    private int bestScore;
+    public int actualScore = 0;
+    public int bestScore;
     [SerializeField] public GameObject heartPrefab;
     [SerializeField] private GameObject score;
     [SerializeField] private GameObject player;
