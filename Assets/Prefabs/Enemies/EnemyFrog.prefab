@@ -212,5 +212,5 @@ MonoBehaviour:
   currentHealth: 0
   startingHealth: 1
   getCollectableScoreAdd: 0
-  killEnemyScoreAdd: 0
+  killEnemyScoreAdd: 500
   uIUpdate: {fileID: 0}

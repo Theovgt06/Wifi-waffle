@@ -46,7 +46,6 @@ public class PlateformBehaviour : MonoBehaviour
             collectables.transform.GetChild(GetRandomCollectable()).gameObject.SetActive(true);
         }else if(WhatSpawn() == "Nothing") 
         {
-            Debug.Log("rien n'a spawn");
         }
     }
 

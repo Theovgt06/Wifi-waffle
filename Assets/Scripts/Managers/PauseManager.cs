@@ -9,6 +9,7 @@ public class PauseManager : MonoBehaviour
     private GameObject mouseIndicator;
 
     [SerializeField] AudioManager audioManager;
+    public bool isDead;
     private void Awake()
     {
         Resume();
@@ -34,7 +35,7 @@ public class PauseManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (Input.GetKeyDown(KeyCode.Escape) && !isDead)
         {
             if (Time.timeScale == 1f)
             {

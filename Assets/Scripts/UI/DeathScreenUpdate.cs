@@ -9,33 +9,40 @@ public class DeathScreenUpdate : MonoBehaviour
     [SerializeField] private TextMeshProUGUI bestScore;
     [SerializeField] private UIUpdate uIUpdate;
     [SerializeField] private GameObject mouseIndicator;
+    [SerializeField] private AudioManager audioManager;
+    [SerializeField] private Evolution evolution;
     
-    void OnAwake()
+    void Awake()
     {
         gameObject.SetActive(false);
+
     }
-    void OnActive()
+    void OnEnable()
     {
-        mouseIndicator.SetActive(false);
-        Cursor.visible = true;
         Time.timeScale = 0f;
+        evolution.spawnedPlatform = 0;
+        audioManager.musicSource.clip = audioManager.backgroundnoise;
         currentScore.text =  uIUpdate.actualScore.ToString();
         bestScore.text = uIUpdate.bestScore.ToString();
-    }
 
+    }
     // Update is called once per frame
     void Update()
     {
         
     }
 
-    void RestartGame()
+    public void RestartGame()
     {
+        audioManager.musicSource.clip = audioManager.gamemusic;
+        Time.timeScale = 1f;
+        Destroy(evolution.gameObject);
         SceneManager.LoadScene("MainScene");
     }
 
-    void ReturnToMenu()
+    public void ReturnToMenu()
     {
+        Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }
 }

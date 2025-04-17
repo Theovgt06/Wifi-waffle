@@ -21,6 +21,7 @@ TagManager:
   - Audio
   - PlayerDeath
   - ShootIndicator
+  - DeathScreen
   layers:
   - Default
   - TransparentFX

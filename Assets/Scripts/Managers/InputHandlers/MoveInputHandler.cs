@@ -8,6 +8,8 @@ public class MoveInputHandler : InputHandler
 
     private Vector2 moveInput;
 
+    
+    
     protected override void RegisterInputActions()
     {
         PlayerInput playerInput = GetPlayerInput();
@@ -19,10 +21,7 @@ public class MoveInputHandler : InputHandler
             playerInput.actions["Jump"].canceled += OnJumpCanceled;
 
         }
-        else
-        {
-            Debug.LogError("PlayerInput is null in MoveInputHandler");
-        }
+
     }
 
     protected override void UnregisterInputActions()
@@ -45,10 +44,7 @@ public class MoveInputHandler : InputHandler
         {
             playerMovement.SetMoveDirection(moveInput);
         }
-        else
-        {
-            Debug.LogError("PlayerController non assigné dans MoveInputHandler");
-        }
+
     }
 
 
@@ -67,10 +63,7 @@ public class MoveInputHandler : InputHandler
         {
             playerJumping.Jump();
         }
-        else
-        {
-            Debug.LogError("PlayerController non assigné dans MoveInputHandler");
-        }
+
     }
 
     private void OnJumpCanceled(InputAction.CallbackContext context)
@@ -79,10 +72,7 @@ public class MoveInputHandler : InputHandler
         {
             playerJumping.NoJump();
         }
-        else
-        {
-            Debug.LogError("PlayerController non assigné dans MoveInputHandler");
-        }
+
     }
 
 

@@ -40,7 +40,6 @@ public class UIUpdate : MonoBehaviour
         if (dataChanger.currentAmmo != previousAmmoNumber)
         {   
             previousAmmoNumber = dataChanger.currentAmmo;
-            Debug.Log(ammoAmountText.text);
             ammoAmountText.text = "x" + previousAmmoNumber.ToString();
         }
 

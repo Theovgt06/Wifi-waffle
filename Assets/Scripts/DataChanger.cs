@@ -11,6 +11,7 @@ public class DataChanger : MonoBehaviour
     [SerializeField] private int getCollectableScoreAdd;
     [SerializeField] private int killEnemyScoreAdd;
     [SerializeField] private UIUpdate uIUpdate;
+    [SerializeField] private PauseManager pauseManager;
     private Animator anim;
 
 
@@ -20,6 +21,10 @@ public class DataChanger : MonoBehaviour
         currentHealth = startingHealth;
         currentAmmo = startingAmmo; 
         uIUpdate = GameObject.FindGameObjectWithTag("Managers").GetComponent<UIUpdate>();
+        if(gameObject.CompareTag("Player"))
+        {
+            pauseManager.isDead = false;
+        }
     }
 
     public void ChangeAmmo(int amount)
@@ -59,9 +64,10 @@ public class DataChanger : MonoBehaviour
 
     public void PlayerDied()
     {
+        pauseManager.isDead = true;
+        uIUpdate.SetBestScore();
         LevelManager.Instance.GameOver();
         GameObject.Find("Player").SetActive(false);
-        uIUpdate.SetBestScore();
     } 
     
     public void EnemyDied()

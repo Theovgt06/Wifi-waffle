@@ -7,7 +7,7 @@ public class MySceneManagement : MonoBehaviour
     
     void Start()
     {
-        audioManager = transform.GetChild(1).transform.GetComponent<AudioManager>();
+        audioManager = transform.GetChild(0).transform.GetComponent<AudioManager>();
     }
 
     // Update is called once per frame

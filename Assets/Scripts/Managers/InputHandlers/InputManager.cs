@@ -36,9 +36,8 @@ public class InputManager : MonoBehaviour
        }
       
        Instance = this;
-      
-       // DontDestroyOnLoad pour qu'il persiste entre les scènes
        DontDestroyOnLoad(gameObject);
+      
    }
   
    // Méthode pour définir le PlayerInput quand un joueur est instancié

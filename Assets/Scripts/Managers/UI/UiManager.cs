@@ -6,7 +6,7 @@ public class UiManager : MonoBehaviour
 
     public void ToggleDeathScreen()
     {
-        DeathScreen.SetActive(!DeathScreen.activeSelf);
+        DeathScreen.SetActive(true);
     }
 
    
