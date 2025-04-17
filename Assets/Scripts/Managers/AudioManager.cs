@@ -1,13 +1,18 @@
 using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.SceneManagement;
+
 
 public class AudioManager : MonoBehaviour
 {
     [Header("---------------Audio Sources---------------")]
-    [SerializeField] AudioSource musicSource;
-    [SerializeField] AudioSource SfxSource;
+    [SerializeField] public AudioSource musicSource;
+    [SerializeField] public AudioSource SFXSource;
+    [SerializeField] public AudioMixer audioMixer;
 
     [Header("---------------Audio Clip---------------")]
-    public AudioClip backgroundmusic;
+    public AudioClip menumusic;
+    public AudioClip gamemusic;
     public AudioClip backgroundnoise;
     public AudioClip death;
     public AudioClip walk;
@@ -22,26 +27,50 @@ public class AudioManager : MonoBehaviour
     public AudioClip pinkDamaged;
     public AudioClip voodooDamaged;
     public AudioClip spotted;
+    private string currentScene = "";
 
-    private void Start()
+
+    private void Update()
     {
-        PlayMusic();
+        string sceneName = SceneManager.GetActiveScene().name;
+
+        if (sceneName != currentScene)
+        {
+            currentScene = sceneName;
+            PlayMusic(sceneName);
+        }
     }
 
     public void ToggleMusic()
     {
         musicSource.mute = !musicSource.mute ;
     }
-    public void PlayMusic()
+
+    public void LowPassMusic(bool isPaused)
     {
-        if (musicSource != null && backgroundmusic != null)
+        if(isPaused)
         {
-            Debug.Log("PlayMusic() appelé");
-            musicSource.clip = backgroundmusic;
-         
-            musicSource.loop = true; // Set the music to loop
-            
-            musicSource.Play();
+            audioMixer.SetFloat("MusicLowPass",800f);
+        }else{
+            audioMixer.SetFloat("MusicLowPass",5000f);
+        }
+    }
+
+    public void PlayMusic(string sceneName)
+    {
+        if (musicSource != null)
+        {
+            if (sceneName == "MainMenu")
+            {
+                Debug.Log("PlayMusic() appelé");
+                musicSource.clip = menumusic;
+            }else if (sceneName == "MainScene")
+            {
+                musicSource.clip = gamemusic;
+            }               
+                musicSource.loop = true; // Set the music to loop
+                
+                musicSource.Play();
         }
         else
         {
@@ -51,6 +80,6 @@ public class AudioManager : MonoBehaviour
 
     public void PlaySfx(AudioClip clip)
     {
-       SfxSource.PlayOneShot(clip);
+       SFXSource.PlayOneShot(clip);
     }
 }

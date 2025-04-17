@@ -1,0 +1,51 @@
+    using UnityEngine;
+
+
+public class PauseManager : MonoBehaviour
+{
+    [SerializeField]
+    private GameObject menuPause;
+    [SerializeField]
+    private GameObject mouseIndicator;
+
+    [SerializeField] AudioManager audioManager;
+    private void Awake()
+    {
+        Resume();
+    }
+
+    private void Paused()
+    {
+        menuPause.SetActive(true);
+        mouseIndicator.SetActive(false);
+        Cursor.visible = true;
+        Time.timeScale = 0f;
+        audioManager.LowPassMusic(true);
+
+    }
+    private void Resume()
+    {
+        menuPause.SetActive(false);
+        mouseIndicator.SetActive(true);
+        Cursor.visible = false;
+        Time.timeScale = 1f;
+        audioManager.LowPassMusic(false);
+    }
+
+    private void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            if (Time.timeScale == 1f)
+            {
+                Paused();
+            }
+            else if (Time.timeScale == 0f)
+            {
+                Resume();
+            }
+        }
+       
+        
+    }
+}
