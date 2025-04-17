@@ -204,6 +204,14 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 14
       objectReference: {fileID: 0}
+    - target: {fileID: 7192390557469710504, guid: add334a1ea86b964cba3d5c8d932fdd9, type: 3}
+      propertyPath: m_Size.y
+      value: 0.04
+      objectReference: {fileID: 0}
+    - target: {fileID: 7192390557469710504, guid: add334a1ea86b964cba3d5c8d932fdd9, type: 3}
+      propertyPath: m_Offset.y
+      value: -0.015
+      objectReference: {fileID: 0}
     - target: {fileID: 8527438587698611968, guid: add334a1ea86b964cba3d5c8d932fdd9, type: 3}
       propertyPath: anchorLeft
       value: 
@@ -1223,18 +1231,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1134246932621062302, guid: 5a556b2791d1d2d49bdcae35fbdec2c5, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1134246932621062302, guid: 5a556b2791d1d2d49bdcae35fbdec2c5, type: 3}
-      propertyPath: prefabHardPlateform
-      value: 
-      objectReference: {fileID: 11400000, guid: a7b31628960f6ed42a4cbeab29101196, type: 2}
-    - target: {fileID: 1134246932621062302, guid: 5a556b2791d1d2d49bdcae35fbdec2c5, type: 3}
-      propertyPath: prefabNormalPlateform
-      value: 
-      objectReference: {fileID: 11400000, guid: c46d5862b5997f9448c3a63bcd6853c2, type: 2}
     - target: {fileID: 1805346735793089853, guid: 5a556b2791d1d2d49bdcae35fbdec2c5, type: 3}
       propertyPath: m_Name
       value: Grid
@@ -1278,30 +1274,6 @@ PrefabInstance:
     - target: {fileID: 2470019256242007509, guid: 5a556b2791d1d2d49bdcae35fbdec2c5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8413971286718211654, guid: 5a556b2791d1d2d49bdcae35fbdec2c5, type: 3}
-      propertyPath: easySpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8413971286718211654, guid: 5a556b2791d1d2d49bdcae35fbdec2c5, type: 3}
-      propertyPath: hardSpeed
-      value: 4
-      objectReference: {fileID: 0}
-    - target: {fileID: 8413971286718211654, guid: 5a556b2791d1d2d49bdcae35fbdec2c5, type: 3}
-      propertyPath: m_Enabled
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8413971286718211654, guid: 5a556b2791d1d2d49bdcae35fbdec2c5, type: 3}
-      propertyPath: spawnRate
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8413971286718211654, guid: 5a556b2791d1d2d49bdcae35fbdec2c5, type: 3}
-      propertyPath: expertSpeed
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8413971286718211654, guid: 5a556b2791d1d2d49bdcae35fbdec2c5, type: 3}
-      propertyPath: normalSpeed
-      value: 3.5
       objectReference: {fileID: 0}
     - target: {fileID: 8413971286718211654, guid: 5a556b2791d1d2d49bdcae35fbdec2c5, type: 3}
       propertyPath: evolutionScript

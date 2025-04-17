@@ -1,47 +1,67 @@
 using UnityEngine;
 
+
 public class Evolution : MonoBehaviour
 {
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
     [SerializeField] private float easySpeed;
     [SerializeField] private float normalSpeed;
     [SerializeField] private float hardSpeed;
     [SerializeField] private float rationSpeedRate = 4.05f;
+
     public float spawnRate;
     public Biome currentBiome;
     public int spawnedPlatform;
+    private int currentSpawnedPlatform = -1;
     public float currentSpeed;
-    
+
+    private int maxEasy = 50;
+    private int maxNormal = 175;
+
+    private float transitionEasyToNormal;
+    private float transitionNormalToHard;
+    private float ratioEasyToNormal;
+    private float ratioNormalToHard;
+
+
     void Start()
     {
         currentBiome = Biome.Easy;
+        currentSpeed = easySpeed;
+        spawnRate = rationSpeedRate / currentSpeed;
+        transitionEasyToNormal = normalSpeed - easySpeed;
+        transitionNormalToHard = hardSpeed - normalSpeed;
+        ratioEasyToNormal = transitionEasyToNormal/maxEasy;
+        ratioNormalToHard = transitionNormalToHard/maxNormal;
     }
 
-    // Update is called once per frame
     void Update()
     {
-        if (spawnedPlatform > 0 && spawnedPlatform <= 60)
+        if (spawnedPlatform >= 0 && spawnedPlatform <= maxEasy)
         {
-            // Niveau Easy
             currentBiome = Biome.Easy;
-            currentSpeed = easySpeed;
-            spawnRate = rationSpeedRate/currentSpeed;
+            UpdateSpeed(ratioEasyToNormal);
+            spawnRate = rationSpeedRate / currentSpeed;
+
         }
-        else if (spawnedPlatform > 60 && spawnedPlatform <= 200)
+        else if (spawnedPlatform > maxEasy && spawnedPlatform <= maxNormal)
         {
-            // Niveau Normal
             currentBiome = Biome.Normal;
-            currentSpeed = normalSpeed;
-            spawnRate = rationSpeedRate/currentSpeed;
+            UpdateSpeed(ratioNormalToHard);
+            spawnRate = rationSpeedRate / currentSpeed;
         }
-        else if (spawnedPlatform > 200)
+        else if (spawnedPlatform > maxNormal)
         {
-            // Niveau Hard
             currentBiome = Biome.Hard;
             currentSpeed = hardSpeed;
-            spawnRate = rationSpeedRate/currentSpeed;
+        }
+    }
+
+    void UpdateSpeed(float ratio)
+    {
+        if(spawnedPlatform>currentSpawnedPlatform)
+        {
+            currentSpeed+=ratio;
+            currentSpawnedPlatform = spawnedPlatform;
         }
     }
 }

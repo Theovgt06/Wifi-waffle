@@ -16,27 +16,33 @@ public class PlateformSpawning : MonoBehaviour
     {
         spawningArea = GameObject.FindGameObjectWithTag("Spawning Area");
         evolutionScript = GameObject.FindGameObjectWithTag("Managers").GetComponent<Evolution>();
-        currentBiome = evolutionScript.currentBiome;
-        spawnRate = evolutionScript.spawnRate;
         previousSpawnRate = spawnRate;
     }
 
+    void OnEnable()
+    {
+        currentBiome = evolutionScript.currentBiome;
+        spawnRate = evolutionScript.spawnRate;
+        previousSpawnRate = spawnRate;
+        UpdateSpawnRate();
+        InvokeRepeating(nameof(Spawn), spawnRate, spawnRate);
+        previousSpawnRate = spawnRate;
+    }
     void Update()
+    {
+        UpdateSpawnRate();
+    }
+    void UpdateSpawnRate()
     {
         currentBiome = evolutionScript.currentBiome;
         spawnRate = evolutionScript.spawnRate;
         // Si le spawnRate a changé, on relance le InvokeRepeating
-        if (spawnRate != previousSpawnRate)
+        if (spawnRate > 0 && Mathf.Abs(spawnRate - previousSpawnRate) >= 0.01f)
         {
             CancelInvoke(nameof(Spawn));
             InvokeRepeating(nameof(Spawn), spawnRate, spawnRate);
             previousSpawnRate = spawnRate;
         }
-    }
-    private void OnEnable()
-    {
-        // Démarre le spawn avec un intervalle de `spawnRate` secondes.
-        InvokeRepeating(nameof(Spawn), spawnRate, spawnRate);
     }
 
     // Update is called once per frame
