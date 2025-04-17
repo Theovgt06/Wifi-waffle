@@ -115,11 +115,11 @@ public class PlateformBehaviour : MonoBehaviour
     // Weighted Lists
     private List<string> easyTable = new List<string>() 
     {
-        // Easy (40% / 10% / 50%)
+        // Easy (35% / 15% / 50%)
         "Collectable", "Collectable", "Collectable", "Collectable",
-        "Collectable", "Collectable", "Collectable", "Collectable",
+        "Collectable", "Collectable", "Collectable",
 
-        "Enemy", "Enemy",
+        "Enemy", "Enemy","Enemy", 
 
         "Nothing", "Nothing", "Nothing", "Nothing", "Nothing",
         "Nothing", "Nothing", "Nothing", "Nothing", "Nothing"
@@ -136,13 +136,14 @@ public class PlateformBehaviour : MonoBehaviour
     };
     private List<string> hardTable = new List<string>()
     {
-        // Hard (15% / 50% / 35%)
+        // Hard (15% / 55% / 30%)
         "Collectable", "Collectable", "Collectable",
 
         "Enemy", "Enemy", "Enemy", "Enemy", "Enemy",
         "Enemy", "Enemy", "Enemy", "Enemy", "Enemy",
+        "Enemy",
 
         "Nothing", "Nothing", "Nothing", "Nothing", "Nothing",
-        "Nothing", "Nothing"
+        "Nothing"
     };
 }  
