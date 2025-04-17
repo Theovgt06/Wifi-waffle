@@ -468,7 +468,7 @@ GameObject:
   m_Component:
   - component: {fileID: 169757248434450638}
   - component: {fileID: 9113107886642574404}
-  m_Layer: 7
+  m_Layer: 14
   m_Name: DeadCollision
   m_TagString: PlayerDeath
   m_Icon: {fileID: 0}

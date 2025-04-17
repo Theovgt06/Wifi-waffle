@@ -58,10 +58,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8207bd765e462384782e0d4935c7e2c7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  easySpeed: 3
   currentBiome: 1
-  spawnRate: 1.35
   evolutionScript: {fileID: 0}
+  spawnRate: 0
 --- !u!114 &1134246932621062302
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -77,12 +76,9 @@ MonoBehaviour:
   pooledEasyPlateform: []
   pooledNormalPlateform: []
   pooledHardPlateform: []
-  pooledExpertPlateform: []
   prefabEasyPlateform: {fileID: 11400000, guid: 39b609f109bad7449ba15538339dce87, type: 2}
-  prefabNormalPlateform: {fileID: 0}
-  prefabHardPlateform: {fileID: 0}
-  prefabExpertPlateform: {fileID: 0}
+  prefabNormalPlateform: {fileID: 11400000, guid: c46d5862b5997f9448c3a63bcd6853c2, type: 2}
+  prefabHardPlateform: {fileID: 11400000, guid: a7b31628960f6ed42a4cbeab29101196, type: 2}
   inactiveEasyIndices: 
   inactiveNormalIndices: 
   inactiveHardIndices: 
-  inactiveExpertIndices: 

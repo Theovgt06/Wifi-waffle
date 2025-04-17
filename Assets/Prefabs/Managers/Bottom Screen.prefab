@@ -87,13 +87,16 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3544049879691646485}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9801f2188aab25845abd35da0b2b2541, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   plateformPooling: {fileID: 0}
   plateformSpawning: {fileID: 0}
+  uIUpdate: {fileID: 0}
+  passedPlatformScoreAdd: 25
+  player: {fileID: 0}
 --- !u!50 &429443385128481328
 Rigidbody2D:
   serializedVersion: 5
