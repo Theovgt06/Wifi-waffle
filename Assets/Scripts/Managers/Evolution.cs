@@ -1,10 +1,8 @@
 using UnityEngine;
 
+
 public class Evolution : MonoBehaviour
 {
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-
     [SerializeField] private float easySpeed;
     [SerializeField] private float normalSpeed;
     [SerializeField] private float hardSpeed;
@@ -15,7 +13,6 @@ public class Evolution : MonoBehaviour
     public int spawnedPlatform;
     private int currentSpawnedPlatform = -1;
     public float currentSpeed;
-    
 
     private int maxEasy = 50;
     private int maxNormal = 175;
@@ -40,26 +37,19 @@ public class Evolution : MonoBehaviour
 
     void Update()
     {
-        if (spawnedPlatform > 0 && spawnedPlatform <= 60)
         if (spawnedPlatform >= 336 && spawnedPlatform <= (maxEasy+336))
         {
             currentBiome = Biome.Easy;
-            currentSpeed = easySpeed;
-            spawnRate = rationSpeedRate/currentSpeed;
             UpdateSpeed(ratioEasyToNormal);
             spawnRate = rationSpeedRate / currentSpeed;
 
         }
-        else if (spawnedPlatform > 60 && spawnedPlatform <= 200)
         else if (spawnedPlatform > (maxEasy+336) && spawnedPlatform <= (maxNormal+336))
         {
             currentBiome = Biome.Normal;
-            currentSpeed = normalSpeed;
-            spawnRate = rationSpeedRate/currentSpeed;
             UpdateSpeed(ratioNormalToHard);
             spawnRate = rationSpeedRate / currentSpeed;
         }
-        else if (spawnedPlatform > 200)
         else if (spawnedPlatform > (maxNormal+336))
         {
             currentBiome = Biome.Hard;
