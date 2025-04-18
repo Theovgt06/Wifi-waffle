@@ -712,6 +712,10 @@ PrefabInstance:
       propertyPath: audioManager
       value: 
       objectReference: {fileID: 340199496}
+    - target: {fileID: 3941890563781406135, guid: 40e07d80baffa6c4d92f1f01f14635b4, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -1.9
+      objectReference: {fileID: 0}
     - target: {fileID: 5027164144645641976, guid: 40e07d80baffa6c4d92f1f01f14635b4, type: 3}
       propertyPath: m_Name
       value: UI
@@ -732,6 +736,14 @@ PrefabInstance:
       propertyPath: mouseIndicator
       value: 
       objectReference: {fileID: 60549229}
+    - target: {fileID: 5655232288304631412, guid: 40e07d80baffa6c4d92f1f01f14635b4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 30
+      objectReference: {fileID: 0}
+    - target: {fileID: 8586326272317591589, guid: 40e07d80baffa6c4d92f1f01f14635b4, type: 3}
+      propertyPath: m_SizeDelta.y
+      value: 30
+      objectReference: {fileID: 0}
     - target: {fileID: 8761948901053746129, guid: 40e07d80baffa6c4d92f1f01f14635b4, type: 3}
       propertyPath: m_Pivot.x
       value: 0
