@@ -65,6 +65,8 @@ MonoBehaviour:
   pinkDamaged: {fileID: 8300000, guid: 326c4368dbb59a84284979e856a09b4b, type: 3}
   voodooDamaged: {fileID: 8300000, guid: f4ffaaa94e2931648940e3b649cdae39, type: 3}
   spotted: {fileID: 8300000, guid: 25a9ec4179cc886418575eda1ec19251, type: 3}
+  frogShooting: {fileID: 8300000, guid: bfa4543fd4ba8ae489e05ff2b456e034, type: 3}
+  pinkShooting: {fileID: 8300000, guid: fbe7d202ca71acc48865456b2cb6f86c, type: 3}
 --- !u!82 &5464337442722391273
 AudioSource:
   m_ObjectHideFlags: 0

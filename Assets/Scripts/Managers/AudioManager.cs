@@ -27,6 +27,8 @@ public class AudioManager : MonoBehaviour
     public AudioClip pinkDamaged;
     public AudioClip voodooDamaged;
     public AudioClip spotted;
+    public AudioClip frogShooting;
+    public AudioClip pinkShooting;
     private string currentScene = "";
 
 
