@@ -19,6 +19,7 @@ public class PlayerMovement : MonoBehaviour
     private Vector2 moveDirection;
     private bool isFacingRight = true;
     private Animator anim;
+    [SerializeField] private AudioManager audioManager;
     
 
     private void Awake()
@@ -80,11 +81,14 @@ public class PlayerMovement : MonoBehaviour
         if (anchorLeft.transform.position.x > playerTransform.position.x)
         {
             playerTransform.position = new Vector2((float)(anchorRight.transform.position.x-0.01), playerTransform.position.y);
+            audioManager.PlaySfx(audioManager.screenWarp);
         }
         if(anchorRight.transform.position.x < playerTransform.position.x)
         {
             playerTransform.position = new Vector2((float)(anchorLeft.transform.position.x+0.01), playerTransform.position.y);
+            audioManager.PlaySfx(audioManager.screenWarp);
         }
+
     }
 
     private void FixedUpdate()

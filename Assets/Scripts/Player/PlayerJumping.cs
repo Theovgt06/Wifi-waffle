@@ -12,6 +12,7 @@ public class PlayerJumping : MonoBehaviour
     [SerializeField] private PlayerMovement playerMovement;
     public Transform groundCheck;
     public LayerMask groundLayer;
+    [SerializeField] private AudioManager audioManager;
 
     public bool isGrounded;
     private bool jumpRequested;
@@ -59,6 +60,7 @@ public class PlayerJumping : MonoBehaviour
         {
             isJumping = true;  // Le joueur est en train de sauter
             anim.SetTrigger("Jump");
+            audioManager.PlaySfx(audioManager.jump);
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);  // Appliquer la vitesse du saut
             jumpRequested = false;  // Réinitialiser la demande de saut
         }

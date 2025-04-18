@@ -191,7 +191,7 @@ MonoBehaviour:
   rationSpeedRate: 4.05
   spawnRate: 0
   currentBiome: 0
-  spawnedPlatform: -336
+  spawnedPlatform: 0
   currentSpeed: 0
 --- !u!114 &8690804527375133912
 MonoBehaviour:
@@ -231,6 +231,7 @@ MonoBehaviour:
   menuPause: {fileID: 0}
   mouseIndicator: {fileID: 0}
   audioManager: {fileID: 4001601423803200215}
+  isDead: 0
 --- !u!114 &7820061659681943955
 MonoBehaviour:
   m_ObjectHideFlags: 0

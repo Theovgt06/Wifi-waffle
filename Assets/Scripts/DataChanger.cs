@@ -12,6 +12,7 @@ public class DataChanger : MonoBehaviour
     [SerializeField] private int killEnemyScoreAdd;
     [SerializeField] private UIUpdate uIUpdate;
     [SerializeField] private PauseManager pauseManager;
+    [SerializeField] private AudioManager audioManager;
     private Animator anim;
 
 
@@ -65,6 +66,7 @@ public class DataChanger : MonoBehaviour
     public void PlayerDied()
     {
         pauseManager.isDead = true;
+        audioManager.PlaySfx(audioManager.death);
         uIUpdate.SetBestScore();
         LevelManager.Instance.GameOver();
         GameObject.Find("Player").SetActive(false);

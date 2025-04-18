@@ -6,6 +6,12 @@ public class Collectible : MonoBehaviour
     public int randomValue;
     public Animator collectableAnimator;
     public DataChanger dataChanger;
+    [SerializeField] private AudioManager audioManager;
+    
+    void Start()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
     
     void OnEnable()
     {
@@ -28,12 +34,14 @@ public class Collectible : MonoBehaviour
             {
                 dataChanger.ChangeAmmo(1);
                 collectableAnimator.SetTrigger("Collect");
+                audioManager.PlaySfx(audioManager.itemCollected);
             }
 
             if(gameObject.CompareTag("Heal"))
             {
                 dataChanger.ChangeHealth(1);
                 collectableAnimator.SetTrigger("Collect");
+                audioManager.PlaySfx(audioManager.itemCollected);
             }   
         }
     }

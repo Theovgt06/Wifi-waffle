@@ -756,6 +756,10 @@ PrefabInstance:
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
       value: DeathScreenUpdate, Assembly-CSharp
       objectReference: {fileID: 0}
+    - target: {fileID: 1955343786966799573, guid: 40e07d80baffa6c4d92f1f01f14635b4, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 340199496}
     - target: {fileID: 2064317200009007993, guid: 40e07d80baffa6c4d92f1f01f14635b4, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
@@ -883,6 +887,10 @@ PrefabInstance:
     - target: {fileID: 2894940011226086399, guid: 40e07d80baffa6c4d92f1f01f14635b4, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3170167135549951992, guid: 40e07d80baffa6c4d92f1f01f14635b4, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
       objectReference: {fileID: 0}
     - target: {fileID: 3765498368924371762, guid: 40e07d80baffa6c4d92f1f01f14635b4, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1201,13 +1209,13 @@ PrefabInstance:
       propertyPath: mouseIndicator
       value: 
       objectReference: {fileID: 60549229}
+    - target: {fileID: 7298560357162432042, guid: db4b8d4a018db734f95033e4736467fc, type: 3}
+      propertyPath: m_Volume
+      value: 0.35
+      objectReference: {fileID: 0}
     - target: {fileID: 7606811446543034067, guid: db4b8d4a018db734f95033e4736467fc, type: 3}
       propertyPath: m_Name
       value: Managers1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8062995524243114551, guid: db4b8d4a018db734f95033e4736467fc, type: 3}
-      propertyPath: spawnedPlatform
-      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8690804527375133912, guid: db4b8d4a018db734f95033e4736467fc, type: 3}
       propertyPath: score
@@ -1338,9 +1346,17 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1476531809}
     - target: {fileID: 3350007436936178436, guid: add334a1ea86b964cba3d5c8d932fdd9, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 340199496}
+    - target: {fileID: 3350007436936178436, guid: add334a1ea86b964cba3d5c8d932fdd9, type: 3}
       propertyPath: pauseManager
       value: 
       objectReference: {fileID: 1476531816}
+    - target: {fileID: 3788147502972188031, guid: add334a1ea86b964cba3d5c8d932fdd9, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 340199496}
     - target: {fileID: 4375773144679361795, guid: add334a1ea86b964cba3d5c8d932fdd9, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.1
@@ -1381,6 +1397,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5062527807939643126, guid: add334a1ea86b964cba3d5c8d932fdd9, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 340199496}
     - target: {fileID: 8527438587698611968, guid: add334a1ea86b964cba3d5c8d932fdd9, type: 3}
       propertyPath: anchorLeft
       value: 
@@ -1389,6 +1409,10 @@ PrefabInstance:
       propertyPath: anchorRight
       value: 
       objectReference: {fileID: 48708121}
+    - target: {fileID: 8527438587698611968, guid: add334a1ea86b964cba3d5c8d932fdd9, type: 3}
+      propertyPath: audioManager
+      value: 
+      objectReference: {fileID: 340199496}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

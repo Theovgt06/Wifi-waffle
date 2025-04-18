@@ -18,6 +18,12 @@ public class BulletBehaviour : MonoBehaviour
     private GameObject fromWho;
     private Rigidbody2D rb;
     private Animator animator;
+    [SerializeField] private AudioManager audioManager;
+    void Start()
+    {
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
+    }
+    
     void OnEnable()
     {   
         animator = GetComponent<Animator>();
@@ -127,15 +133,35 @@ public class BulletBehaviour : MonoBehaviour
                 bulletBehavior.SetBehaviourType(BehaviourBullet.Inactive);
                 animator.SetTrigger("Explode");
                 IDamageable target = hitObject.GetComponent<IDamageable>();
+                audioManager.PlaySfx(audioManager.damageTaken);
                 target.TakeDamage(-1);
 
             }
-            if(hitObject.CompareTag("Pink") || hitObject.CompareTag("Frog") | hitObject.CompareTag("Vodoo"))
+            if(hitObject.CompareTag("Pink"))
             {
                 gameObject.SetActive(false);
                 IDamageable target = hitObject.GetComponent<IDamageable>();
                 target.TakeDamage(-1);
                 BulletBehaviour bulletBehavior = gameObject.GetComponent<BulletBehaviour>();
+                audioManager.PlaySfx(audioManager.pinkDamaged);
+                bulletBehavior.SetBehaviourType(BehaviourBullet.Inactive);
+            }
+            if (hitObject.CompareTag("Frog"))
+            {
+                gameObject.SetActive(false);
+                IDamageable target = hitObject.GetComponent<IDamageable>();
+                target.TakeDamage(-1);
+                BulletBehaviour bulletBehavior = gameObject.GetComponent<BulletBehaviour>();
+                audioManager.PlaySfx(audioManager.frogDamaged);
+                bulletBehavior.SetBehaviourType(BehaviourBullet.Inactive);
+            }
+            if(hitObject.CompareTag("Vodoo"))
+            {
+                gameObject.SetActive(false);
+                IDamageable target = hitObject.GetComponent<IDamageable>();
+                target.TakeDamage(-1);
+                BulletBehaviour bulletBehavior = gameObject.GetComponent<BulletBehaviour>();
+                audioManager.PlaySfx(audioManager.voodooDamaged);
                 bulletBehavior.SetBehaviourType(BehaviourBullet.Inactive);
             }
             if(hitObject.CompareTag("Edge Collider"))

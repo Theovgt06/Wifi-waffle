@@ -12,6 +12,7 @@ public class PlayerSystem : MonoBehaviour, IWeapons, IDamageable {
     private DataChanger dataChanger;
     public Animator anim;
     public Rigidbody2D rb;
+    [SerializeField] private AudioManager audioManager;
     
     void Start()
     {
@@ -38,6 +39,7 @@ public class PlayerSystem : MonoBehaviour, IWeapons, IDamageable {
             BulletBehaviour bulletBehaviourInstance = bullet.GetComponent<BulletBehaviour>();
             bulletBehaviourInstance.GetValues(gameObject, bullet,mousePosition, gameObject);
             bulletBehaviourInstance.SetBehaviourType(BulletBehaviour.BehaviourBullet.Directional);
+            audioManager.PlaySfx(audioManager.shooting);
             dataChanger.ChangeAmmo(-1);
         } 
     }
@@ -55,6 +57,7 @@ public class PlayerSystem : MonoBehaviour, IWeapons, IDamageable {
     public void TakeDamage(int amount)
     {
         dataChanger.ChangeHealth(amount);
+        audioManager.PlaySfx(audioManager.damageTaken);
         anim.SetTrigger("Hit");
     }
 }

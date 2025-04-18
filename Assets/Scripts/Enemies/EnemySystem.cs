@@ -30,11 +30,13 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
     [SerializeField] private GameObject playerGroundCheck;
     [SerializeField] private GameObject currentVodooPlatform;
     [SerializeField] private GameObject currentPlayerPlatform;
+    [SerializeField] private AudioManager audioManager;
    
     
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
+        audioManager = GameObject.FindGameObjectWithTag("Audio").GetComponent<AudioManager>();
         playerGroundCheck = player.transform.GetChild(0).gameObject;
         bulletPooling = gameObject.GetComponent<BulletPooling>();
         anim = GetComponent<Animator>();
@@ -106,6 +108,7 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
             BulletBehaviour bulletBehaviourInstance = bullet.GetComponent<BulletBehaviour>();
             bulletBehaviourInstance.GetValues(gameObject, bullet,playerPosition, gameObject);
             bulletBehaviourInstance.SetBehaviourType(BulletBehaviour.BehaviourBullet.Directional);
+            audioManager.PlaySfx(audioManager.frogDamaged);
             anim.SetTrigger("Attack");
         }
     }
@@ -126,6 +129,7 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
             BulletBehaviour bulletBehaviourInstance = bullet.GetComponent<BulletBehaviour>();
             bulletBehaviourInstance.GetValues(gameObject, bullet,playerPosition, gameObject);
             bulletBehaviourInstance.SetBehaviourType(BulletBehaviour.BehaviourBullet.Parabolic);
+            audioManager.PlaySfx(audioManager.pinkShooting);
             anim.SetTrigger("Attack");
         } 
     }
@@ -239,6 +243,7 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
             if((isFacingRight && transform.position.x<= player.transform.position.x) || (!isFacingRight && transform.position.x> player.transform.position.x))
             {
                 currentVodooState = VodooState.Chase;
+                audioManager.PlaySfx(audioManager.spotted);
             }
         }
     }
@@ -261,10 +266,13 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
             if(currentVodooState != VodooState.Explode)
             {
                 currentVodooState = VodooState.Explode;
+                audioManager.PlaySfx(audioManager.damageTaken);
+                audioManager.PlaySfx(audioManager.voodooDamaged);
             }
             // other.gameObject.GetComponent<PlayerSystem>().rb.DOMove(KnockbackDirection(other.transform.position,transform.position),0.5f);
         }else{
             other.gameObject.GetComponent<PlayerSystem>().TakeDamage(-1);
+            audioManager.PlaySfx(audioManager.damageTaken);
             // other.gameObject.GetComponent<PlayerSystem>().rb.DOMove(KnockbackDirection(other.transform.position,transform.position),0.5f);
         }
     }
