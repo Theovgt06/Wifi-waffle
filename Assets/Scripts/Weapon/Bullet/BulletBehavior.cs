@@ -144,6 +144,7 @@ public class BulletBehaviour : MonoBehaviour
                 target.TakeDamage(-1);
                 BulletBehaviour bulletBehavior = gameObject.GetComponent<BulletBehaviour>();
                 audioManager.PlaySfx(audioManager.pinkDamaged);
+                animator.SetTrigger("Explode");
                 bulletBehavior.SetBehaviourType(BehaviourBullet.Inactive);
             }
             if (hitObject.CompareTag("Frog"))
@@ -153,6 +154,7 @@ public class BulletBehaviour : MonoBehaviour
                 target.TakeDamage(-1);
                 BulletBehaviour bulletBehavior = gameObject.GetComponent<BulletBehaviour>();
                 audioManager.PlaySfx(audioManager.frogDamaged);
+                animator.SetTrigger("Explode");
                 bulletBehavior.SetBehaviourType(BehaviourBullet.Inactive);
             }
             if(hitObject.CompareTag("Vodoo"))
@@ -162,6 +164,7 @@ public class BulletBehaviour : MonoBehaviour
                 target.TakeDamage(-1);
                 BulletBehaviour bulletBehavior = gameObject.GetComponent<BulletBehaviour>();
                 audioManager.PlaySfx(audioManager.voodooDamaged);
+                animator.SetTrigger("Explode");
                 bulletBehavior.SetBehaviourType(BehaviourBullet.Inactive);
             }
             if(hitObject.CompareTag("Edge Collider"))
