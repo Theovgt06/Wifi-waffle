@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class DeathScreenUpdate : MonoBehaviour
 {
@@ -14,6 +15,7 @@ public class DeathScreenUpdate : MonoBehaviour
     
     void Awake()
     {
+        Cursor.visible = false;
         gameObject.SetActive(false);
 
     }
@@ -21,7 +23,9 @@ public class DeathScreenUpdate : MonoBehaviour
     {
         Time.timeScale = 0f;
         evolution.spawnedPlatform = 0;
-        audioManager.musicSource.clip = audioManager.backgroundnoise;
+        mouseIndicator.SetActive(false);
+        Cursor.visible = true;
+        audioManager.PlayMusic("MainScene", audioManager.backgroundnoise);
         currentScore.text =  uIUpdate.actualScore.ToString();
         bestScore.text = uIUpdate.bestScore.ToString();
 
@@ -34,7 +38,9 @@ public class DeathScreenUpdate : MonoBehaviour
 
     public void RestartGame()
     {
-        audioManager.musicSource.clip = audioManager.gamemusic;
+        audioManager.PlaySfx(audioManager.buttons);
+        Debug.Log("rer");
+        // audioManager.PlayMusic("MainScene", audioManager.gamemusic);
         Time.timeScale = 1f;
         Destroy(evolution.gameObject);
         SceneManager.LoadScene("MainScene");
@@ -42,6 +48,7 @@ public class DeathScreenUpdate : MonoBehaviour
 
     public void ReturnToMenu()
     {
+        audioManager.PlaySfx(audioManager.buttons);
         Time.timeScale = 1f;
         SceneManager.LoadScene("MainMenu");
     }

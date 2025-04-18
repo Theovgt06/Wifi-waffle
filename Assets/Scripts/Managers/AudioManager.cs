@@ -39,7 +39,14 @@ public class AudioManager : MonoBehaviour
         if (sceneName != currentScene)
         {
             currentScene = sceneName;
-            PlayMusic(sceneName);
+            if (sceneName == "MainMenu")
+            {
+                PlayMusic(sceneName,menumusic);
+
+            }else if (sceneName == "MainScene")
+            {
+                PlayMusic(sceneName,gamemusic);
+            }
         }
     }
 
@@ -58,17 +65,17 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void PlayMusic(string sceneName)
+    public void PlayMusic(string sceneName,AudioClip clip )
     {
         if (musicSource != null)
         {
             if (sceneName == "MainMenu")
             {
                 Debug.Log("PlayMusic() appelé");
-                musicSource.clip = menumusic;
+                musicSource.clip = clip;
             }else if (sceneName == "MainScene")
             {
-                musicSource.clip = gamemusic;
+                musicSource.clip = clip;
             }               
                 musicSource.loop = true; // Set the music to loop
                 
