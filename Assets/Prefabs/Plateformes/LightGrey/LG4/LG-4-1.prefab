@@ -455,8 +455,6 @@ MonoBehaviour:
   currentIndex: 0
   currentSpeed: 0
   currentBiome: 0
-  enemySpawnChances: 0
-  collectableSpawnChances: 0
   spawnAnchorToPool:
   - {fileID: 9010931981622788693}
   - {fileID: 985147828835045041}

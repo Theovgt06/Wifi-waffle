@@ -39,7 +39,6 @@ public class DeathScreenUpdate : MonoBehaviour
     public void RestartGame()
     {
         audioManager.PlaySfx(audioManager.buttons);
-        Debug.Log("rer");
         // audioManager.PlayMusic("MainScene", audioManager.gamemusic);
         Time.timeScale = 1f;
         Destroy(evolution.gameObject);

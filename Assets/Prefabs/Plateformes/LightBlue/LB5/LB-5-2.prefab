@@ -276,7 +276,7 @@ Tilemap:
     second:
       serializedVersion: 2
       m_TileIndex: 1
-      m_TileSpriteIndex: 0
+      m_TileSpriteIndex: 2
       m_TileMatrixIndex: 0
       m_TileColorIndex: 0
       m_TileObjectToInstantiateIndex: 65535
@@ -355,12 +355,12 @@ Tilemap:
   - m_RefCount: 5
     m_Data: {fileID: 11400000, guid: 2c7936cc713e55b48a1b73b7b2cbd001, type: 2}
   m_TileSpriteArray:
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
+  - m_RefCount: 0
+    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -5513795479391381863, guid: c1fc39f1e8e42e24bab6817483b2d0ef, type: 3}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
-  - m_RefCount: 0
-    m_Data: {fileID: 0}
   - m_RefCount: 1
     m_Data: {fileID: -5149735147113039429, guid: c1fc39f1e8e42e24bab6817483b2d0ef, type: 3}
   - m_RefCount: 5
@@ -478,8 +478,6 @@ MonoBehaviour:
   currentIndex: 0
   currentSpeed: 0
   currentBiome: 0
-  enemySpawnChances: 0
-  collectableSpawnChances: 0
   spawnAnchorToPool:
   - {fileID: 6015460371682078765}
   - {fileID: 1984820707155360110}
