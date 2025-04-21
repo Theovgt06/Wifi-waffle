@@ -139,7 +139,6 @@ public class BulletBehaviour : MonoBehaviour
             }
             if(hitObject.CompareTag("Pink"))
             {
-                gameObject.SetActive(false);
                 IDamageable target = hitObject.GetComponent<IDamageable>();
                 target.TakeDamage(-1);
                 BulletBehaviour bulletBehavior = gameObject.GetComponent<BulletBehaviour>();
@@ -150,7 +149,6 @@ public class BulletBehaviour : MonoBehaviour
             }
             if (hitObject.CompareTag("Frog"))
             {
-                gameObject.SetActive(false);
                 IDamageable target = hitObject.GetComponent<IDamageable>();
                 target.TakeDamage(-1);
                 BulletBehaviour bulletBehavior = gameObject.GetComponent<BulletBehaviour>();
@@ -161,7 +159,6 @@ public class BulletBehaviour : MonoBehaviour
             }
             if(hitObject.CompareTag("Vodoo"))
             {
-                gameObject.SetActive(false);
                 IDamageable target = hitObject.GetComponent<IDamageable>();
                 target.TakeDamage(-1);
                 BulletBehaviour bulletBehavior = gameObject.GetComponent<BulletBehaviour>();
