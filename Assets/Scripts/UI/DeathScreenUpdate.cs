@@ -15,7 +15,6 @@ public class DeathScreenUpdate : MonoBehaviour
     
     void Awake()
     {
-        Cursor.visible = false;
         gameObject.SetActive(false);
 
     }
@@ -23,8 +22,6 @@ public class DeathScreenUpdate : MonoBehaviour
     {
         Time.timeScale = 0f;
         evolution.spawnedPlatform = 0;
-        mouseIndicator.SetActive(false);
-        Cursor.visible = true;
         audioManager.PlayMusic("MainScene", audioManager.backgroundnoise);
         currentScore.text =  uIUpdate.actualScore.ToString();
         bestScore.text = uIUpdate.bestScore.ToString();

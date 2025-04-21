@@ -20,7 +20,7 @@ public class LevelManager : MonoBehaviour
     }
     public void GameOver()
     {
-
+        uIManager = GameObject.FindGameObjectWithTag("Managers").GetComponent<UiManager>();
         if (uIManager != null)
         {
             uIManager.ToggleDeathScreen();

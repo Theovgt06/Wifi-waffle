@@ -18,8 +18,6 @@ public class PauseManager : MonoBehaviour
     private void Paused()
     {
         menuPause.SetActive(true);
-        mouseIndicator.SetActive(false);
-        Cursor.visible = true;
         Time.timeScale = 0f;
         audioManager.LowPassMusic(true);
 
@@ -27,8 +25,6 @@ public class PauseManager : MonoBehaviour
     private void Resume()
     {
         menuPause.SetActive(false);
-        mouseIndicator.SetActive(true);
-        Cursor.visible = false;
         Time.timeScale = 1f;
         audioManager.LowPassMusic(false);
     }

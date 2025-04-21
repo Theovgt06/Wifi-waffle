@@ -35,10 +35,7 @@ public class ShootingInputHandler : InputHandler
         {
             playerSystem.Shoot();
         }
-        else
-        {
-            Debug.LogError("PlayerShooting non assigné dans ShootingInputHandler");
-        }
+
     }
 }
 
