@@ -107,6 +107,7 @@ MonoBehaviour:
   bulletSpeed: 5
   peakDirectionXCalc: 10
   peakDirectionYCalc: 10
+  audioManager: {fileID: 0}
 --- !u!50 &4185469316317405627
 Rigidbody2D:
   serializedVersion: 5

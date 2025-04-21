@@ -39,7 +39,7 @@ AnimatorStateMachine:
     m_Position: {x: 270, y: 110, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 502352477017308733}
-    m_Position: {x: 270, y: 10, z: 0}
+    m_Position: {x: 290, y: 0, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions:
   - {fileID: -735022572261571676}
@@ -86,7 +86,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: An_Player_Bullet_Hit
+  m_Name: An_playerBulletHit
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions: []
@@ -99,7 +99,7 @@ AnimatorState:
   m_MirrorParameterActive: 0
   m_CycleOffsetParameterActive: 0
   m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 5281240815b0fd2459160b4c3b413764, type: 2}
+  m_Motion: {fileID: 7400000, guid: 0a1974d9dbbfa8d4eadc8f7d7db678a9, type: 2}
   m_Tag: 
   m_SpeedParameter: 
   m_MirrorParameter: 

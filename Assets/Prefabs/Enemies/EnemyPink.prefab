@@ -157,6 +157,7 @@ MonoBehaviour:
   playerGroundCheck: {fileID: 0}
   currentVodooPlatform: {fileID: 0}
   currentPlayerPlatform: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &2644526402278351829
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,3 +215,5 @@ MonoBehaviour:
   getCollectableScoreAdd: 0
   killEnemyScoreAdd: 500
   uIUpdate: {fileID: 0}
+  pauseManager: {fileID: 0}
+  audioManager: {fileID: 0}

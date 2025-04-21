@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: An_Player_Bullet_Hit
+  m_Name: An_playerBulletHit
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,13 +21,13 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -8851295171192077074, guid: c97c938afc9e3bf4b950f9f9ca0cfd2e, type: 3}
+      value: {fileID: -7417273336005684690, guid: d60e21bfb3d628b4c828913567343621, type: 3}
     - time: 0.083333336
-      value: {fileID: -6607389083210281652, guid: c97c938afc9e3bf4b950f9f9ca0cfd2e, type: 3}
+      value: {fileID: 8470005964434392515, guid: d60e21bfb3d628b4c828913567343621, type: 3}
     - time: 0.16666667
-      value: {fileID: -5408708905944366526, guid: c97c938afc9e3bf4b950f9f9ca0cfd2e, type: 3}
+      value: {fileID: -1585390337909068099, guid: d60e21bfb3d628b4c828913567343621, type: 3}
     - time: 0.25
-      value: {fileID: 6433686366378673208, guid: c97c938afc9e3bf4b950f9f9ca0cfd2e, type: 3}
+      value: {fileID: 5013229083883826134, guid: d60e21bfb3d628b4c828913567343621, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -50,10 +50,10 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -8851295171192077074, guid: c97c938afc9e3bf4b950f9f9ca0cfd2e, type: 3}
-    - {fileID: -6607389083210281652, guid: c97c938afc9e3bf4b950f9f9ca0cfd2e, type: 3}
-    - {fileID: -5408708905944366526, guid: c97c938afc9e3bf4b950f9f9ca0cfd2e, type: 3}
-    - {fileID: 6433686366378673208, guid: c97c938afc9e3bf4b950f9f9ca0cfd2e, type: 3}
+    - {fileID: -7417273336005684690, guid: d60e21bfb3d628b4c828913567343621, type: 3}
+    - {fileID: 8470005964434392515, guid: d60e21bfb3d628b4c828913567343621, type: 3}
+    - {fileID: -1585390337909068099, guid: d60e21bfb3d628b4c828913567343621, type: 3}
+    - {fileID: 5013229083883826134, guid: d60e21bfb3d628b4c828913567343621, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}
