@@ -25,6 +25,9 @@ public class DataChanger : MonoBehaviour
         if(gameObject.CompareTag("Player"))
         {
             pauseManager.isDead = false;
+        }else{
+            gameObject.GetComponent<Collider2D>().enabled = true;
+            gameObject.GetComponent<EnemySystem>().enabled = true;
         }
     }
 
@@ -71,6 +74,12 @@ public class DataChanger : MonoBehaviour
         LevelManager.Instance.GameOver();
         GameObject.Find("Player").SetActive(false);
     } 
+    
+    public void EnemyDying()
+    {
+        gameObject.GetComponent<Collider2D>().enabled = false;
+        gameObject.GetComponent<EnemySystem>().enabled = false;
+    }
     
     public void EnemyDied()
     {
