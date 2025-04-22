@@ -258,7 +258,7 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if(!other.gameObject.CompareTag("Player") && !(Time.time - lastHitPlayer > hitPlayerDelay))
+        if(!other.gameObject.CompareTag("Player") || !(Time.time - lastHitPlayer > hitPlayerDelay))
         {
             return;
         }

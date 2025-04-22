@@ -7,6 +7,7 @@ public class UIUpdate : MonoBehaviour
     [SerializeField] private DataChanger dataChanger;
     [SerializeField] private TextMeshProUGUI scoreText;
     [SerializeField] private TextMeshProUGUI ammoAmountText;
+    [SerializeField] private TextMeshProUGUI bestScoreText; // Ajoutez cette référence pour afficher le meilleur score
     private int previousScore = -1;
     private int previousAmmoNumber = -1;
     public int previousHealthNumber = 7;
@@ -26,6 +27,11 @@ public class UIUpdate : MonoBehaviour
             GameObject heart = Instantiate(heartPrefab, healthBarGrid.transform, false);
         }
         ammoAmountText.text = "x3";
+        bestScore = PlayerPrefs.GetInt("BestScore", 0);
+        if (bestScoreText != null)
+        {
+            bestScoreText.text = "Best: " + bestScore.ToString();
+        }
     }
 
     // Update is called once per frame
@@ -76,6 +82,32 @@ public class UIUpdate : MonoBehaviour
     }
     public void SetBestScore()
     {
-        bestScore = actualScore;
+        // Vérifier si le score actuel est meilleur que le précédent record
+        if (actualScore > bestScore)
+        {
+            bestScore = actualScore;
+            // Sauvegarder dans PlayerPrefs
+            PlayerPrefs.SetInt("BestScore", bestScore);
+            PlayerPrefs.Save();
+            
+            // Mettre à jour l'affichage si disponible
+            if (bestScoreText != null)
+            {
+                bestScoreText.text = "Best: " + bestScore.ToString();
+            }
+        }
+    }
+    
+    // Méthode pour réinitialiser le meilleur score (à appeler par exemple depuis un bouton de menu)
+    public void ResetBestScore()
+    {
+        bestScore = 0;
+        PlayerPrefs.SetInt("BestScore", 0);
+        PlayerPrefs.Save();
+        
+        if (bestScoreText != null)
+        {
+            bestScoreText.text = "Best: 0";
+        }
     }
 }
