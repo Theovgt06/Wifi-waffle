@@ -7,6 +7,7 @@ public class Evolution : MonoBehaviour
     [SerializeField] private float normalSpeed;
     [SerializeField] private float hardSpeed;
     [SerializeField] private float rationSpeedRate = 4.05f;
+    [SerializeField] private Parallaxe parallaxe;
 
     public float spawnRate;
     public Biome currentBiome;
@@ -46,12 +47,14 @@ public class Evolution : MonoBehaviour
         }
         else if (spawnedPlatform > (maxEasy+336) && spawnedPlatform <= (maxNormal+336))
         {
+            parallaxe.CallSecondCoroutine();
             currentBiome = Biome.Normal;
             UpdateSpeed(ratioNormalToHard);
             spawnRate = rationSpeedRate / currentSpeed;
         }
         else if (spawnedPlatform > (maxNormal+336))
         {
+            parallaxe.CallThirdCoroutine();
             currentBiome = Biome.Hard;
             currentSpeed = hardSpeed;
         }
