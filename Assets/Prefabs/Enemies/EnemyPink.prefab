@@ -142,6 +142,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   shootDelay: 1.5
+  hitPlayerDelay: 1.25
   vodooSpeed: 0
   maxSpeed: 0
   vodooChaseSpeed: 0

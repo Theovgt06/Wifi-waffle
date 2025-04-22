@@ -16,6 +16,8 @@ public class PlayerJumping : MonoBehaviour
 
     public bool isGrounded;
     private bool jumpRequested;
+    private bool jumpSoundPlayed; // Nouvelle variable pour le son
+
     private bool isJumping;
     Vector2 vecGravity;
     private Animator anim;
@@ -39,6 +41,11 @@ public class PlayerJumping : MonoBehaviour
             anim.SetBool("isJumping", false);
         }
            anim.SetBool("isGrounded", isGrounded);
+        if (jumpRequested && !jumpSoundPlayed && isGrounded)
+        {
+            audioManager.PlaySfx(audioManager.jump);
+            jumpSoundPlayed = true; 
+        }
     }
     
     private void FixedUpdate()
@@ -60,9 +67,9 @@ public class PlayerJumping : MonoBehaviour
         {
             isJumping = true;  // Le joueur est en train de sauter
             anim.SetTrigger("Jump");
-            audioManager.PlaySfx(audioManager.jump);
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpPower);  // Appliquer la vitesse du saut
             jumpRequested = false;  // Réinitialiser la demande de saut
+            jumpSoundPlayed = false; // Réinitialiser pour le prochain saut
         }
 
         // Gérer la vitesse de chute
@@ -83,11 +90,13 @@ public class PlayerJumping : MonoBehaviour
         if (!isJumping)  // Si le joueur n'est pas déjà en train de sauter
         {
             jumpRequested = true;  // Demander un saut
+            jumpSoundPlayed = false; // S'assurer que le son peut être joué
         }
     }
 
     public void NoJump()
     {
         jumpRequested = false;
+        jumpSoundPlayed = false;
     }
 }

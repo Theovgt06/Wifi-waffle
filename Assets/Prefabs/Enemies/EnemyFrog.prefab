@@ -141,7 +141,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 26b7fccf55e89bc45b5dd6124ae1e527, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  shootDelay: 1
+  shootDelay: 1.25
+  hitPlayerDelay: 1.25
   vodooSpeed: 0
   maxSpeed: 0
   vodooChaseSpeed: 0
@@ -157,6 +158,7 @@ MonoBehaviour:
   playerGroundCheck: {fileID: 0}
   currentVodooPlatform: {fileID: 0}
   currentPlayerPlatform: {fileID: 0}
+  audioManager: {fileID: 0}
 --- !u!114 &37102170191382173
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -214,3 +216,5 @@ MonoBehaviour:
   getCollectableScoreAdd: 0
   killEnemyScoreAdd: 500
   uIUpdate: {fileID: 0}
+  pauseManager: {fileID: 0}
+  audioManager: {fileID: 0}

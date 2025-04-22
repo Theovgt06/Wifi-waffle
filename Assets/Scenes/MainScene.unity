@@ -643,6 +643,17 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 1070716504948490111, guid: 6ba31b97fa6d8b84d8c4fffe874b194f, type: 3}
   m_PrefabInstance: {fileID: 636150426}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &710733629 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5345717917041052718, guid: e3d46da82f7ac564bbe69eac9551c6b1, type: 3}
+  m_PrefabInstance: {fileID: 5226479804220174884}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c5f565044a0d4a4cad4a56e14cd5b70, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &711639475
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1141,6 +1152,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Managers1
       objectReference: {fileID: 0}
+    - target: {fileID: 8062995524243114551, guid: db4b8d4a018db734f95033e4736467fc, type: 3}
+      propertyPath: parallaxe
+      value: 
+      objectReference: {fileID: 710733629}
     - target: {fileID: 8690804527375133912, guid: db4b8d4a018db734f95033e4736467fc, type: 3}
       propertyPath: score
       value: 

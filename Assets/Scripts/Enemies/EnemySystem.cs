@@ -7,6 +7,7 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
     private enum EnemyType {Frog, Pink, Vodoo}
     public enum VodooState { Chase, Explode, Routine, Inactive,Dead};
     [SerializeField] private float shootDelay = 1f;
+    [SerializeField] private float hitPlayerDelay;
     [SerializeField] private float vodooSpeed;
     [SerializeField] private float maxSpeed;
     [SerializeField] private float vodooChaseSpeed;
@@ -17,6 +18,7 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
     [SerializeField]private bool isGrounded;
 
     private float lastShoot;
+    private float lastHitPlayer;
     [SerializeField]
     private BulletPooling bulletPooling;
     private GameObject player;
@@ -136,7 +138,7 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
      
     private bool CanShoot()
     {
-        if (Time.time - lastShoot > shootDelay && player.transform.position.y<transform.position.y) // Comparaison avec le temps global
+        if (Time.time - lastShoot > shootDelay && player.transform.position.y+10f<transform.position.y) // Comparaison avec le temps global
         {
             lastShoot = Time.time; // Mise à jour du dernier tir
             return true;
@@ -256,10 +258,11 @@ public class EnemySystem : MonoBehaviour, IWeapons, IDamageable {
 
     void OnCollisionEnter2D(Collision2D other)
     {
-        if(!other.gameObject.CompareTag("Player"))
+        if(!other.gameObject.CompareTag("Player") && !(Time.time - lastHitPlayer > hitPlayerDelay))
         {
             return;
         }
+        lastHitPlayer = Time.time;
         if(enemyType == EnemyType.Vodoo)
         {
             other.gameObject.GetComponent<PlayerSystem>().TakeDamage(-2);
